@@ -29,8 +29,8 @@ export default function Nav() {
           className={styles.logo}
           src="/logo-transparent.svg"
           alt="Official Datakyu logo"
-          width={90}
-          height={19}
+          width={180}
+          height={38}
           priority
         />
         <Accordion.Root variant={"plain"} size={"lg"} multiple>
