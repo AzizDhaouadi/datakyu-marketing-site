@@ -4,8 +4,10 @@ import Nav from "@/components/custom/Nav";
 import HeroHeading from "@/components/custom/HeroHeading";
 import IllustrationWithText from "@/components/custom/IllustrationWithText";
 import FeatureCards from "@/components/custom/FeatureCards";
-import { Text, Heading, Icon } from "@chakra-ui/react";
+import CallToActionButton from "@/components/custom/CallToActionButton";
+import { Text, Heading } from "@chakra-ui/react";
 import { FiMap, FiTrendingUp, FiShield, FiPercent } from 'react-icons/fi';
+import CallToActionSection from "@/components/custom/CallToActionSection";
 
 export default function Home() {
   const featuredCards = [
@@ -82,6 +84,7 @@ export default function Home() {
           <Text>We belive in transperancy and ownership. We help make sense of your data and empower you take decisions and guide you towards growth.</Text>
         </section>
         <FeatureCards featuredCards={featuredCards} />
+        <CallToActionSection description="Ready to take your data to the next level?" />
       </main>
     </div>
   );
