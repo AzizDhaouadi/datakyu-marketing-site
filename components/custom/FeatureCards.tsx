@@ -13,7 +13,7 @@ export default function FeatureCards({
   featuredCards: FeatureCardsProps[];
 }) {
   return (
-    <Flex direction={"row"} gap={6} wrap={"wrap"}>
+    <Flex direction={"row"} my={"2rem"} gap={6} wrap={"wrap"}>
       {featuredCards.map((featuredCard, index) => {
         return (
           <Card.Root width="320px" variant={"elevated"} key={index}>
