@@ -34,6 +34,10 @@
   grid-row-start: 2;
 }
 
+.heroImg {
+  margin: 3rem auto;
+}
+
 .main ol {
   font-family: var(--font-geist-mono);
   padding-left: 0;
