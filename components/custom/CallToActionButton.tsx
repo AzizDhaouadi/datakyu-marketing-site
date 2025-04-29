@@ -1,8 +1,9 @@
 import React from "react";
+import { Button } from "@chakra-ui/react";
 
-export default function CallToActionButton({ text }: { text: string }) {
+export default function CallToActionButton({ text, toCenter }: { text: string, toCenter?: boolean }) {
     return (
-        <button
+        <Button
             style={{
                 backgroundColor: "#2B6CB0",
                 color: "white",
@@ -12,8 +13,10 @@ export default function CallToActionButton({ text }: { text: string }) {
                 cursor: "pointer",
                 fontSize: "16px",
             }}
+            mx={toCenter ? "auto" : undefined}
+            display={toCenter ? "block" : undefined}
         >
             {text}
-        </button>
+        </Button>
     );
 }
