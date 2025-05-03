@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Heading, Icon } from "@chakra-ui/react";
 import { HiOutlineLightningBolt } from "react-icons/hi";
-import CallToActionButton from "./CallToActionButton";
+import OpenHubsportDialog from "./OpenHubspotDialog";
 
 export default function CallToActionSection({ description }: { description: string }) {
     return (
@@ -11,15 +11,15 @@ export default function CallToActionSection({ description }: { description: stri
             align={"center"}
             justify={"center"}
             gap={4}
-            bg={"green.50"}
+            bg={"gray.50"}
             borderRadius={"md"}
             p={4}
             w={"fit-content"}
             mx={"auto"}
         >
-            <HiOutlineLightningBolt size={24} color="#2B6CB0" />
+            <HiOutlineLightningBolt size={24} color="#9B7FC8" />
             <Heading size={"2xl"}>{description}</Heading>
-            <CallToActionButton text="Drop us a message" />
+            <OpenHubsportDialog text="Drop us a message" toCenter={false}/>
         </Flex>
     )
 }

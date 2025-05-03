@@ -1,15 +1,32 @@
+// 🖼️ Styles
 import styles from "./page.module.css";
+
+// ⚛️ Next.js Built-ins
 import Image from "next/image";
+
+// 🧩 Custom Components – Core
 import Nav from "@/components/custom/Nav";
 import HeroHeading from "@/components/custom/HeroHeading";
 import IllustrationWithText from "@/components/custom/IllustrationWithText";
 import FeatureCards from "@/components/custom/FeatureCards";
 import FeatureTabs from "@/components/custom/FeatureTabs";
-import CallToActionButton from "@/components/custom/CallToActionButton";
-import { LuFolder, LuSquareCheck, LuUser, LuDatabase } from "react-icons/lu"
-import { Text, Heading } from "@chakra-ui/react";
-import { FiMap, FiTrendingUp, FiShield, FiPercent } from 'react-icons/fi';
 import CallToActionSection from "@/components/custom/CallToActionSection";
+import Footer from "@/components/custom/Footer";
+
+// 📬 Custom Components – Integrations
+import OpenHubspotDialog from "@/components/custom/OpenHubspotDialog";
+
+// 🎞️ Custom Components – Animations
+import SineWaveAnimation from "@/components/animation/SinFunction";
+import SlidingLogoGrid from "@/components/animation/SlidingLogoGrid";
+
+// 💅 Chakra UI
+import { Text, Heading } from "@chakra-ui/react";
+
+// 🎨 Icons
+import { LuFolder, LuSquareCheck, LuUser, LuDatabase } from "react-icons/lu";
+import { FiMap, FiTrendingUp, FiShield, FiPercent } from "react-icons/fi";
+
 
 export default function Home() {
   const featuredCards = [
@@ -58,9 +75,42 @@ export default function Home() {
     }
   ]
 
+  const techStackLogos = [
+    {
+      src: "/images/techStack/google-analytics-4.svg",
+      alt: "Google Analytics 4 logo",
+      width: 50,
+      height: 50
+    },
+    {
+      src: "/images/techStack/google-tag-manager.svg",
+      alt: "Google Tag Manager logo",
+      width: 50,
+      height: 50
+    },
+    {
+      src: "/images/techStack/looker.svg",
+      alt: "Looker logo",
+      width: 90,
+      height: 50
+    },
+    {
+      src: "/images/techStack/mixpanel.svg",
+      alt: "Mixpanel logo",
+      width: 90,
+      height: 50
+    },
+    {
+      src: "/images/techStack/segment-1.svg",
+      alt: "Segment logo",
+      width: 100,
+      height: 50
+    }
+  ]
+
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
+      <header style={{ width: "100%" }} className={styles.header}>
         <Nav />
       </header>
       <main className={styles.main}>
@@ -113,12 +163,19 @@ export default function Home() {
           <Heading size={"4xl"} my={6} textAlign={"center"} letterSpacing={"tight"}>Why is our approach so effective? 🤫</Heading>
           <FeatureTabs FeatureTabs={processSteps} />
         </section>
-        <section id="contact">
-          <Heading size={"4xl"} my={4} textAlign={"center"} letterSpacing={"tight"}>Are you ready to work together?</Heading>
-          <Heading size={"2xl"} my={4} textAlign={"center"} letterSpacing={"tight"}>Let's unlock your data's full potential.</Heading>
-          <CallToActionButton toCenter={true} text="Drop us a message" />
+        <section id="martech-stack">
+          <Heading size={"5xl"} my={4} textAlign={"center"} letterSpacing={"tight"}>Our Technology Stack</Heading>
+          <SlidingLogoGrid logoStack={techStackLogos} />
+        </section>
+        <section style={{marginTop: "3rem"}} id="contact">
+          <Heading size={"5xl"} textAlign={"center"} letterSpacing={"tight"} color={"rgb(79, 59, 62)"}>Let's unlock your data's full potential.</Heading>
+          <section id="sin-wave-animation">
+            <SineWaveAnimation />
+          </section>
+          <OpenHubspotDialog text={"Drop us a message"} toCenter={true}  />
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

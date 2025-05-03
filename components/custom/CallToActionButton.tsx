@@ -5,7 +5,7 @@ export default function CallToActionButton({ text, toCenter }: { text: string, t
     return (
         <Button
             style={{
-                backgroundColor: "#2B6CB0",
+                backgroundColor: "#9B7FC8",
                 color: "white",
                 padding: "10px 20px",
                 borderRadius: "5px",

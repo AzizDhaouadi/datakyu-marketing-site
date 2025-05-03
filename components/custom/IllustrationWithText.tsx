@@ -9,7 +9,7 @@ export default function IllustrationWithText({title, description, imageSrc, imag
                 <Image src={imageSrc} alt={imageAlt ? imageAlt : "This is a generic image"} width={300} height={180}></Image>
                 <Box>
                     <Flex ml={"4rem"} p={4} direction={"column"} gap={6} alignItems={"flex-start"}>
-                        <Heading size={"xl"}>{title}</Heading>
+                        <Heading size={"xl"} color={"rgb(79, 59, 62)"}>{title}</Heading>
                         <Text fontSize={"lg"}>{description}</Text>
                         <List.Root>
                             {features.map((feature, index) => (

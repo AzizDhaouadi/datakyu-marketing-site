@@ -1,7 +1,5 @@
 import React from "react";
-import styles from "../../app/page.module.css";
 import { Flex, Accordion, Span } from "@chakra-ui/react";
-import Image from "next/image";
 
 export default function Nav() {
   const menuItems = [
@@ -24,36 +22,38 @@ export default function Nav() {
     },
   ];
   return (
-    <Flex direction={"row"} gap={"5rem"} justifyContent={"space-between"} alignItems={"center"}>
-        <Image
-          className={styles.logo}
-          src="/logo-transparent.svg"
-          alt="Official Datakyu logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <Accordion.Root variant={"plain"} size={"lg"} multiple>
-      <Flex gap={10} direction={"row"} flexWrap={"wrap"}>
+    <Flex
+      direction={"row"}
+      gap={"2rem"}
+      justifyContent={"flex-start"}
+      alignItems={"center"}
+    >
+      <img src="/logo-transparent.svg" alt="Datakyu Logo" width={200} height={30} />
+
       {menuItems.map((menuItem, index) => (
-        <Accordion.Item key={index} value={menuItem.title}>
-          <Accordion.ItemTrigger>
-            <Span flex="1">{menuItem.title}</Span>
-            <Accordion.ItemIndicator />
-          </Accordion.ItemTrigger>
-          <Accordion.ItemContent>
-            <Flex direction={"column"} gap={2}>
-              {menuItem.items.map((item, index) => (
-                <Span key={index} flex="1">
-                  {item}
-                </Span>
-              ))}
-            </Flex>
-          </Accordion.ItemContent>
-        </Accordion.Item>
+        <Accordion.Root
+          key={index}
+          variant={"plain"}
+          size={"lg"}
+          multiple
+        >
+          <Accordion.Item value={menuItem.title}>
+            <Accordion.ItemTrigger>
+              <Span flex="1">{menuItem.title}</Span>
+              <Accordion.ItemIndicator />
+            </Accordion.ItemTrigger>
+            <Accordion.ItemContent>
+              <Flex p={2} direction={"column"} gap={2}>
+                {menuItem.items.map((item, subIndex) => (
+                  <Span key={subIndex} flex="1">
+                    {item}
+                  </Span>
+                ))}
+              </Flex>
+            </Accordion.ItemContent>
+          </Accordion.Item>
+        </Accordion.Root>
       ))}
-      </Flex>
-    </Accordion.Root>
     </Flex>
   );
 }

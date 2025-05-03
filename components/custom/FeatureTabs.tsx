@@ -1,34 +1,44 @@
 import React from "react";
-import { SimpleGrid, Tabs, Box } from "@chakra-ui/react";
+import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import Image from "next/image";
 
 type FeatureTabsProps = {
-    step: string;
-    description: string;
-    icon: any;
-}
+  step: string;
+  description: string;
+  icon: any;
+};
 
-export default function FeatureTabs({FeatureTabs}: {FeatureTabs: FeatureTabsProps[]}) {
-    return (
-        <SimpleGrid columns={1} mx="auto">
-            <Tabs.Root my={"2.5rem"} defaultValue="Consultation Call" variant={"outline"}>
-                <Tabs.List>
-                    {FeatureTabs.map((featureTab, index) => (
-                        <Tabs.Trigger key={index} width="max-content" flex="1" value={featureTab.step} color={"teal.600"} fontSize={"md"} fontWeight={"bold"}>
-                            <Box pl={1} boxSize={5} color={"teal.600"}>
-                                {featureTab.icon}
-                            </Box>
-                            {featureTab.step}
-                        </Tabs.Trigger>   
-                    ))}
-                </Tabs.List>
-                {FeatureTabs.map((featureTab, index) => (
-                    <Box key={index} maxW={"1200px"}>
-                        <Tabs.Content lineHeight={"taller"} my={"1.5rem"} key={index} value={featureTab.step} fontSize={"md"} fontWeight={"bold"}>
-                            {featureTab.description}
-                        </Tabs.Content>
-                    </Box>
-                ))}
-            </Tabs.Root>
-        </SimpleGrid>
-    )
+export default function FeatureTabs({
+  FeatureTabs,
+}: {
+  FeatureTabs: FeatureTabsProps[];
+}) {
+  return (
+    <Flex direction={"row"} justifyContent={"space-evenly"}>
+      <Flex direction={"column"} justify={"center"} alignItems={"center"}>
+        <Image src={"/images/folders.png"} alt="Stacked folders" width={450} height={450} />
+      </Flex>
+      <VStack align="start" position="relative" pl={6} py={8} w={"55%"}>
+        {FeatureTabs.map((item, index) => (
+          <Flex
+            borderLeft="1px dotted #CBD5E0"
+            my={"1rem"}
+            key={index}
+            direction="column"
+            position="relative"
+          >
+            <Flex direction={"row"} justifyItems={"center"} alignItems={"center"}>
+              <Box ml={"1rem"}>{item.icon}</Box>
+              <Text ml={"1rem"} fontWeight="bold" fontSize="lg" mb={1}>
+                {item.step}
+              </Text>
+            </Flex>
+            <Text ml={"2rem"} color="gray.600">
+              {item.description}
+            </Text>
+          </Flex>
+        ))}
+      </VStack>
+    </Flex>
+  );
 }

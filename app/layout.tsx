@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+
 import { Provider } from "@/components/ui/provider";
 import "./globals.css";
+import styles from "./page.module.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const plexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-sans' });
+const plexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400'], variable: '--font-mono' });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${plexSans.variable} ${plexMono.variable} ${styles.body}`}>
         <Provider>
           {children}
         </Provider>
