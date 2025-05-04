@@ -1,22 +1,21 @@
 import React from "react";
-import { Button } from "@chakra-ui/react";
+import { Flex, Heading, Icon } from "@chakra-ui/react";
+import OpenHubsportDialog from "./OpenHubspotDialog";
 
 export default function CallToActionButton({ text, toCenter }: { text: string, toCenter?: boolean }) {
     return (
-        <Button
-            style={{
-                backgroundColor: "#9B7FC8",
-                color: "white",
-                padding: "10px 20px",
-                borderRadius: "5px",
-                border: "none",
-                cursor: "pointer",
-                fontSize: "16px",
-            }}
-            mx={toCenter ? "auto" : undefined}
-            display={toCenter ? "block" : undefined}
+        <Flex 
+            my={2}
+            direction={"row"}
+            align={"center"}
+            justify={"center"}
+            gap={4}
+            borderRadius={"md"}
+            p={4}
+            w={"fit-content"}
+            mx={"auto"}
         >
-            {text}
-        </Button>
-    );
+            <OpenHubsportDialog text={text} toCenter={toCenter}/>
+        </Flex>
+    )
 }
