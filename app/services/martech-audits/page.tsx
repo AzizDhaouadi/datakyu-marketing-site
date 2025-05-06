@@ -12,6 +12,8 @@ import Footer from "@/components/custom/Footer";
 import TypedCodeSection from "@/components/animation/TypedCode";
 import FeatureCards from "@/components/custom/FeatureCards";
 import TableComponent from "@/components/custom/Table";
+import SlidingLogoGrid from "@/components/animation/SlidingLogoGrid";
+import ListsWithIcons from "@/components/custom/ListsWithIcons";
 
 // 💅 Chakra UI
 import { Text, Box, Flex, Heading } from "@chakra-ui/react";
@@ -21,6 +23,8 @@ import { LuLayers3 } from "react-icons/lu";
 import { FaGaugeHigh } from "react-icons/fa6";
 import { FcWorkflow } from "react-icons/fc";
 import { GiChoice } from "react-icons/gi";
+import { MdTimeline } from "react-icons/md";
+import { BiLineChart } from "react-icons/bi";
 
 export default function MarTechAudits() {
   const codesToType = [
@@ -29,19 +33,10 @@ gtag("event", "user_login", {
   method: "google"
 });
 
-gtag("event", "user_signup", {
-  signup_method: "email"
-});
-
 `,
     `
   analytics.track("User Login", {
     method: "google",
-    email: "datakyu@help.tracking"
-  });
-  
-  analytics.track("User Signup", {
-    method: "email",
     email: "datakyu@help.tracking"
   });
   `,
@@ -129,6 +124,86 @@ gtag("event", "user_signup", {
       basic: false,
       full: true,
     },
+  ];
+
+  const techStackLogos = [
+    {
+      src: "/images/techStack/google-analytics-4.svg",
+      alt: "Google Analytics 4 logo",
+      width: 25,
+      height: 25,
+    },
+    {
+      src: "/images/techStack/google-tag-manager.svg",
+      alt: "Google Tag Manager logo",
+      width: 25,
+      height: 25,
+    },
+    {
+      src: "/images/techStack/looker.svg",
+      alt: "Looker logo",
+      width: 60,
+      height: 25,
+    },
+    {
+      src: "/images/techStack/mixpanel.svg",
+      alt: "Mixpanel logo",
+      width: 60,
+      height: 25,
+    },
+    {
+      src: "/images/techStack/segment-1.svg",
+      alt: "Segment logo",
+      width: 70,
+      height: 25,
+    },
+  ];
+
+  const listWithIconsContent = [
+    {
+      title: "Collect data from any platform",
+      description:
+        "Whether you want to collect data from your website, mobile application or offline systems, we can get you there.",
+      icon: <MdTimeline size={20} />,
+    },
+    {
+      title: "Visualization that matters",
+      description:
+        "Everyone hates clutter, and so do we. That's why our dashboards are insightful and help you make descisions on the go.",
+      icon: <BiLineChart size={20} />,
+    },
+  ];
+
+  const trackingSnippets = [
+    // 👉 Segment: industry standard customer data platform
+    `// Segment event tracking
+analytics.track("submitted_form", {
+  form_id: "contact_form",
+  session_number: 4
+});`,
+
+    // 👉 dataLayer: for use with Google Tag Manager (GTM) or GA4
+    `// Push to dataLayer for GTM/GA4
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+  event: "submitted_form",
+  form_id: "contact_form",
+  session_number: 4
+});`,
+
+    // 👉 Mixpanel: product analytics platform focused on behavioral events
+    `// Mixpanel event tracking
+mixpanel.track("submitted_form", {
+  form_id: "contact_form",
+  session_number: 4
+});`,
+
+    // 👉 Amplitude: analytics for product usage and growth
+    `// Amplitude event logging
+amplitude.getInstance().logEvent("submitted_form", {
+  form_id: "contact_form",
+  session_number: 4
+});`,
   ];
 
   return (
@@ -237,6 +312,52 @@ gtag("event", "user_signup", {
             and alignment with business objectives.
           </Text>
           <TableComponent tableBodyContent={tableContent} />
+        </section>
+        <section id="tech-stack">
+          <Flex direction={"row"} gap={6}>
+            <Flex direction={"column"} minWidth={"60%"}>
+              <Heading
+                my={6}
+                size={"4xl"}
+                textAlign={"left"}
+                letterSpacing={"tight"}
+              >
+                Our Technology Stack
+              </Heading>
+              <Text fontSize={"md"}>
+                We operate on a modern, future-ready stack—if it can be built,
+                we can track it.
+              </Text>
+              <SlidingLogoGrid logoStack={techStackLogos} />
+              <ListsWithIcons listDescriptions={listWithIconsContent} />
+            </Flex>
+            <Box
+              bg="gray.900"
+              w={"60rem"}
+              mx={"auto"}
+              py={4}
+              px={2}
+              borderRadius="xl"
+            >
+              <Box
+                bg="gray.800"
+                p={6}
+                borderRadius="md"
+                color="white"
+                overflowX="auto"
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.9rem",
+                  whiteSpace: "pre",
+                }}
+              >
+                <TypedCodeSection
+                  codeToType={trackingSnippets}
+                  smartBackspace={true}
+                />
+              </Box>
+            </Box>
+          </Flex>
         </section>
       </main>
       <Footer />
