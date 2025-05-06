@@ -11,6 +11,7 @@ import CallToActionButton from "@/components/custom/CallToActionButton";
 import Footer from "@/components/custom/Footer";
 import TypedCodeSection from "@/components/animation/TypedCode";
 import FeatureCards from "@/components/custom/FeatureCards";
+import TableComponent from "@/components/custom/Table";
 
 // 💅 Chakra UI
 import { Text, Box, Flex, Heading } from "@chakra-ui/react";
@@ -69,6 +70,64 @@ gtag("event", "user_signup", {
       description:
         "How do I make sense of all the data I have? How do I use it to make decisions?",
       icon: <GiChoice />,
+    },
+  ];
+
+  const tableContent = [
+    {
+      service: "Google Analytics 4",
+      basic: true,
+      full: true,
+    },
+    {
+      service: "Other Analytics Tools",
+      basic: false,
+      full: true,
+    },
+    {
+      service: "Google Tag Manager Containers",
+      basic: true,
+      full: true,
+    },
+    {
+      service: "Event Parameters",
+      basic: false,
+      full: true,
+    },
+    {
+      service: "User Properties",
+      basic: false,
+      full: true,
+    },
+    {
+      service: "Filters and data controls",
+      basic: false,
+      full: true,
+    },
+    {
+      service: "Consent & Privacy Signals",
+      basic: false,
+      full: true,
+    },
+    {
+      service: "Data Layer Review",
+      basic: false,
+      full: true,
+    },
+    {
+      service: "Conversion Tracking",
+      basic: false,
+      full: true,
+    },
+    {
+      service: "User Identification",
+      basic: false,
+      full: true,
+    },
+    {
+      service: "Customer Dimensions & Metrics",
+      basic: false,
+      full: true,
     },
   ];
 
@@ -151,7 +210,7 @@ gtag("event", "user_signup", {
             right business questions.
           </Text>
         </section>
-        <section id="features">
+        <section id="services">
           <Heading
             my={6}
             size={"4xl"}
@@ -165,6 +224,19 @@ gtag("event", "user_signup", {
             business objectives.
           </Text>
           <FeatureCards featuredCards={featuredCards} />
+          <Heading
+            my={6}
+            size={"4xl"}
+            textAlign={"left"}
+            letterSpacing={"tight"}
+          >
+            Auditing Services
+          </Heading>
+          <Text>
+            Comprehensive audits to ensure data accuracy, platform integrity,
+            and alignment with business objectives.
+          </Text>
+          <TableComponent tableBodyContent={tableContent} />
         </section>
       </main>
       <Footer />
