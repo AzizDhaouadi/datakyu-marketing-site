@@ -10,8 +10,16 @@ import HeroHeading from "@/components/custom/HeroHeading";
 import CallToActionButton from "@/components/custom/CallToActionButton";
 import Footer from "@/components/custom/Footer";
 import TypedCodeSection from "@/components/animation/TypedCode";
+import FeatureCards from "@/components/custom/FeatureCards";
+
 // 💅 Chakra UI
-import { Text, Box, Flex } from "@chakra-ui/react";
+import { Text, Box, Flex, Heading } from "@chakra-ui/react";
+
+// 🎨 Icons
+import { LuLayers3 } from "react-icons/lu";
+import { FaGaugeHigh } from "react-icons/fa6";
+import { FcWorkflow } from "react-icons/fc";
+import { GiChoice } from "react-icons/gi";
 
 export default function MarTechAudits() {
   const codesToType = [
@@ -36,6 +44,32 @@ gtag("event", "user_signup", {
     email: "datakyu@help.tracking"
   });
   `,
+  ];
+
+  const featuredCards = [
+    {
+      title: "Understand what you are tracking",
+      description: "Which user actions if tracked can help us track our KPIs?",
+      icon: <LuLayers3 />,
+    },
+    {
+      title: "Understand your Marketing Tech Stack",
+      description:
+        "Which tools would be ideal for my tracking? How long would implementation take?",
+      icon: <FaGaugeHigh />,
+    },
+    {
+      title: "Understand data integrity and quality",
+      description:
+        "Is my current analytics layer collecting everything pertinent to my business? Do we have a Single Source of Truth? Is my data accurate?",
+      icon: <FcWorkflow />,
+    },
+    {
+      title: "Understand your data",
+      description:
+        "How do I make sense of all the data I have? How do I use it to make decisions?",
+      icon: <GiChoice />,
+    },
   ];
 
   return (
@@ -96,6 +130,41 @@ gtag("event", "user_signup", {
               ))}
             </Flex>
           </Box>
+        </section>
+        <section id="what-do-we-do">
+          <Heading
+            size={"4xl"}
+            my={6}
+            textAlign={"center"}
+            letterSpacing={"tight"}
+          >
+            Measure the Right Things, Not All Things
+          </Heading>
+          <Text
+            textAlign={"center"}
+            mx={"auto"}
+            fontSize="xl"
+            mt={4}
+            maxW="2xl"
+          >
+            We build and implement measurement plans that help you answer the
+            right business questions.
+          </Text>
+        </section>
+        <section id="features">
+          <Heading
+            my={6}
+            size={"4xl"}
+            textAlign={"left"}
+            letterSpacing={"tight"}
+          >
+            Implementation Services
+          </Heading>
+          <Text>
+            Delivering seamless, scalable implementation tailored to your
+            business objectives.
+          </Text>
+          <FeatureCards featuredCards={featuredCards} />
         </section>
       </main>
       <Footer />
