@@ -8,22 +8,38 @@ import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-tomorrow.css";
 
 type TypedCodeSectionProps = {
-  codeToType: string;
+  codeToType: any;
+  smartBackspace?: boolean;
 };
 
 export default function TypedCodeSection({
   codeToType,
+  smartBackspace,
 }: TypedCodeSectionProps) {
-  
- const el = React.useRef(null);
- const highlightedCodeToType = Prism.highlight(codeToType, Prism.languages.javascript, "javascript");
+  const el = React.useRef(null);
+
+  const highlightedCodeToType = Prism.highlight(
+    codeToType,
+    Prism.languages.javascript,
+    "javascript"
+  );
+
+  let highlightedCodes: any = [];
+
+  if (Array.isArray(codeToType)) {
+    highlightedCodes = codeToType.map((code) =>
+      Prism.highlight(code, Prism.languages.javascript, "javascript")
+    );
+  }
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: [highlightedCodeToType],
+      strings: !smartBackspace ? [highlightedCodeToType] : highlightedCodes,
       typeSpeed: 50,
       showCursor: false,
-      contentType: "html"
+      contentType: "html",
+      smartBackspace: smartBackspace,
+      loop: smartBackspace ? true : false,
     });
 
     return () => {
@@ -32,8 +48,8 @@ export default function TypedCodeSection({
     };
   }, []);
   return (
-        <Box ref={el} p={4} borderRadius="md">
-            <SkeletonText noOfLines={1} gap="4"  />
-        </Box>
+    <Box ref={el} p={4} borderRadius="md">
+      <SkeletonText noOfLines={1} gap="4" />
+    </Box>
   );
 }
