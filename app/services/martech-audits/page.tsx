@@ -16,6 +16,7 @@ import SlidingLogoGrid from "@/components/animation/SlidingLogoGrid";
 import ListsWithIcons from "@/components/custom/ListsWithIcons";
 import AlternatingTimeline from "@/components/custom/AlternatingTimeline";
 import CardsWithImages from "@/components/custom/CardsWithImages";
+import FAQ from "@/components/custom/FAQ";
 
 // 💅 Chakra UI
 import { Text, Box, Flex, Heading } from "@chakra-ui/react";
@@ -239,6 +240,48 @@ amplitude.getInstance().logEvent("submitted_form", {
     },
   ];
 
+  const faqs = [
+    {
+      question: "How does the auditing and implementation package work?",
+      answer:
+        "Our auditing and implementation package starts at $2000, which is the base price for standard marketing websites. Final pricing depends on the type of business (SaaS, Ecommerce, etc.), the number of pages involved, and the total number of events that need to be tracked. If you have specific requirements, please contact our sales team.",
+    },
+    {
+      question: "Do you offer ongoing support after implementation?",
+      answer:
+        "We do not offer default ongoing support after the implementation is complete. However, if you require post-implementation assistance, please reach out to our team—we’re happy to explore a support agreement that fits your needs. During implementation, support and thorough documentation are provided.",
+    },
+    {
+      question:
+        "Do you offer auditing and implementation services for mobile apps?",
+      answer:
+        "Yes, we do. Whether you're building for Android, iOS, or a cross-platform app, we can help you implement event tracking, monitor app performance, and build a solid data foundation.",
+    },
+    {
+      question:
+        "Can I get only the auditing services without implementation? Or vice versa?",
+      answer:
+        "Absolutely. If you only need your analytics setup reviewed, our consulting services are a great fit. Likewise, if you already have a plan and need help implementing it, we can tailor a package specifically for implementation.",
+    },
+    {
+      question:
+        "Can I get a dashboard built without purchasing the full package?",
+      answer:
+        "Yes. You can purchase dashboard development as a standalone service. Please refer to our data visualization services for more information.",
+    },
+    {
+      question:
+        "How long does it take to complete the audit and implementation?",
+      answer:
+        "Timelines vary depending on the size and complexity of your setup. After our initial call, we’ll provide a clear timeline for both audit and implementation phases. Work begins once you give us the go-ahead.",
+    },
+    {
+      question: "Do you support server-side tracking setups?",
+      answer:
+        "Yes, we support server-side tracking implementations using tools like GTM Server, Segment, and custom Node.js endpoints. Let us know your stack and we’ll take it from there.",
+    },
+  ];
+
   return (
     <div className={styles.page}>
       <header style={{ width: "100%" }} className={styles.header}>
@@ -425,7 +468,16 @@ amplitude.getInstance().logEvent("submitted_form", {
             />
           </section>
         </section>
-        <section id="faq-section"></section>
+        <section id="faq-section">
+          <Image
+            style={{ margin: "0 auto" }}
+            src={"/images/faq.png"}
+            width={320}
+            height={160}
+            alt="A person thinking."
+          />
+          <FAQ questions={faqs} />
+        </section>
       </main>
       <Footer />
     </div>
