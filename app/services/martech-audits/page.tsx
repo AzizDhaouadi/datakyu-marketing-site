@@ -14,6 +14,7 @@ import FeatureCards from "@/components/custom/FeatureCards";
 import TableComponent from "@/components/custom/Table";
 import SlidingLogoGrid from "@/components/animation/SlidingLogoGrid";
 import ListsWithIcons from "@/components/custom/ListsWithIcons";
+import AlternatingTimeline from "@/components/custom/AlternatingTimeline";
 
 // 💅 Chakra UI
 import { Text, Box, Flex, Heading } from "@chakra-ui/react";
@@ -206,6 +207,16 @@ amplitude.getInstance().logEvent("submitted_form", {
 });`,
   ];
 
+  const timeLineSteps = [
+    { name: "Less hypothetical — more evidence-based execution" },
+    { name: "Less noise — more measurable outcomes" },
+    { name: "Less talk — more actionable tracking" },
+    { name: "Less friction — more scalable infrastructure" },
+    { name: "Less guesswork — more data-informed decisions" },
+    { name: "Less fragmentation — more unified visibility" },
+    { name: "Less lag — more real-time clarity" },
+  ];
+
   return (
     <div className={styles.page}>
       <header style={{ width: "100%" }} className={styles.header}>
@@ -358,6 +369,23 @@ amplitude.getInstance().logEvent("submitted_form", {
               </Box>
             </Box>
           </Flex>
+        </section>
+        <section id="anaytics-importance">
+          <Heading
+            my={6}
+            size={"4xl"}
+            textAlign={"left"}
+            letterSpacing={"tight"}
+          >
+            You Are Only as Strong as Your Analytics Layer
+          </Heading>
+          <Text fontSize={"md"}>
+            The right foundation lets every event, click, and user action drive
+            value.
+          </Text>
+          <Box my={6}>
+            <AlternatingTimeline steps={timeLineSteps} />
+          </Box>
         </section>
       </main>
       <Footer />
