@@ -15,6 +15,7 @@ import TableComponent from "@/components/custom/Table";
 import SlidingLogoGrid from "@/components/animation/SlidingLogoGrid";
 import ListsWithIcons from "@/components/custom/ListsWithIcons";
 import AlternatingTimeline from "@/components/custom/AlternatingTimeline";
+import CardsWithImages from "@/components/custom/CardsWithImages";
 
 // 💅 Chakra UI
 import { Text, Box, Flex, Heading } from "@chakra-ui/react";
@@ -217,6 +218,27 @@ amplitude.getInstance().logEvent("submitted_form", {
     { name: "Less lag — more real-time clarity" },
   ];
 
+  const cardsContent = [
+    {
+      title: "Documentation",
+      description:
+        "We help you design, build, and maintain robust tracking documentation—from naming conventions to implementation references—so your data stays trustworthy.",
+      image: "/images/headers.png",
+    },
+    {
+      title: "Tracking Code",
+      description:
+        "We engineer high-quality, maintainable tracking code across web and product platforms, ensuring data flows cleanly from event to destination.",
+      image: "/images/cards.png",
+    },
+    {
+      title: "Training",
+      description:
+        "Coming soon. Workshops and stakeholder sessions to ensure everyone—from marketers to engineers—understands how to use and trust the data.",
+      image: "/images/windows.png",
+    },
+  ];
+
   return (
     <div className={styles.page}>
       <header style={{ width: "100%" }} className={styles.header}>
@@ -383,10 +405,27 @@ amplitude.getInstance().logEvent("submitted_form", {
             The right foundation lets every event, click, and user action drive
             value.
           </Text>
-          <Box my={6}>
+          <Box my={10}>
             <AlternatingTimeline steps={timeLineSteps} />
           </Box>
+          <Heading
+            my={6}
+            size={"4xl"}
+            textAlign={"left"}
+            letterSpacing={"tight"}
+            textAlignLast={"center"}
+          >
+            The Backbone of Marketing Analytics
+          </Heading>
+          <CardsWithImages cardsContent={cardsContent} />
+          <section id="post-cards-contact-us">
+            <CallToActionButton
+              text={"Contact our Sales Team"}
+              toCenter={true}
+            />
+          </section>
         </section>
+        <section id="faq-section"></section>
       </main>
       <Footer />
     </div>
