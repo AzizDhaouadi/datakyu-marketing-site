@@ -1,59 +1,187 @@
-import React from "react";
-import { Flex, Accordion, Span } from "@chakra-ui/react";
+"use client";
+import { useState } from "react";
 
-export default function Nav() {
-  const menuItems = [
-    {
-      title: "Services",
-      items: [
-        "Auditing and Implementation",
-        "MarTech Stack Migration",
-        "Consulting",
-      ],
-    },
-    {
-      title: "Resources",
-      items: [
-        "Blog",
-        "Google Analytics 4 Tracking Generator",
-        "Google Tag Manager Container Templates",
-        "Looker Studio Templates",
-      ],
-    },
-  ];
+import {
+  Box,
+  Flex,
+  Text,
+  CloseButton,
+  Stack,
+  Button,
+  Drawer,
+  Link,
+  Container,
+  Image,
+  HStack,
+  VStack,
+  Portal,
+} from "@chakra-ui/react";
+import { FiChevronDown } from "react-icons/fi";
+
+const navItems = [
+  {
+    title: "Services",
+    items: [
+      { name: "Auditing & Implementation", href: "/services/martech-audits" },
+      { name: "Stack Migration", href: "#" },
+      { name: "Consulting", href: "#" },
+    ],
+  },
+  {
+    title: "Resources",
+    items: [
+      "Blog",
+      "GA4 Generator",
+      "GTM Templates",
+      "Looker Studio Templates",
+    ],
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+  },
+  {
+    title: "About",
+    href: "/about",
+  },
+];
+
+type NavItemWithSubItems = {
+  name: string;
+  href?: string;
+};
+
+export default function SimpleNav() {
+  const [isOpen, setOpen] = useState(false);
   return (
-    <Flex
-      direction={"row"}
-      gap={"2rem"}
-      justifyContent={"flex-start"}
-      alignItems={"center"}
-    >
-      <img src="/logo-transparent.svg" alt="Datakyu Logo" width={200} height={30} />
+    <Box as="nav">
+      <Container maxW="container.xl" py={4}>
+        <Flex justify="space-between" align="center">
+          {/* Logo */}
+          <Link href={"/"}>
+            <Image
+              display={{ base: "none", md: "initial" }}
+              src="/logo-transparent.svg"
+              alt="Logo"
+              height="100px"
+            />
+          </Link>
 
-      {menuItems.map((menuItem, index) => (
-        <Accordion.Root
-          key={index}
-          variant={"plain"}
-          size={"lg"}
-          multiple
+          {/* Desktop navigation */}
+          <HStack gap={8} display={{ base: "none", md: "flex" }}>
+            {navItems.map((item, i) => (
+              <Box key={i} position="relative">
+                {item.items ? (
+                  <Box
+                    position="relative"
+                    className="nav-dropdown"
+                    _hover={{ "& > .dropdown-content": { display: "block" } }}
+                  >
+                    <HStack gap={1} cursor="pointer">
+                      <Text fontWeight="medium">{item.title}</Text>
+                      <Box>
+                        <FiChevronDown />
+                      </Box>
+                    </HStack>
+                    <Box
+                      className="dropdown-content"
+                      position="absolute"
+                      top="100%"
+                      left="0"
+                      mt={2}
+                      boxShadow="md"
+                      borderRadius="md"
+                      minW="200px"
+                      display="none"
+                      zIndex={1}
+                      p={2}
+                      bg={"white"}
+                    >
+                      <VStack align="stretch" gap={1}>
+                        {item.items.map((subItem: any, j) => (
+                          <Link
+                            key={j}
+                            href={subItem.href || "#"}
+                            px={3}
+                            py={2}
+                            borderRadius="md"
+                          >
+                            <Text>{subItem.name}</Text>
+                          </Link>
+                        ))}
+                      </VStack>
+                    </Box>
+                  </Box>
+                ) : (
+                  <Link
+                    href={item.href || "#"}
+                    fontWeight="medium"
+                    _hover={{
+                      textDecoration: "none",
+                    }}
+                  >
+                    {item.title}
+                  </Link>
+                )}
+              </Box>
+            ))}
+          </HStack>
+        </Flex>
+
+        {/* Mobile navigation */}
+        <Drawer.Root
+          size={"sm"}
+          open={isOpen}
+          onOpenChange={(e) => setOpen(e.open)}
         >
-          <Accordion.Item value={menuItem.title}>
-            <Accordion.ItemTrigger>
-              <Span flex="1">{menuItem.title}</Span>
-              <Accordion.ItemIndicator />
-            </Accordion.ItemTrigger>
-            <Accordion.ItemContent>
-              <Flex p={2} direction={"column"} gap={2}>
-                {menuItem.items.map((item, subIndex) => (
-                  <Span key={subIndex} flex="1">
-                    {item}
-                  </Span>
-                ))}
-              </Flex>
-            </Accordion.ItemContent>
-          </Accordion.Item>
-        </Accordion.Root>
-      ))}
-    </Flex>
+          <Drawer.Trigger asChild>
+            <Button p={4} variant="outline" size="sm" display={{ md: "none" }}>
+              Menu
+            </Button>
+          </Drawer.Trigger>
+          <Portal>
+            <Drawer.Backdrop />
+            <Drawer.Positioner padding={4}>
+              <Drawer.Content rounded="md">
+                <Drawer.Body p={6}>
+                  <Stack gap={6}>
+                    {navItems.map((item, i) => (
+                      <Box key={i}>
+                        {item.items ? (
+                          <Box>
+                            <Text fontWeight="medium" mb={4}>
+                              {item.title}
+                            </Text>
+                            <VStack
+                              align="start"
+                              pl={4}
+                              borderLeft="1px"
+                              gap={4}
+                            >
+                              {item.items.map((subItem: any, j) => (
+                                <Link key={j} href={subItem.href} fontSize="sm">
+                                  {subItem.name}
+                                </Link>
+                              ))}
+                            </VStack>
+                          </Box>
+                        ) : (
+                          <Link href={item.href || "#"} fontWeight="medium">
+                            {item.title}
+                          </Link>
+                        )}
+                      </Box>
+                    ))}
+                  </Stack>
+                </Drawer.Body>
+                <Drawer.CloseTrigger asChild>
+                  <CloseButton size="sm" />
+                </Drawer.CloseTrigger>
+              </Drawer.Content>
+            </Drawer.Positioner>
+          </Portal>
+        </Drawer.Root>
+      </Container>
+    </Box>
   );
 }

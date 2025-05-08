@@ -14,7 +14,14 @@ export default function SlidingLogoGrid({
   logoStack: SlidingLogoGridProps[];
 }) {
   return (
-    <Flex direction={"row"} gap={10} wrap={"wrap"} mt={"3rem"} justifyContent={"space-evenly"} alignItems={"center"}>
+    <Flex
+      direction={"row"}
+      gap={10}
+      wrap={"wrap"}
+      my={"3rem"}
+      justifyContent={"space-evenly"}
+      alignItems={"center"}
+    >
       {logoStack.map((logo, index) => (
         <Box key={index} position="relative">
           <Image
