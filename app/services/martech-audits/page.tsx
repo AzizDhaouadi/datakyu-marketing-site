@@ -367,6 +367,7 @@ amplitude.getInstance().logEvent("submitted_form", {
             size={"4xl"}
             textAlign={"left"}
             letterSpacing={"tight"}
+            color={"rgb(79, 59, 62)"}
           >
             Implementation Services
           </Heading>
@@ -380,6 +381,7 @@ amplitude.getInstance().logEvent("submitted_form", {
             size={"4xl"}
             textAlign={"left"}
             letterSpacing={"tight"}
+            color={"rgb(79, 59, 62)"}
           >
             Auditing Services
           </Heading>
@@ -397,6 +399,7 @@ amplitude.getInstance().logEvent("submitted_form", {
                 size={"4xl"}
                 textAlign={"left"}
                 letterSpacing={"tight"}
+                color={"rgb(79, 59, 62)"}
               >
                 Our Technology Stack
               </Heading>
@@ -441,6 +444,7 @@ amplitude.getInstance().logEvent("submitted_form", {
             size={"4xl"}
             textAlign={"left"}
             letterSpacing={"tight"}
+            color={"rgb(79, 59, 62)"}
           >
             You Are Only as Strong as Your Analytics Layer
           </Heading>

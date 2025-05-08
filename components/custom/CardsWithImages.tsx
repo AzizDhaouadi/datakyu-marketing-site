@@ -29,7 +29,7 @@ export default function CardsWithImages({
             alt="A prop image"
           />
           <Card.Body gap="2">
-            <Card.Title>{card.title}</Card.Title>
+            <Card.Title color={"rgb(79, 59, 62)"}>{card.title}</Card.Title>
             <Card.Description>{card.description}</Card.Description>
           </Card.Body>
         </Card.Root>
