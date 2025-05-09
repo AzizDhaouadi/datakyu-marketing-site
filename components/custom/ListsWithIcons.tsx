@@ -15,10 +15,12 @@ export default function ListsWithIcons({
   return (
     <Stack direction={"column"} gap={5}>
       {listDescriptions.map((item, index) => (
-        <Flex key={index} direction={"row"} gap={2}>
-          <Box alignItems={"center"} display={"flex"} boxSize={10}>
-            {item.icon}
-          </Box>
+        <Flex key={index} direction={"row"} gap={5}>
+          {item.icon && (
+            <Box alignItems={"center"} display={"flex"} boxSize={10}>
+              {item.icon}
+            </Box>
+          )}
           <Flex direction={"column"} gap={2}>
             <Heading size={"xl"}>{item.title}</Heading>
             <Text>{item.description}</Text>
