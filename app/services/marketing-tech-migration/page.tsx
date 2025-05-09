@@ -18,15 +18,14 @@ import Footer from "@/components/custom/Footer";
 
 // 🎞️ Custom Components – Animations
 import TypedCodeSection from "@/components/animation/TypedCode";
-import { desc } from "framer-motion/client";
+
+// 💻 Code Hightlighter
+import Prism from "prismjs";
+import "prismjs/components/prism-javascript";
+import "prismjs/themes/prism-tomorrow.css";
 
 export default function MarketingTechMigration() {
-  const codeToType = [
-    "Helping every business.",
-    "Helping every team.",
-    "Helping every startup.",
-    "Helping every decision maker.",
-  ];
+  const codeToType = ["business.", "team.", "startup.", "enterprise."];
 
   const listsContent = [
     {
@@ -49,6 +48,32 @@ export default function MarketingTechMigration() {
     },
   ];
 
+  const codeContent = [
+    `gtag("event",
+    "submitted_form",{
+    "form_id":"contact_form",
+    "session_number":4
+});`,
+
+    `
+window.dataLayer.push({
+    "event":"submitted_form",
+    "form_id":"contact_form",
+    "session_number":4
+});`,
+    `
+mixpanel.track(
+    "submitted_form",{
+    "form_id":"contact_form",
+    "session_number":4
+});
+    `,
+  ];
+
+  const highlightedCodeContent = codeContent.map((code) => {
+    return Prism.highlight(code, Prism.languages.javascript, "javascript");
+  });
+
   return (
     <div className={styles.page}>
       <header style={{ width: "100%" }} className={styles.header}>
@@ -56,16 +81,68 @@ export default function MarketingTechMigration() {
       </header>
       <main className={styles.main}>
         <Flex direction={"row"} gap={6}>
-          <Flex direction={"column"} gap={4}>
-            <TypedCodeSection codeToType={codeToType} smartBackspace={true} />
-            <Text p={4}>
+          <Flex direction={"column"} gap={6}>
+            <Flex
+              direction={"row"}
+              alignItems={"center"}
+              justifyContent={"flex-start"}
+              display={{ base: "flex-column", md: "flex" }}
+            >
+              <Heading
+                my={6}
+                color={"rgb(79, 59, 62)"}
+                size={"4xl"}
+                textAlign={"left"}
+                letterSpacing={"tight"}
+              >
+                Helping every
+              </Heading>
+              <Heading size={"4xl"} textAlign={"left"} letterSpacing={"tight"}>
+                <TypedCodeSection
+                  codeToType={codeToType}
+                  smartBackspace={true}
+                  isHeader={true}
+                />
+              </Heading>
+            </Flex>
+            <Text>
               Build a tracking infrastructure that scales with your business.
               Future proof your tracking and work with tooks that are shaping to
               future of web analytics.
             </Text>
             <ListsWithIcons listDescriptions={listsContent} />
           </Flex>
-          <Flex></Flex>
+          <Flex display={{ base: "none", md: "flex" }}>
+            <Box
+              bg="gray.900"
+              w={"55rem"}
+              mx={"auto"}
+              py={4}
+              px={2}
+              borderRadius="xl"
+            >
+              <Box
+                bg="gray.800"
+                p={6}
+                borderRadius="md"
+                color="white"
+                overflowX="hidden"
+                height={"100%"}
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.9rem",
+                  whiteSpace: "pre",
+                }}
+              >
+                {highlightedCodeContent.map((code: any, index) => (
+                  <Box
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: code }}
+                  ></Box>
+                ))}
+              </Box>
+            </Box>
+          </Flex>
         </Flex>
       </main>
     </div>
