@@ -152,6 +152,7 @@ export default function CustomMarketingAnalytics() {
           </Heading>
           <Text textAlign={"center"}>All the different ways we can help.</Text>
           <CardsWithImages cardsContent={featureCardsContent} />
+          <CallToActionButton text={"Contact us"} toCenter={true} />
         </section>
       </main>
     </div>
