@@ -242,7 +242,32 @@ mixpanel.track(
             />
           </Flex>
         </section>
+        <section id="cta-section">
+          <Flex direction={"row"} gap={10} justifyContent={"center"}>
+            <Image
+              src={"/images/todo.png"}
+              display={{ base: "none", lg: "initial" }}
+              width={"30rem"}
+            />
+            <Flex
+              direction={"column"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Heading
+                size={"4xl"}
+                my={6}
+                textAlign={"center"}
+                letterSpacing={"tight"}
+              >
+                Can't find what you are looking for?
+              </Heading>
+              <CallToActionButton text={"Contact us"} />
+            </Flex>
+          </Flex>
+        </section>
       </main>
+      <Footer />
     </div>
   );
 }
