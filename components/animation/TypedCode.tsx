@@ -6,15 +6,19 @@ import Typed from "typed.js";
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-tomorrow.css";
+import { tr } from "framer-motion/client";
 
 type TypedCodeSectionProps = {
   codeToType: any;
   smartBackspace?: boolean;
+  className?: string;
+  isHeader?: boolean;
 };
 
 export default function TypedCodeSection({
   codeToType,
   smartBackspace,
+  isHeader,
 }: TypedCodeSectionProps) {
   const el = React.useRef(null);
 
@@ -48,7 +52,7 @@ export default function TypedCodeSection({
     };
   }, []);
   return (
-    <Box ref={el} p={4} borderRadius="md">
+    <Box ref={el} p={isHeader ? 0 : 4} pl={isHeader ? 2 : 0} borderRadius="md">
       <SkeletonText noOfLines={1} gap="4" />
     </Box>
   );

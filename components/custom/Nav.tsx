@@ -23,22 +23,18 @@ const navItems = [
     title: "Services",
     items: [
       { name: "Auditing & Implementation", href: "/services/martech-audits" },
-      { name: "Stack Migration", href: "#" },
+      { name: "Stack Migration", href: "/services/marketing-tech-migration" },
       { name: "Consulting", href: "#" },
     ],
   },
   {
     title: "Resources",
     items: [
-      "Blog",
-      "GA4 Generator",
-      "GTM Templates",
-      "Looker Studio Templates",
+      { name: "Blog", href: "https://datajournal.datakyu.co/" },
+      { name: "GA4 Generator", href: "#" },
+      { name: "GTM Templates", href: "#" },
+      { name: "Looker Studio Templates", href: "#" },
     ],
-  },
-  {
-    title: "Contact",
-    href: "/contact",
   },
   {
     title: "About",
