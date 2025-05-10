@@ -133,7 +133,7 @@ gtag("event", "user_login", {
     {
       src: "/images/techStack/google-analytics-4.svg",
       alt: "Google Analytics 4 logo",
-      width: 25,
+      width: 70,
       height: 25,
     },
     {
