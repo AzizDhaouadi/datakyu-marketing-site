@@ -39,7 +39,7 @@ export default function CardsWithImages({
           </Card.Body>
           {card.includeFooter && (
             <Card.Footer gap="2">
-              <CallToActionButton text="Contact Us" toCenter={false} />
+              <CallToActionButton text="Contact Us" toCenter={true} />
             </Card.Footer>
           )}
           {card.dialogFooter && (

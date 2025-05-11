@@ -1,9 +1,6 @@
 // 🖼️ Styles
 import styles from "./page.module.css";
 
-// ⚛️ Next.js Built-ins
-import Image from "next/image";
-
 // 🧩 Custom Components – Core
 import Nav from "@/components/custom/Nav";
 import HeroHeading from "@/components/custom/HeroHeading";
@@ -13,15 +10,12 @@ import FeatureTabs from "@/components/custom/FeatureTabs";
 import CallToActionSection from "@/components/custom/CallToActionSection";
 import Footer from "@/components/custom/Footer";
 
-// 📬 Custom Components – Integrations
-import OpenHubspotDialog from "@/components/custom/OpenHubspotDialog";
-
 // 🎞️ Custom Components – Animations
 import SineWaveAnimation from "@/components/animation/SinFunction";
 import SlidingLogoGrid from "@/components/animation/SlidingLogoGrid";
 
 // 💅 Chakra UI
-import { Text, Heading } from "@chakra-ui/react";
+import { Text, Heading, Box, Image } from "@chakra-ui/react";
 
 // 🎨 Icons
 import { LuFolder, LuSquareCheck, LuUser, LuDatabase } from "react-icons/lu";
@@ -126,73 +120,70 @@ export default function Home() {
             title="Make your Marketing data work harder with Datakyu"
             highlight="Datakyu"
           />
-          <Text
-            textAlign={"center"}
-            mx={"auto"}
-            fontSize="xl"
-            mt={4}
-            maxW="2xl"
-          >
+          <Text textAlign={"center"} mx={"auto"} my={4}>
             We help you own the unlimited power of your marketing data.
           </Text>
-          <Image
-            className={styles.heroImg}
-            src="/images/collaboration.png"
-            alt="Two analysts collaborating on a data project"
-            priority
-            width={600}
-            height={400}
+          <Box display={{ base: "none", lg: "initial" }}>
+            <Image
+              src="/images/collaboration.png"
+              alt="Two analysts collaborating on a data project"
+              m={{ lg: "0 auto" }}
+              width={"45rem"}
+              height={"auto"}
+            />
+          </Box>
+        </section>
+        <section id="offered-services">
+          <Heading
+            size={"4xl"}
+            my={6}
+            textAlign={"center"}
+            letterSpacing={"tight"}
+          >
+            Our Data Driven Approach
+          </Heading>
+          <IllustrationWithText
+            title={"Set goals and build a measurement plan"}
+            description={
+              "We are here to listen and we are here help. Let us know what your business goals are and we will help you build a plan to measure exactly what you need to grow."
+            }
+            imageSrc={"/images/Climbing.png"}
+            imageAlt={"A person climibing strairs"}
+            features={[
+              "Identify Key Business Goals",
+              "Build a Measurement Infrastructure",
+              "Ensure Data Fidelity & Integrity",
+            ]}
+            reverse={false}
+          />
+          <IllustrationWithText
+            title={"Establish data-backed growth"}
+            description={
+              "We build execute our tracking to reflect our measurement plan which gives you the confidence to reduce uncertainty and make data-driven decisions."
+            }
+            imageSrc={"/images/on-laptop.png"}
+            imageAlt={"A person working on a laptop"}
+            features={[
+              "Focus on Real Metrics",
+              "Capture Meaningful Data",
+              "Build a Data-Driven Culture",
+            ]}
+            reverse={true}
+          />
+          <IllustrationWithText
+            title={"Visualize your data and follow your growth"}
+            description={
+              "We don't just track data, we visualize it as well. Our dashboarding tools are our canvas and we are known for producing beautiful art."
+            }
+            imageSrc={"/images/project-management.png"}
+            imageAlt={"A person working on industrial drawings."}
+            features={[
+              "Gain Insights Beyond KPIs",
+              "Tailored Dashboards for All Stakeholders",
+            ]}
+            reverse={false}
           />
         </section>
-        <Heading
-          size={"4xl"}
-          my={6}
-          textAlign={"center"}
-          letterSpacing={"tight"}
-        >
-          Our Data Driven Approach
-        </Heading>
-        <IllustrationWithText
-          title={"Set goals and build a measurement plan"}
-          description={
-            "We are here to listen and we are here help. Let us know what your business goals are and we will help you build a plan to measure exactly what you need to grow."
-          }
-          imageSrc={"/images/Climbing.png"}
-          imageAlt={"A person climibing strairs"}
-          features={[
-            "Identify Key Business Goals",
-            "Build a Measurement Infrastructure",
-            "Ensure Data Fidelity & Integrity",
-          ]}
-          reverse={false}
-        />
-        <IllustrationWithText
-          title={"Establish data-backed growth"}
-          description={
-            "We build execute our tracking to reflect our measurement plan which gives you the confidence to reduce uncertainty and make data-driven decisions."
-          }
-          imageSrc={"/images/on-laptop.png"}
-          imageAlt={"A person working on a laptop"}
-          features={[
-            "Focus on Real Metrics",
-            "Capture Meaningful Data",
-            "Build a Data-Driven Culture",
-          ]}
-          reverse={true}
-        />
-        <IllustrationWithText
-          title={"Visualize your data and follow your growth"}
-          description={
-            "We don't just track data, we visualize it as well. Our dashboarding tools are our canvas and we are known for producing beautiful art."
-          }
-          imageSrc={"/images/project-management.png"}
-          imageAlt={"A person working on industrial drawings."}
-          features={[
-            "Gain Insights Beyond KPIs",
-            "Tailored Dashboards for All Stakeholders",
-          ]}
-          reverse={false}
-        />
         <section id="features">
           <Heading
             my={6}
@@ -222,8 +213,9 @@ export default function Home() {
         </section>
         <section id="martech-stack">
           <Heading
-            size={"5xl"}
-            my={4}
+            size={"4xl"}
+            my={6}
+            color={"rgb(79, 59, 62)"}
             textAlign={"center"}
             letterSpacing={"tight"}
           >
@@ -231,19 +223,20 @@ export default function Home() {
           </Heading>
           <SlidingLogoGrid logoStack={techStackLogos} />
         </section>
-        <section style={{ marginTop: "3rem" }} id="contact">
+        <section id="cta">
           <Heading
-            size={"5xl"}
+            size={"4xl"}
+            my={6}
+            color={"rgb(79, 59, 62)"}
             textAlign={"center"}
             letterSpacing={"tight"}
-            color={"rgb(79, 59, 62)"}
           >
             Let's unlock your data's full potential.
           </Heading>
-          <section id="sin-wave-animation">
+          <Box display={{ base: "none", md: "none", lg: "initial" }}>
             <SineWaveAnimation />
-          </section>
-          <OpenHubspotDialog text={"Drop us a message"} toCenter={true} />
+          </Box>
+          <CallToActionSection description="Unlock Your Marketing Data's Full Potential" />
         </section>
       </main>
       <Footer />

@@ -268,7 +268,10 @@ mixpanel.track(
                 launching a new feature, or refining your funnel, you'll finally
                 have data you trust and the strategy to back it up.
               </Text>
-              <CallToActionButton text={"Contact us"} toCenter={false} />
+              <CallToActionButton
+                text={"Contact us"}
+                toCenter={{ base: true, md: true, lg: false, xl: false }}
+              />
             </Flex>
           </Flex>
         </section>

@@ -7,8 +7,19 @@ export default function CallToActionButton({
   toCenter,
 }: {
   text: string;
-  toCenter?: boolean;
+  toCenter?: any;
 }) {
+  const mx = toCenter
+    ? {
+        base: toCenter.base ? "auto" : 0,
+        sm: toCenter.sm ? "auto" : 0,
+        md: toCenter.md ? "auto" : 0,
+        lg: toCenter.lg ? "auto" : 0,
+        xl: toCenter.xl ? "auto" : 0,
+        "2xl": toCenter["2xl"] ? "auto" : 0,
+      }
+    : "initial";
+
   return (
     <Flex
       my={2}
@@ -17,9 +28,9 @@ export default function CallToActionButton({
       justify={"center"}
       gap={4}
       borderRadius={"md"}
-      p={4}
-      w={"fit-content"}
-      mx={toCenter ? "auto" : "initial"}
+      p={{ base: 0, md: 0, lg: 4 }}
+      w={{ base: 0, md: 0, lg: "fit-content" }}
+      mx={mx}
     >
       <OpenHubsportDialog text={text} toCenter={toCenter} />
     </Flex>

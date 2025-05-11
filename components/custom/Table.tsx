@@ -1,7 +1,6 @@
 import React from "react";
-import { Table, Flex } from "@chakra-ui/react";
+import { Table, Flex, Image } from "@chakra-ui/react";
 import { FiCheckCircle, FiCircle } from "react-icons/fi";
-import Image from "next/image";
 
 type TableComponentProps = {
   service: string;
@@ -15,11 +14,16 @@ export default function TableComponent({
   tableBodyContent: TableComponentProps[];
 }) {
   return (
-    <Flex direction={"row"} gap={4} my={"3rem"}>
+    <Flex
+      // display={{ base: "none", md: "none", lg: "flex" }}
+      direction={"row"}
+      gap={4}
+      my={"3rem"}
+    >
       <Image
         src="/images/thinking.png"
         width={400}
-        height={180}
+        display={{ base: "none", md: "none", lg: "initial" }}
         alt={"A lady thinking"}
       />
       <Table.Root size="sm">
@@ -29,10 +33,10 @@ export default function TableComponent({
               Auditing Area
             </Table.ColumnHeader>
             <Table.ColumnHeader p={2} fontWeight={"bold"}>
-              Basic Audit Coverage
+              Basic Audit
             </Table.ColumnHeader>
             <Table.ColumnHeader p={2} fontWeight={"bold"}>
-              Full Audit Coverage
+              Full Audit
             </Table.ColumnHeader>
           </Table.Row>
         </Table.Header>

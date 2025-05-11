@@ -7,10 +7,18 @@ type questionsProps = {
 
 export default function FAQ({ questions }: { questions: questionsProps[] }) {
   return (
-    <Stack width="full" maxW={"50%"} mx={"auto"}>
+    <Stack
+      width="full"
+      maxW={{ base: "100%", md: "100%", lg: "50%" }}
+      mx={"auto"}
+    >
       <Accordion.Root collapsible>
         {questions.map((question, index) => (
-          <Accordion.Item key={index} value={question.answer.toString()} my={6}>
+          <Accordion.Item
+            key={index}
+            value={question.answer.toString()}
+            my={10}
+          >
             <Accordion.ItemTrigger fontSize={"larger"}>
               {question.question}
             </Accordion.ItemTrigger>
