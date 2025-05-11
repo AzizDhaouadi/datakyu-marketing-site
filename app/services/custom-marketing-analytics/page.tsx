@@ -17,6 +17,8 @@ import { Text, Heading, Image, Flex, Box } from "@chakra-ui/react";
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-tomorrow.css";
+import { title } from "process";
+import { desc, image } from "framer-motion/client";
 
 export default function CustomMarketingAnalytics() {
   const dialogsContent = [
@@ -117,6 +119,51 @@ export default function CustomMarketingAnalytics() {
       description:
         "Mixpanel is an advanced analytics platform that helps businesses track user interactions with web and mobile applications. It provides insights into user behavior, engagement, and retention.",
       icon: null,
+    },
+  ];
+
+  const solutionsCardsContent = [
+    {
+      title: "Audits",
+      description:
+        "Understand your data generation process and identify gaps in your tracking.",
+      image: "/images/hello.png",
+      includeFooter: false,
+    },
+    {
+      title: "Interactive Dashboards",
+      description:
+        "Visualize your data in a way that makes sense to you and your team.",
+      image: "/images/dashboards.png",
+      includeFooter: false,
+    },
+    {
+      title: "User Journey Mapping",
+      description:
+        "Understand how users interact with your product and identify areas for improvement.",
+      image: "/images/user-journey.png",
+      includeFooter: false,
+    },
+    {
+      title: "E-commerce Tracking",
+      description:
+        "Track user interactions with your e-commerce site and optimize for conversions.",
+      image: "/images/ecommerce-tracking.png",
+      includeFooter: false,
+    },
+    {
+      title: "User Identification",
+      description:
+        "Identify users across devices and platforms to understand their behavior.",
+      image: "/images/user-identification.png",
+      includeFooter: false,
+    },
+    {
+      title: "Insights & Recommendations",
+      description:
+        "Get actionable insights and recommendations based on your data.",
+      image: "/images/thinking-v.png",
+      includeFooter: false,
     },
   ];
 
@@ -261,6 +308,13 @@ mixpanel.track(
               </Box>
             </Flex>
           </Flex>
+        </section>
+        <section id="problems-we-solve">
+          <HeroHeading
+            title="Complex problems we make simple"
+            highlight="simple"
+          />
+          <CardsWithImages cardsContent={solutionsCardsContent} />
         </section>
       </main>
     </div>
