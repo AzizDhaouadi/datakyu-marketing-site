@@ -9,6 +9,8 @@ import CallToActionButton from "@/components/custom/CallToActionButton";
 import CustomDialog from "@/components/custom/Dialog";
 import ListsWithIcons from "@/components/custom/ListsWithIcons";
 import FeatureTabs from "@/components/custom/FeatureTabs";
+import CallToActionSection from "@/components/custom/CallToActionSection";
+import SinFunction from "@/components/animation/SinFunction";
 import Footer from "@/components/custom/Footer";
 
 // 💅 Chakra UI
@@ -346,9 +348,24 @@ mixpanel.track(
           <CardsWithImages cardsContent={solutionsCardsContent} />
         </section>
         <section id="process">
+          <Heading
+            my={6}
+            size={"4xl"}
+            textAlign={"center"}
+            letterSpacing={"tight"}
+          >
+            Our Methodology
+          </Heading>
           <FeatureTabs FeatureTabs={processSteps} />
         </section>
+        <section id="cta">
+          <Box display={{ base: "none", md: "none", lg: "initial" }}>
+            <SinFunction />
+          </Box>
+          <CallToActionSection description="Contact us today to learn how we can help you turn data into actionable insights." />
+        </section>
       </main>
+      <Footer />
     </div>
   );
 }
