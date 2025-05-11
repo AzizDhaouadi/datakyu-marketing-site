@@ -31,8 +31,8 @@ export default function FeatureTabs({
       <VStack
         align="start"
         position="relative"
-        pl={6}
-        py={8}
+        pl={{ base: 2, md: 2, lg: 6 }}
+        py={{ base: 0, md: 0, lg: 8 }}
         w={{ base: "100%", md: "100%", lg: "55%" }}
       >
         {FeatureTabs.map((item, index) => (
