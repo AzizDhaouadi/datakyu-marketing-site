@@ -15,10 +15,26 @@ export default function FeatureTabs({
 }) {
   return (
     <Flex direction={"row"} justifyContent={"space-evenly"}>
-      <Flex direction={"column"} justify={"center"} alignItems={"center"}>
-        <Image src={"/images/folders.png"} alt="Stacked folders" width={450} height={450} />
+      <Flex
+        display={{ base: "none", md: "none", lg: "flex" }}
+        direction={"column"}
+        justify={"center"}
+        alignItems={"center"}
+      >
+        <Image
+          src={"/images/folders.png"}
+          alt="Stacked folders"
+          width={450}
+          height={450}
+        />
       </Flex>
-      <VStack align="start" position="relative" pl={6} py={8} w={"55%"}>
+      <VStack
+        align="start"
+        position="relative"
+        pl={{ base: 2, md: 2, lg: 6 }}
+        py={{ base: 0, md: 0, lg: 8 }}
+        w={{ base: "100%", md: "100%", lg: "55%" }}
+      >
         {FeatureTabs.map((item, index) => (
           <Flex
             borderLeft="1px dotted #CBD5E0"
@@ -27,7 +43,11 @@ export default function FeatureTabs({
             direction="column"
             position="relative"
           >
-            <Flex direction={"row"} justifyItems={"center"} alignItems={"center"}>
+            <Flex
+              direction={"row"}
+              justifyItems={"center"}
+              alignItems={"center"}
+            >
               <Box ml={"1rem"}>{item.icon}</Box>
               <Text ml={"1rem"} fontWeight="bold" fontSize="lg" mb={1}>
                 {item.step}

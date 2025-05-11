@@ -24,7 +24,7 @@ const navItems = [
     items: [
       { name: "Auditing & Implementation", href: "/services/martech-audits" },
       { name: "Stack Migration", href: "/services/marketing-tech-migration" },
-      { name: "Consulting", href: "#" },
+      { name: "Consulting", href: "/services/custom-marketing-analytics" },
     ],
   },
   {

@@ -180,7 +180,7 @@ mixpanel.track(
             </Flex>
             <Flex
               display={{ base: "none", md: "none", lg: "flex" }}
-              width={{ lg: "25rem", xl: "inherit" }}
+              width={{ lg: "35rem" }}
             >
               <Box
                 bg="gray.900"
