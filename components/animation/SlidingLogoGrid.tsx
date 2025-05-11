@@ -15,11 +15,11 @@ export default function SlidingLogoGrid({
 }) {
   return (
     <Flex
-      direction={"row"}
+      direction={{ base: "column", md: "column", lg: "row" }}
       gap={10}
       wrap={"wrap"}
       my={"3rem"}
-      justifyContent={"space-evenly"}
+      justifyContent={{ base: "center", md: "center", lg: "space-evenly" }}
       alignItems={"center"}
     >
       {logoStack.map((logo, index) => (

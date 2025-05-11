@@ -1,9 +1,6 @@
 // 🖼️ Styles
 import styles from "../../page.module.css";
 
-// ⚛️ Next.js Built-ins
-import Image from "next/image";
-
 // 🧩 Custom Components – Core
 import Nav from "@/components/custom/Nav";
 import HeroHeading from "@/components/custom/HeroHeading";
@@ -19,7 +16,7 @@ import CardsWithImages from "@/components/custom/CardsWithImages";
 import FAQ from "@/components/custom/FAQ";
 
 // 💅 Chakra UI
-import { Text, Box, Flex, Heading } from "@chakra-ui/react";
+import { Text, Box, Flex, Heading, Image } from "@chakra-ui/react";
 
 // 🎨 Icons
 import { LuLayers3 } from "react-icons/lu";
@@ -40,7 +37,6 @@ gtag("event", "user_login", {
     `
   analytics.track("User Login", {
     method: "google",
-    email: "datakyu@help.tracking"
   });
   `,
   ];
@@ -290,28 +286,26 @@ amplitude.getInstance().logEvent("submitted_form", {
       <main className={styles.main}>
         <section id="hero">
           <HeroHeading
-            title="Marketing Tech Stack Implementation & Audits Services"
-            highlight="Implementation & Audits"
+            title="Marketing Tech Stack Services"
+            highlight="Services"
           />
-          <Text
-            textAlign={"center"}
-            mx={"auto"}
-            fontSize="xl"
-            mt={4}
-            maxW="2xl"
-          >
+          <Text textAlign={"center"} mx={"auto"} my={4}>
             You build. We measure. Actionable insights from every user
             interaction.
           </Text>
         </section>
-        <section id="hero-contact-us">
-          <CallToActionButton
-            text={"Request a Measurement Plan Audit"}
-            toCenter={true}
-          />
-        </section>
+        <CallToActionButton
+          text={"Request a Measurement Plan"}
+          toCenter={true}
+        />
         <section id="typed-code">
-          <Box bg="gray.900" py={12} px={6} borderRadius="xl">
+          <Box
+            display={{ base: "none", md: "none", lg: "inherit" }}
+            bg="gray.900"
+            py={12}
+            px={6}
+            borderRadius="xl"
+          >
             <Flex
               direction="row"
               wrap="wrap"
@@ -392,8 +386,8 @@ amplitude.getInstance().logEvent("submitted_form", {
           <TableComponent tableBodyContent={tableContent} />
         </section>
         <section id="tech-stack">
-          <Flex direction={"row"} gap={6}>
-            <Flex direction={"column"} minWidth={"60%"}>
+          <Flex gap={6}>
+            <Flex direction={"column"}>
               <Heading
                 my={6}
                 size={"4xl"}
@@ -410,32 +404,37 @@ amplitude.getInstance().logEvent("submitted_form", {
               <SlidingLogoGrid logoStack={techStackLogos} />
               <ListsWithIcons listDescriptions={listWithIconsContent} />
             </Flex>
-            <Box
-              bg="gray.900"
-              w={"60rem"}
-              mx={"auto"}
-              py={4}
-              px={2}
-              borderRadius="xl"
-            >
+            <section id="typed-code-back">
               <Box
-                bg="gray.800"
-                p={6}
-                borderRadius="md"
-                color="white"
-                overflowX="auto"
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "0.9rem",
-                  whiteSpace: "pre",
-                }}
+                display={{ base: "none", md: "none", lg: "inherit" }}
+                bg="gray.900"
+                py={12}
+                px={6}
+                w={{ lg: "30rem", xl: "45rem" }}
+                h={{ lg: "100%" }}
+                borderRadius="xl"
               >
-                <TypedCodeSection
-                  codeToType={trackingSnippets}
-                  smartBackspace={true}
-                />
+                <Box
+                  bg="gray.800"
+                  p={6}
+                  borderRadius="md"
+                  boxShadow="md"
+                  minW="320px"
+                  maxW="500px"
+                  color="white"
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.9rem",
+                    whiteSpace: "pre",
+                  }}
+                >
+                  <TypedCodeSection
+                    codeToType={trackingSnippets}
+                    smartBackspace={true}
+                  />
+                </Box>
               </Box>
-            </Box>
+            </section>
           </Flex>
         </section>
         <section id="anaytics-importance">
