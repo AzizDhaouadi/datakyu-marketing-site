@@ -68,7 +68,9 @@ export default function CardsWithImages({
                     href={downloadableLinkMapping(card.title)}
                     target={"_blank"}
                   >
-                    Download
+                    {card.title.toLowerCase().includes("bigquery")
+                      ? "Replicate"
+                      : "Download"}
                   </Link>
                 )}
               </Flex>
