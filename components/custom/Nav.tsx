@@ -38,7 +38,7 @@ const navItems = [
       },
       {
         name: "Looker Studio Templates",
-        href: "/resoureces/lookder-studio-templates",
+        href: "/resources/looker-studio-templates",
       },
     ],
   },
