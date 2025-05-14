@@ -7,6 +7,7 @@ import CardsWithImages from "@/components/custom/CardsWithImages";
 import CustomDialog from "@/components/custom/Dialog";
 import FAQ from "@/components/custom/FAQ";
 import Footer from "@/components/custom/Footer";
+import CallToActionSection from "@/components/custom/CallToActionSection";
 
 // 💅 Chakra UI
 import {
@@ -17,7 +18,6 @@ import {
   Timeline,
   List,
 } from "@chakra-ui/react";
-import CallToActionSection from "@/components/custom/CallToActionSection";
 
 export default function GoogleTagManagerTemplates() {
   const containerTemplatesContent = [
