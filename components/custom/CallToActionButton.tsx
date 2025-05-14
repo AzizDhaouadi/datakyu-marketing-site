@@ -29,7 +29,7 @@ export default function CallToActionButton({
       gap={4}
       borderRadius={"md"}
       p={{ base: 0, md: 0, lg: 4 }}
-      w={{ base: 0, md: 0, lg: "fit-content" }}
+      w={{ lg: "fit-content" }}
       mx={mx}
     >
       <OpenHubsportDialog text={text} toCenter={toCenter} />

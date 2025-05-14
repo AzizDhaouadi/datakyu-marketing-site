@@ -7,6 +7,7 @@ import {
   Flex,
   HStack,
   Portal,
+  SkeletonText,
 } from "@chakra-ui/react";
 import styles from "../../app/page.module.css";
 

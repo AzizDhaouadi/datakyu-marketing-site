@@ -20,7 +20,11 @@ export default function CustomDialog({
   content,
 }: CustomDialogProps) {
   return (
-    <Dialog.Root placement={placement} motionPreset="slide-in-bottom">
+    <Dialog.Root
+      placement={placement}
+      size={"md"}
+      motionPreset="slide-in-bottom"
+    >
       <Dialog.Trigger my={4} asChild>
         <Button p={2} variant={buttonVariant}>
           {cta}

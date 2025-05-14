@@ -286,7 +286,10 @@ mixpanel.track(
           </Heading>
           <Text textAlign={"center"}>All the different ways we can help.</Text>
           <CardsWithImages cardsContent={featureCardsContent} />
-          <CallToActionButton text={"Contact us"} toCenter={true} />
+          <CallToActionButton
+            text={"Contact us"}
+            toCenter={{ base: true, md: true, lg: false, xl: false }}
+          />
         </section>
         <section style={{ marginTop: "2rem" }} id={"analytics-tech-stack"}>
           <Flex direction={"row"} gap={6}>
