@@ -32,8 +32,14 @@ const navItems = [
     items: [
       { name: "Blog", href: "https://datajournal.datakyu.co/" },
       { name: "GA4 Generator", href: "#" },
-      { name: "GTM Templates", href: "#" },
-      { name: "Looker Studio Templates", href: "#" },
+      {
+        name: "GTM Templates",
+        href: "/resources/google-tag-manager-templates",
+      },
+      {
+        name: "Looker Studio Templates",
+        href: "/resoureces/lookder-studio-templates",
+      },
     ],
   },
   {
