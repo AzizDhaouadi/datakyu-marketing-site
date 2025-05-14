@@ -21,8 +21,12 @@ export default function CardsWithImages({
       return "/download/all-properties-container.json";
     } else if (resourceName.toLowerCase().includes("saas")) {
       return "/download/saas-container.json";
-    } else {
+    } else if (resourceName.toLowerCase().includes("commerce")) {
       return "/download/e-commerce-container.json";
+    } else if (resourceName.toLowerCase().includes("bigquery")) {
+      return "https://lookerstudio.google.com/reporting/fb0c939c-dd51-4ac7-bc1f-f0adcff1edfd";
+    } else {
+      return "#";
     }
   };
 
