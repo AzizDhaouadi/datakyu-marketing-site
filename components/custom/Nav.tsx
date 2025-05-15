@@ -21,6 +21,7 @@ import { FiChevronDown } from "react-icons/fi";
 const navItems = [
   {
     title: "Services",
+    href: "#",
     items: [
       { name: "Auditing & Implementation", href: "/services/martech-audits" },
       { name: "Stack Migration", href: "/services/marketing-tech-migration" },
@@ -29,6 +30,7 @@ const navItems = [
   },
   {
     title: "Resources",
+    href: "#",
     items: [
       { name: "Blog", href: "https://datajournal.datakyu.co/" },
       { name: "GA4 Generator", href: "#" },
@@ -43,14 +45,19 @@ const navItems = [
     ],
   },
   {
-    title: "About",
-    href: "/about",
+    title: "Policies",
+    href: "#",
+    items: [
+      { name: "Cookie Policy", href: "/policies/cookie-policy" },
+      { name: "Privacy Policy", href: "/policies/privacy-policy" },
+    ],
   },
 ];
 
 type NavItemWithSubItems = {
   name: string;
   href?: string;
+  items?: any;
 };
 
 export default function SimpleNav() {
