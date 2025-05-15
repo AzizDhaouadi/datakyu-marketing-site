@@ -21,6 +21,7 @@ import { FiChevronDown } from "react-icons/fi";
 const navItems = [
   {
     title: "Services",
+    href: "#",
     items: [
       { name: "Auditing & Implementation", href: "/services/martech-audits" },
       { name: "Stack Migration", href: "/services/marketing-tech-migration" },
@@ -29,23 +30,29 @@ const navItems = [
   },
   {
     title: "Resources",
+    href: "#",
     items: [
       { name: "Blog", href: "https://datajournal.datakyu.co/" },
       { name: "GA4 Generator", href: "#" },
-      { name: "GTM Templates", href: "#" },
-      { name: "Looker Studio Templates", href: "#" },
+      {
+        name: "GTM Templates",
+        href: "/resources/google-tag-manager-templates",
+      },
+      {
+        name: "Looker Studio Templates",
+        href: "/resources/looker-studio-templates",
+      },
     ],
   },
   {
-    title: "About",
-    href: "/about",
+    title: "Policies",
+    href: "#",
+    items: [
+      { name: "Cookie Policy", href: "/policies/cookie-policy" },
+      { name: "Privacy Policy", href: "/policies/privacy-policy" },
+    ],
   },
 ];
-
-type NavItemWithSubItems = {
-  name: string;
-  href?: string;
-};
 
 export default function SimpleNav() {
   const [isOpen, setOpen] = useState(false);
@@ -94,17 +101,19 @@ export default function SimpleNav() {
                       bg={"white"}
                     >
                       <VStack align="stretch" gap={1}>
-                        {item.items.map((subItem: any, j) => (
-                          <Link
-                            key={j}
-                            href={subItem.href || "#"}
-                            px={3}
-                            py={2}
-                            borderRadius="md"
-                          >
-                            <Text>{subItem.name}</Text>
-                          </Link>
-                        ))}
+                        {item.items.map(
+                          (subItem: { href: string; name: string }, j) => (
+                            <Link
+                              key={j}
+                              href={subItem.href || "#"}
+                              px={3}
+                              py={2}
+                              borderRadius="md"
+                            >
+                              <Text>{subItem.name}</Text>
+                            </Link>
+                          )
+                        )}
                       </VStack>
                     </Box>
                   </Box>
@@ -154,11 +163,20 @@ export default function SimpleNav() {
                               borderLeft="1px"
                               gap={4}
                             >
-                              {item.items.map((subItem: any, j) => (
-                                <Link key={j} href={subItem.href} fontSize="sm">
-                                  {subItem.name}
-                                </Link>
-                              ))}
+                              {item.items.map(
+                                (
+                                  subItem: { href: string; name: string },
+                                  j
+                                ) => (
+                                  <Link
+                                    key={j}
+                                    href={subItem.href}
+                                    fontSize="sm"
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                )
+                              )}
                             </VStack>
                           </Box>
                         ) : (

@@ -1,5 +1,12 @@
 import React from "react";
-import { Dialog, Button, Portal, CloseButton, Text } from "@chakra-ui/react";
+import {
+  Dialog,
+  Button,
+  Portal,
+  CloseButton,
+  Text,
+  ConditionalValue,
+} from "@chakra-ui/react";
 
 type DialogContent = {
   title: string;
@@ -7,9 +14,11 @@ type DialogContent = {
 };
 
 type CustomDialogProps = {
-  placement: any;
+  placement: ConditionalValue<"center" | "top" | "bottom" | undefined>;
   cta: string;
-  buttonVariant?: any;
+  buttonVariant?: ConditionalValue<
+    "outline" | "solid" | "subtle" | "surface" | "ghost" | "plain" | undefined
+  >;
   content: DialogContent;
 };
 
@@ -20,7 +29,11 @@ export default function CustomDialog({
   content,
 }: CustomDialogProps) {
   return (
-    <Dialog.Root placement={placement} motionPreset="slide-in-bottom">
+    <Dialog.Root
+      placement={placement}
+      size={"md"}
+      motionPreset="slide-in-bottom"
+    >
       <Dialog.Trigger my={4} asChild>
         <Button p={2} variant={buttonVariant}>
           {cta}

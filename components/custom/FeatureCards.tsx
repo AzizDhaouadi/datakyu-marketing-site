@@ -2,7 +2,7 @@ import React from "react";
 import { Flex, Card, Box } from "@chakra-ui/react";
 
 type FeatureCardsProps = {
-  icon: any;
+  icon: React.ReactNode;
   title: string;
   description: string;
 };

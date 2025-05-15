@@ -4,7 +4,7 @@ import { Box, Flex, Text, Heading, Stack } from "@chakra-ui/react";
 type ListsWithIconsProps = {
   title: string;
   description: string;
-  icon: any;
+  icon: React.ReactNode;
   reverse?: boolean;
 };
 

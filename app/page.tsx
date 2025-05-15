@@ -231,7 +231,7 @@ export default function Home() {
             textAlign={"center"}
             letterSpacing={"tight"}
           >
-            Let's unlock your data's full potential.
+            Let&apos;s unlock your data&apos;s full potential.
           </Heading>
           <Box display={{ base: "none", md: "none", lg: "initial" }}>
             <SineWaveAnimation />

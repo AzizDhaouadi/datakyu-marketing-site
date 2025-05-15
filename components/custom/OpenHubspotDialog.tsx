@@ -15,7 +15,6 @@ export default function OpenHubspotDialog({
   toCenter,
 }: {
   text: string;
-  display?: boolean;
   toCenter?: boolean;
 }) {
   return (

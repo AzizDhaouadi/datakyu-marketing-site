@@ -1,8 +1,8 @@
-import { Accordion, Heading, Stack } from "@chakra-ui/react";
+import { Accordion, Stack } from "@chakra-ui/react";
 
 type questionsProps = {
   question: string;
-  answer: string;
+  answer: string | React.ReactNode;
 };
 
 export default function FAQ({ questions }: { questions: questionsProps[] }) {
@@ -14,11 +14,7 @@ export default function FAQ({ questions }: { questions: questionsProps[] }) {
     >
       <Accordion.Root collapsible>
         {questions.map((question, index) => (
-          <Accordion.Item
-            key={index}
-            value={question.answer.toString()}
-            my={10}
-          >
+          <Accordion.Item key={index} value={index.toString()} my={10}>
             <Accordion.ItemTrigger fontSize={"larger"}>
               {question.question}
             </Accordion.ItemTrigger>

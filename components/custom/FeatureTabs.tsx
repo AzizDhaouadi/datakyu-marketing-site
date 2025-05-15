@@ -5,7 +5,7 @@ import Image from "next/image";
 type FeatureTabsProps = {
   step: string;
   description: string;
-  icon: any;
+  icon: React.ReactNode;
 };
 
 export default function FeatureTabs({
