@@ -18,8 +18,8 @@ export default function HubspotForm({
     script.src = "https://js.hsforms.net/forms/v2.js";
     script.async = true;
     script.onload = () => {
-      if (window.hbspt) {
-        window.hbspt.forms.create({
+      if ((window as any).hbspt) {
+        (window as any).hbspt.forms.create({
           portalId: portalId,
           formId: formId,
           region: region,
