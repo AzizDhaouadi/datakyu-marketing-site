@@ -7,19 +7,19 @@ export default function CallToActionButton({
   toCenter,
 }: {
   text: string;
-  toCenter?: any;
+  toCenter?: { base: boolean; md: boolean; lg: boolean; xl: boolean } | boolean;
 }) {
-  const mx = toCenter
-    ? {
-        base: toCenter.base ? "auto" : 0,
-        sm: toCenter.sm ? "auto" : 0,
-        md: toCenter.md ? "auto" : 0,
-        lg: toCenter.lg ? "auto" : 0,
-        xl: toCenter.xl ? "auto" : 0,
-        "2xl": toCenter["2xl"] ? "auto" : 0,
-      }
-    : "initial";
-
+  let mx = {};
+  if (typeof toCenter === "object") {
+    mx = toCenter
+      ? {
+          base: toCenter.base ? "auto" : 0,
+          md: toCenter.md ? "auto" : 0,
+          lg: toCenter.lg ? "auto" : 0,
+          xl: toCenter.xl ? "auto" : 0,
+        }
+      : "initial";
+  }
   return (
     <Flex
       my={2}
@@ -32,7 +32,7 @@ export default function CallToActionButton({
       w={{ lg: "fit-content" }}
       mx={mx}
     >
-      <OpenHubsportDialog text={text} toCenter={toCenter} />
+      <OpenHubsportDialog text={text} toCenter={true} />
     </Flex>
   );
 }

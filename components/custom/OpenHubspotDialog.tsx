@@ -7,7 +7,6 @@ import {
   Flex,
   HStack,
   Portal,
-  SkeletonText,
 } from "@chakra-ui/react";
 import styles from "../../app/page.module.css";
 
@@ -16,7 +15,6 @@ export default function OpenHubspotDialog({
   toCenter,
 }: {
   text: string;
-  display?: boolean;
   toCenter?: boolean;
 }) {
   return (

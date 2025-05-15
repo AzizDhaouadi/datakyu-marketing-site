@@ -294,10 +294,7 @@ amplitude.getInstance().logEvent("submitted_form", {
             interaction.
           </Text>
         </section>
-        <CallToActionButton
-          text={"Request a Measurement Plan"}
-          toCenter={true}
-        />
+        <CallToActionButton text={"Request an Audit"} toCenter={true} />
         <section id="typed-code">
           <Box
             display={{ base: "none", md: "none", lg: "inherit" }}

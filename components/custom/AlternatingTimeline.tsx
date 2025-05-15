@@ -1,5 +1,5 @@
 import React from "react";
-import { Timeline, Flex, Text, Box } from "@chakra-ui/react";
+import { Timeline, Flex, Text } from "@chakra-ui/react";
 
 type TimelineStepProps = {
   name: string;

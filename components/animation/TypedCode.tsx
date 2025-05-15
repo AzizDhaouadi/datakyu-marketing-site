@@ -6,10 +6,9 @@ import Typed from "typed.js";
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-tomorrow.css";
-import { tr } from "framer-motion/client";
 
 type TypedCodeSectionProps = {
-  codeToType: any;
+  codeToType: string | string[];
   smartBackspace?: boolean;
   className?: string;
   isHeader?: boolean;
@@ -22,16 +21,20 @@ export default function TypedCodeSection({
 }: TypedCodeSectionProps) {
   const el = React.useRef(null);
 
-  const highlightedCodeToType = Prism.highlight(
-    codeToType,
-    Prism.languages.javascript,
-    "javascript"
-  );
+  let highlightedCodeToType = "";
 
-  let highlightedCodes: any = [];
+  if (typeof codeToType == "string") {
+    highlightedCodeToType = Prism.highlight(
+      codeToType,
+      Prism.languages.javascript,
+      "javascript"
+    );
+  }
+
+  let highlightedCodes: string[] = [];
 
   if (Array.isArray(codeToType)) {
-    highlightedCodes = codeToType.map((code) =>
+    highlightedCodes = codeToType.map((code: string) =>
       Prism.highlight(code, Prism.languages.javascript, "javascript")
     );
   }

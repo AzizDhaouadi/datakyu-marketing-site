@@ -203,7 +203,7 @@ mixpanel.track(
                     whiteSpace: "pre",
                   }}
                 >
-                  {highlightedCodeContent.map((code: any, index) => (
+                  {highlightedCodeContent.map((code: string, index) => (
                     <Box
                       key={index}
                       dangerouslySetInnerHTML={{ __html: code }}
@@ -260,7 +260,7 @@ mixpanel.track(
                 textAlign={"center"}
                 letterSpacing={"tight"}
               >
-                Can't find what you are looking for?
+                Can&apos;t find what you are looking for?
               </Heading>
               <CallToActionButton text={"Contact us"} />
             </Flex>

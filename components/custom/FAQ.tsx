@@ -1,4 +1,4 @@
-import { Accordion, Heading, Stack } from "@chakra-ui/react";
+import { Accordion, Stack } from "@chakra-ui/react";
 
 type questionsProps = {
   question: string;

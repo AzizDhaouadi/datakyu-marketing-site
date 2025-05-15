@@ -77,8 +77,8 @@ export default function LookerStudioTemplates() {
       answer: (
         <>
           <Text py={4} color={"grey.50"}>
-            Mapping the original data sources is very straightforward. Here's
-            how can map them:
+            Mapping the original data sources is very straightforward.
+            Here&apos;s how can map them:
           </Text>
           <List.Root as={"ol"} textAlign={"left"}>
             <List.Item>

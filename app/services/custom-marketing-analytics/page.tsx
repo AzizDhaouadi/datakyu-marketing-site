@@ -14,7 +14,14 @@ import SinFunction from "@/components/animation/SinFunction";
 import Footer from "@/components/custom/Footer";
 
 // 💅 Chakra UI
-import { Text, Heading, Image, Flex, Box } from "@chakra-ui/react";
+import {
+  Text,
+  Heading,
+  Image,
+  Flex,
+  Box,
+  ConditionalValue,
+} from "@chakra-ui/react";
 
 // 💻 Code Hightlighter
 import Prism from "prismjs";
@@ -66,9 +73,11 @@ export default function CustomMarketingAnalytics() {
       includeFooter: false,
       dialogFooter: (
         <CustomDialog
-          placement={dialogsContent[0].placement}
+          placement={dialogsContent[0].placement as ConditionalValue<"center">}
           cta={dialogsContent[0].cta}
-          buttonVariant={dialogsContent[0].buttonVariant}
+          buttonVariant={
+            dialogsContent[0].buttonVariant as ConditionalValue<"outline">
+          }
           content={dialogsContent[0].content}
         />
       ),
@@ -81,9 +90,11 @@ export default function CustomMarketingAnalytics() {
       includeFooter: false,
       dialogFooter: (
         <CustomDialog
-          placement={dialogsContent[1].placement}
+          placement={dialogsContent[1].placement as ConditionalValue<"center">}
           cta={dialogsContent[1].cta}
-          buttonVariant={dialogsContent[1].buttonVariant}
+          buttonVariant={
+            dialogsContent[1].buttonVariant as ConditionalValue<"outline">
+          }
           content={dialogsContent[1].content}
         />
       ),
@@ -96,9 +107,11 @@ export default function CustomMarketingAnalytics() {
       includeFooter: false,
       dialogFooter: (
         <CustomDialog
-          placement={dialogsContent[2].placement}
+          placement={dialogsContent[2].placement as ConditionalValue<"center">}
           cta={dialogsContent[2].cta}
-          buttonVariant={dialogsContent[2].buttonVariant}
+          buttonVariant={
+            dialogsContent[2].buttonVariant as ConditionalValue<"outline">
+          }
           content={dialogsContent[2].content}
         />
       ),
@@ -255,18 +268,18 @@ mixpanel.track(
                 to the next level!
               </Text>
               <Text>
-                Our team combines technical expertise with a marketer’s mindset,
-                bridging the gap between data and action. We dive into your
-                current setup, identify gaps, and implement tracking strategies
-                tailored to your business goals. From event architecture to
-                custom dashboards, every insight we deliver is built to inform
-                smarter decisions.
+                Our team combines technical expertise with a marketer&apos;s
+                mindset, bridging the gap between data and action. We dive into
+                your current setup, identify gaps, and implement tracking
+                strategies tailored to your business goals. From event
+                architecture to custom dashboards, every insight we deliver is
+                built to inform smarter decisions.
               </Text>
               <Text>
                 The result? Clear visibility, measurable growth, and confidence
-                in every move you make. Whether you're running a campaign,
-                launching a new feature, or refining your funnel, you'll finally
-                have data you trust and the strategy to back it up.
+                in every move you make. Whether you&apos;re running a campaign,
+                launching a new feature, or refining your funnel, you&apos;ll
+                finally have data you trust and the strategy to back it up.
               </Text>
               <CallToActionButton
                 text={"Contact us"}
@@ -335,7 +348,7 @@ mixpanel.track(
                     whiteSpace: "pre",
                   }}
                 >
-                  {highlightedCodeContent.map((code: any, index) => (
+                  {highlightedCodeContent.map((code: string, index) => (
                     <Box
                       key={index}
                       dangerouslySetInnerHTML={{ __html: code }}

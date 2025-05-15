@@ -54,12 +54,6 @@ const navItems = [
   },
 ];
 
-type NavItemWithSubItems = {
-  name: string;
-  href?: string;
-  items?: any;
-};
-
 export default function SimpleNav() {
   const [isOpen, setOpen] = useState(false);
   return (
@@ -107,17 +101,19 @@ export default function SimpleNav() {
                       bg={"white"}
                     >
                       <VStack align="stretch" gap={1}>
-                        {item.items.map((subItem: any, j) => (
-                          <Link
-                            key={j}
-                            href={subItem.href || "#"}
-                            px={3}
-                            py={2}
-                            borderRadius="md"
-                          >
-                            <Text>{subItem.name}</Text>
-                          </Link>
-                        ))}
+                        {item.items.map(
+                          (subItem: { href: string; name: string }, j) => (
+                            <Link
+                              key={j}
+                              href={subItem.href || "#"}
+                              px={3}
+                              py={2}
+                              borderRadius="md"
+                            >
+                              <Text>{subItem.name}</Text>
+                            </Link>
+                          )
+                        )}
                       </VStack>
                     </Box>
                   </Box>
@@ -167,11 +163,20 @@ export default function SimpleNav() {
                               borderLeft="1px"
                               gap={4}
                             >
-                              {item.items.map((subItem: any, j) => (
-                                <Link key={j} href={subItem.href} fontSize="sm">
-                                  {subItem.name}
-                                </Link>
-                              ))}
+                              {item.items.map(
+                                (
+                                  subItem: { href: string; name: string },
+                                  j
+                                ) => (
+                                  <Link
+                                    key={j}
+                                    href={subItem.href}
+                                    fontSize="sm"
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                )
+                              )}
                             </VStack>
                           </Box>
                         ) : (

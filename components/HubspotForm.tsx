@@ -6,7 +6,6 @@ type HubspotFormProps = {
   portalId: string;
   formId: string;
   region: string;
-  onLoad?: any;
 };
 
 export default function HubspotForm({
@@ -19,8 +18,8 @@ export default function HubspotForm({
     script.src = "https://js.hsforms.net/forms/v2.js";
     script.async = true;
     script.onload = () => {
-      if ((window as any).hbspt) {
-        (window as any).hbspt.forms.create({
+      if (window.hbspt) {
+        window.hbspt.forms.create({
           portalId: portalId,
           formId: formId,
           region: region,
