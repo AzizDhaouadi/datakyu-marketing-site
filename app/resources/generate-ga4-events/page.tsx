@@ -1,0 +1,263 @@
+"use client";
+
+import React from "react";
+import { useState } from "react";
+
+// 🖼️ Styles
+import styles from "../../page.module.css";
+
+// 🧩 Custom Components – Core
+import Nav from "@/components/custom/Nav";
+import HeroHeading from "@/components/custom/HeroHeading";
+import Footer from "@/components/custom/Footer";
+
+// 💅 Chakra UI
+import {
+  Text,
+  Field,
+  Flex,
+  Fieldset,
+  For,
+  NativeSelect,
+  Textarea,
+  Tabs,
+  Button,
+} from "@chakra-ui/react";
+
+export default function GenerateGA4Events() {
+  // State handling for the default tracking medium
+  const [defaultTrackingMedium, setDefaultTrackingMedium] =
+    useState("GTM's dataLayer"); // setting the default value to GTM's dataLayer as that's selected by default
+  // State handing for the default event name
+  const [defaultEventName, setDefaultEventName] = useState("ad_click"); // setting the default value to ad_click as that's selected by default
+  // State handling for the custom tracking medium
+  const [customTrackingMedium, setCustomTrackingMedium] =
+    useState("GTM's dataLayer"); // setting the default value to GTM's dataLayer as that's selected by default
+  // State handling for the custom event description
+  const [customEventDescription, setCustomEventDescription] = useState("");
+
+  const handleDefaultFormSubmission = () => {
+    return console.log(
+      `The form was submitted! And the default medium is ${defaultTrackingMedium} and the tracked event is ${defaultEventName}`
+    );
+  };
+
+  const handleCustomFormSubmission = () => {
+    return console.log(
+      `The form was submitted! And the default medium is ${customTrackingMedium} and the event description is ${customEventDescription}`
+    );
+  };
+
+  return (
+    <div className={styles.page}>
+      <header style={{ width: "100%" }} className={styles.header}>
+        <Nav />
+      </header>
+      <main className={styles.main}>
+        <Flex direction={{ base: "column", md: "column", lg: "row" }} gap={10}>
+          <section id={"controls"}>
+            <Flex direction={"column"} gap={6}>
+              <HeroHeading
+                title={"Google Analytics Events Generator"}
+                highlight={"Events Generator"}
+              />
+              <Text>
+                Set up Google Analytics 4 event tracking for recommended events,
+                ecommerce events, SaaS events, and custom events using
+                JavaScript, the dataLayer or the Measurement Protocol.
+              </Text>
+              <Flex id="form-controls" direction={"column"} gap={4}>
+                <Tabs.Root defaultValue={"default"} variant={"enclosed"}>
+                  <Tabs.List mb={4}>
+                    <Tabs.Trigger p={4} value={"default"}>
+                      Recommended
+                    </Tabs.Trigger>
+                    <Tabs.Trigger p={4} value={"custom"}>
+                      Custom
+                    </Tabs.Trigger>
+                  </Tabs.List>
+                  <Tabs.Content value={"default"}>
+                    <Fieldset.Root size={{ base: "sm", md: "md", lg: "lg" }}>
+                      <Fieldset.Legend my={4}>
+                        Please select the event name and the tracking medium
+                      </Fieldset.Legend>
+                      <Fieldset.Content>
+                        <Field.Root my={4} required>
+                          <Field.Label>
+                            Tracking medium
+                            <Field.RequiredIndicator />
+                          </Field.Label>
+                          <NativeSelect.Root>
+                            <NativeSelect.Field
+                              value={defaultTrackingMedium}
+                              onChange={(e) =>
+                                setDefaultTrackingMedium(e.target.value)
+                              }
+                              px={4}
+                              name={"tracking-medium"}
+                            >
+                              <For
+                                each={[
+                                  "GTM's dataLayer",
+                                  "Gtag.js",
+                                  "Measurement Protocol",
+                                ]}
+                              >
+                                {(item) => (
+                                  <option key={item} value={item}>
+                                    {item}
+                                  </option>
+                                )}
+                              </For>
+                            </NativeSelect.Field>
+                            <NativeSelect.Indicator />
+                          </NativeSelect.Root>
+                        </Field.Root>
+                        <Field.Root my={4} required>
+                          <Field.Label>
+                            Event name
+                            <Field.RequiredIndicator />
+                          </Field.Label>
+                          <NativeSelect.Root>
+                            <NativeSelect.Field
+                              px={4}
+                              name={"event-name"}
+                              value={defaultEventName}
+                              onChange={(e) =>
+                                setDefaultEventName(e.target.value)
+                              }
+                            >
+                              <For
+                                each={[
+                                  "ad_click",
+                                  "ad_impression",
+                                  "add_payment_info",
+                                  "add_shipping_info",
+                                  "add_to_cart",
+                                  "add_to_wishlist",
+                                  "begin_checkout",
+                                  "earn_virtual_currency",
+                                  "generate_lead",
+                                  "join_group",
+                                  "level_end",
+                                  "level_start",
+                                  "level_up",
+                                  "login",
+                                  "purchase",
+                                  "refund",
+                                  "remove_from_cart",
+                                  "search",
+                                  "select_content",
+                                  "select_item",
+                                  "select_promotion",
+                                  "share",
+                                  "sign_up",
+                                  "spend_virtual_currency",
+                                  "tutorial_begin",
+                                  "tutorial_complete",
+                                  "unlock_achievement",
+                                  "view_cart",
+                                  "view_item",
+                                  "view_item_list",
+                                  "view_promotion",
+                                  "view_search_results",
+                                  "video_complete",
+                                  "video_progress",
+                                  "video_start",
+                                ]}
+                              >
+                                {(item) => (
+                                  <option key={item} value={item}>
+                                    {item}
+                                  </option>
+                                )}
+                              </For>
+                            </NativeSelect.Field>
+                            <NativeSelect.Indicator />
+                          </NativeSelect.Root>
+                        </Field.Root>
+                      </Fieldset.Content>
+                      <Button
+                        className={styles.ctaButton}
+                        type="submit"
+                        alignSelf="flex-start"
+                        onClick={handleDefaultFormSubmission}
+                      >
+                        Generate Event
+                      </Button>
+                    </Fieldset.Root>
+                  </Tabs.Content>
+                  <Tabs.Content value={"custom"}>
+                    <Fieldset.Root size={{ base: "sm", md: "md", lg: "lg" }}>
+                      <Fieldset.Legend my={4}>
+                        Please provide details on your custom event.
+                      </Fieldset.Legend>
+                      <Fieldset.Content>
+                        <Field.Root my={4} required>
+                          <Field.Label>
+                            Tracking medium
+                            <Field.RequiredIndicator />
+                          </Field.Label>
+                          <NativeSelect.Root>
+                            <NativeSelect.Field
+                              px={4}
+                              value={customTrackingMedium}
+                              onChange={(e) =>
+                                setCustomTrackingMedium(e.target.value)
+                              }
+                              name={"tracking-medium"}
+                            >
+                              <For
+                                each={[
+                                  "GTM's dataLayer",
+                                  "Gtag.js",
+                                  "Measurement Protocol",
+                                ]}
+                              >
+                                {(item) => (
+                                  <option key={item} value={item}>
+                                    {item}
+                                  </option>
+                                )}
+                              </For>
+                            </NativeSelect.Field>
+                            <NativeSelect.Indicator />
+                          </NativeSelect.Root>
+                        </Field.Root>
+                        <Field.Root my={4} required>
+                          <Field.Label>
+                            Event description
+                            <Field.RequiredIndicator />
+                          </Field.Label>
+                          <Textarea
+                            variant="flushed"
+                            size={{ base: "sm", md: "sm", lg: "lg", xl: "xl" }}
+                            placeholder="Please describe the event by adding a name and the desired parameter names..."
+                            value={customEventDescription}
+                            onChange={(e) =>
+                              setCustomEventDescription(e.target.value)
+                            }
+                          />
+                        </Field.Root>
+                      </Fieldset.Content>
+                      <Button
+                        className={styles.ctaButton}
+                        type="submit"
+                        alignSelf="flex-start"
+                        onClick={handleCustomFormSubmission}
+                      >
+                        Generate Event
+                      </Button>
+                    </Fieldset.Root>
+                  </Tabs.Content>
+                </Tabs.Root>
+              </Flex>
+            </Flex>
+          </section>
+          <section id={"code"}></section>
+        </Flex>
+      </main>
+      <Footer />
+    </div>
+  );
+}
