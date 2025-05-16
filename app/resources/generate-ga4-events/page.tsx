@@ -22,6 +22,7 @@ import {
   Textarea,
   Tabs,
   Button,
+  Box,
 } from "@chakra-ui/react";
 
 export default function GenerateGA4Events() {
@@ -36,6 +37,9 @@ export default function GenerateGA4Events() {
   // State handling for the custom event description
   const [customEventDescription, setCustomEventDescription] = useState("");
 
+  const [generatedCode, setGenerateCode] = useState(
+    "Choose which event you need help with and we'll handle the rest"
+  );
   const handleDefaultFormSubmission = () => {
     return console.log(
       `The form was submitted! And the default medium is ${defaultTrackingMedium} and the tracked event is ${defaultEventName}`
@@ -254,7 +258,35 @@ export default function GenerateGA4Events() {
               </Flex>
             </Flex>
           </section>
-          <section id={"code"}></section>
+          <section id={"code"}>
+            <Flex
+              bg="gray.900"
+              mx={"auto"}
+              py={4}
+              px={2}
+              wordBreak={"break-word"}
+              borderRadius="xl"
+              maxW={"100%"}
+              height={"100%"}
+              overflowWrap={"break-word"}
+            >
+              <Box
+                bg="gray.800"
+                p={6}
+                borderRadius="md"
+                color="white"
+                overflowX="hidden"
+                height={"100%"}
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.9rem",
+                  whiteSpace: "pre-wrap",
+                }}
+              >
+                {generatedCode}
+              </Box>
+            </Flex>
+          </section>
         </Flex>
       </main>
       <Footer />
