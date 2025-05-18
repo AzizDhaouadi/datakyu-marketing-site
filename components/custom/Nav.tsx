@@ -33,7 +33,7 @@ const navItems = [
     href: "#",
     items: [
       { name: "Blog", href: "https://datajournal.datakyu.co/" },
-      { name: "GA4 Generator", href: "#" },
+      { name: "GA4 Generator", href: "/resources/generate-ga4-events" },
       {
         name: "GTM Templates",
         href: "/resources/google-tag-manager-templates",
@@ -78,7 +78,9 @@ export default function SimpleNav() {
                   <Box
                     position="relative"
                     className="nav-dropdown"
-                    _hover={{ "& > .dropdown-content": { display: "block" } }}
+                    _hover={{
+                      "& > .dropdown-content": { display: "block" },
+                    }}
                   >
                     <HStack gap={1} cursor="pointer">
                       <Text fontWeight="medium">{item.title}</Text>
