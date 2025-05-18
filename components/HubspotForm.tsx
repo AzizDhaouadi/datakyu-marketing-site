@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useEffect } from "react";
+import track from "@/app/lib/universalTracking";
 
 type HubspotFormProps = {
   portalId: string;
@@ -25,6 +26,28 @@ export default function HubspotForm({
           region: region,
           onFormReady: function () {
             console.log("Loaded!");
+            return track({
+              trackingPlatform: { segment: true, dataLayer: true },
+              eventPayload: {
+                event_name: "initiated_contact_form",
+                event_parameters: { form_id: formId },
+              },
+              identify: { capture: false, identifier: "" },
+            });
+          },
+          onFormSubmit: function (form: any) {
+            // console.log(form["elements"]["email"].value);
+            track({
+              trackingPlatform: { segment: true, dataLayer: true },
+              eventPayload: {
+                event_name: "captured_lead",
+                event_parameters: { form_id: formId },
+              },
+              identify: {
+                capture: true,
+                identifier: form["elements"]["email"].value,
+              },
+            });
           },
         });
       }
