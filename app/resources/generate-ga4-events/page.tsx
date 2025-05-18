@@ -9,6 +9,7 @@ import styles from "../../page.module.css";
 // 🧩 Custom Components – Core
 import Nav from "@/components/custom/Nav";
 import HeroHeading from "@/components/custom/HeroHeading";
+import TypedCodeSection from "@/components/animation/TypedCode";
 import Footer from "@/components/custom/Footer";
 
 // 💅 Chakra UI
@@ -23,6 +24,8 @@ import {
   Tabs,
   Button,
   Box,
+  SkeletonText,
+  Clipboard,
 } from "@chakra-ui/react";
 
 export default function GenerateGA4Events() {
@@ -36,22 +39,97 @@ export default function GenerateGA4Events() {
     useState("GTM's dataLayer"); // setting the default value to GTM's dataLayer as that's selected by default
   // State handling for the custom event description
   const [customEventDescription, setCustomEventDescription] = useState("");
+  // state handling for loading
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [generatedCode, setGenerateCode] = useState(
+  const [generatedCode, setGenerateCode] = useState<string | any>(
     "Choose which event you need help with and we'll handle the rest"
   );
-  const handleDefaultFormSubmission = () => {
-    return console.log(
-      `The form was submitted! And the default medium is ${defaultTrackingMedium} and the tracked event is ${defaultEventName}`
-    );
+
+  const defaultPrompt = `Given the GA4 event name "${defaultEventName}" and the tracking method "${defaultTrackingMedium}", generate the JavaScript code only, with:
+
+- No markdown
+- No triple backticks
+- No language tags like "javascript"
+- Just clean, raw JS code that can be copy-pasted into a file.
+
+If the tracking method is:
+- "gtag": use gtag('event', ...)
+- "dataLayer": use window.dataLayer.push({...})
+- "Measurement Protocol": use fetch() in Node.js with the body as a JS object, sent to the GA4 MP endpoint
+
+❌ Do not wrap the output in any formatting
+✅ Output raw code only`;
+
+  const customEventPrompt = `Givent the tracking method ${customTrackingMedium} and the event description: ${customEventDescription},  generate the JavaScript code only, with:
+
+- No markdown
+- No triple backticks
+- No language tags like "javascript"
+- Just clean, raw JS code that can be copy-pasted into a file.
+
+If the tracking method is:
+- "gtag": use gtag('event', ...)
+- "dataLayer": use window.dataLayer.push({...})
+- "Measurement Protocol": use fetch() in Node.js with the body as a JS object, sent to the GA4 MP endpoint
+
+❌ Do not wrap the output in any formatting
+✅ Output raw code only`;
+
+  const handleDefaultFormSubmission = async () => {
+    setIsLoading(true);
+    const generatedResponse = await fetch("/api/generate-event", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        prompt: defaultPrompt,
+      }),
+    });
+    setIsLoading(false);
+
+    if (!generatedResponse.ok) {
+      const errorPayload = await generatedResponse.json();
+      throw new Error(
+        `HTTP error! Status: ${generatedResponse.status}. Error: ${errorPayload.error}`
+      );
+    }
+
+    const data = await generatedResponse.json();
+
+    setGenerateCode(data.text);
   };
 
-  const handleCustomFormSubmission = () => {
-    return console.log(
-      `The form was submitted! And the default medium is ${customTrackingMedium} and the event description is ${customEventDescription}`
-    );
+  const handleCustomFormSubmission = async () => {
+    setIsLoading(true);
+    const generatedCustomEventResponse = await fetch("/api/generate-event", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        prompt: customEventPrompt,
+      }),
+    });
+
+    setIsLoading(false);
+
+    if (!generatedCustomEventResponse.ok) {
+      const errPayload = await generatedCustomEventResponse.json();
+      throw new Error(
+        `HTTP error! Status: ${generatedCustomEventResponse.status}. Error: ${errPayload.error}`
+      );
+    }
+
+    const customEventData = await generatedCustomEventResponse.json();
+
+    setGenerateCode(customEventData.text);
   };
 
+  const codeReady = (
+    <TypedCodeSection
+      codeToType={generatedCode}
+      smartBackspace={false}
+      isGen={true}
+    />
+  );
   return (
     <div className={styles.page}>
       <header style={{ width: "100%" }} className={styles.header}>
@@ -259,33 +337,61 @@ export default function GenerateGA4Events() {
             </Flex>
           </section>
           <section id={"code"}>
-            <Flex
-              bg="gray.900"
-              mx={"auto"}
-              py={4}
-              px={2}
-              wordBreak={"break-word"}
-              borderRadius="xl"
-              maxW={"100%"}
-              height={"100%"}
-              overflowWrap={"break-word"}
-            >
+            {isLoading ? (
               <Box
-                bg="gray.800"
-                p={6}
-                borderRadius="md"
-                color="white"
-                overflowX="hidden"
+                width={{ lg: "25rem", xl: "45rem" }}
+                bg="gray.900"
+                mx={"auto"}
+                color={"white"}
+                py={4}
+                px={2}
+                wordBreak={"break-word"}
+                borderRadius="xl"
+                maxW={"100%"}
                 height={"100%"}
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "0.9rem",
-                  whiteSpace: "pre-wrap",
-                }}
+                overflowWrap={"break-word"}
+                overflowX="hidden"
+                fontFamily={"var(--font-mono)"}
+                fontSize={"0.9rem"}
+                whiteSpace={"pre-wrap"}
               >
-                {generatedCode}
+                <SkeletonText noOfLines={5} gap="4" />
               </Box>
-            </Flex>
+            ) : (
+              <Box
+                width={{ lg: "25rem", xl: "45rem" }}
+                bg="gray.900"
+                mx={"auto"}
+                color={"white"}
+                py={4}
+                px={2}
+                wordBreak={"break-word"}
+                borderRadius="xl"
+                maxW={"100%"}
+                height={"100%"}
+                overflowWrap={"break-word"}
+                overflowX="hidden"
+                fontFamily={"var(--font-mono)"}
+                fontSize={"0.9rem"}
+                whiteSpace={"pre-wrap"}
+              >
+                <Flex
+                  direction={"row"}
+                  alignItems={"flex-end"}
+                  justifyContent={"flex-end"}
+                >
+                  <Clipboard.Root value={generatedCode}>
+                    <Clipboard.Trigger asChild>
+                      <Button variant="surface" size="sm">
+                        <Clipboard.Indicator />
+                        <Clipboard.CopyText />
+                      </Button>
+                    </Clipboard.Trigger>
+                  </Clipboard.Root>
+                </Flex>
+                {codeReady}
+              </Box>
+            )}
           </section>
         </Flex>
       </main>
