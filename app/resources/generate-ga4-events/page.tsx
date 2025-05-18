@@ -12,6 +12,9 @@ import HeroHeading from "@/components/custom/HeroHeading";
 import TypedCodeSection from "@/components/animation/TypedCode";
 import Footer from "@/components/custom/Footer";
 
+// 💻 tracking library
+import track from "@/app/lib/universalTracking";
+
 // 💅 Chakra UI
 import {
   Text,
@@ -97,6 +100,15 @@ If the tracking method is:
     const data = await generatedResponse.json();
 
     setGenerateCode(data.text);
+
+    track({
+      trackingPlatform: { segment: true, dataLayer: true },
+      eventPayload: {
+        event_name: "generated_code_sample",
+        event_parameters: { medium: defaultTrackingMedium },
+      },
+      identify: { capture: false, identifier: "" },
+    });
   };
 
   const handleCustomFormSubmission = async () => {
@@ -121,6 +133,15 @@ If the tracking method is:
     const customEventData = await generatedCustomEventResponse.json();
 
     setGenerateCode(customEventData.text);
+
+    track({
+      trackingPlatform: { segment: true, dataLayer: true },
+      eventPayload: {
+        event_name: "generated_code_sample",
+        event_parameters: { medium: customTrackingMedium },
+      },
+      identify: { capture: false, identifier: "" },
+    });
   };
 
   const codeReady = (

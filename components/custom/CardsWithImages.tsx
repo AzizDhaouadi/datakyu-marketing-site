@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { Flex, Card, Image, Link } from "@chakra-ui/react";
 import CallToActionButton from "./CallToActionButton";
+import track from "@/app/lib/universalTracking";
 
 type CardsWithImagesProps = {
   image?: string | null;
@@ -30,6 +32,21 @@ export default function CardsWithImages({
     }
   };
 
+  const handleClickTracking = (e: React.MouseEvent) => {
+    track({
+      trackingPlatform: { dataLayer: true, segment: false },
+      eventPayload: {
+        event_name: "Download Resource",
+        event_parameters: {
+          template_name: (e.target as HTMLElement)
+            .closest("[data-template-target]")
+            ?.querySelector("[data-template-value]")?.textContent,
+        },
+      },
+      identify: { capture: false, identifier: "" },
+    });
+  };
+
   return (
     <Flex
       direction={"row"}
@@ -39,7 +56,13 @@ export default function CardsWithImages({
       wrap={"wrap"}
     >
       {cardsContent.map((card, index) => (
-        <Card.Root key={index} maxW="sm" p={4} overflow="hidden">
+        <Card.Root
+          key={index}
+          maxW="sm"
+          p={4}
+          data-template-target={card.title}
+          overflow="hidden"
+        >
           {card.image && (
             <Image
               mx={"auto"}
@@ -49,7 +72,9 @@ export default function CardsWithImages({
             />
           )}
           <Card.Body mt={4} gap="2">
-            <Card.Title color={"rgb(79, 59, 62)"}>{card.title}</Card.Title>
+            <Card.Title data-template-value color={"rgb(79, 59, 62)"}>
+              {card.title}
+            </Card.Title>
             <Card.Description>{card.description}</Card.Description>
           </Card.Body>
           {card.includeFooter && (
@@ -67,6 +92,7 @@ export default function CardsWithImages({
                     variant={"underline"}
                     href={downloadableLinkMapping(card.title)}
                     target={"_blank"}
+                    onClick={handleClickTracking}
                   >
                     {card.title.toLowerCase().includes("bigquery")
                       ? "Replicate"

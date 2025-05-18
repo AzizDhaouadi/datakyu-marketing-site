@@ -6,6 +6,8 @@ import "./globals.css";
 import styles from "./page.module.css";
 import { Analytics } from "@vercel/analytics/next";
 
+import Script from "next/script";
+
 const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -31,6 +33,11 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes={"192x192"} />
+        <Script
+          type="text/javascript"
+          src="/platforms/load.js"
+          strategy="afterInteractive"
+        ></Script>
       </head>
       <body
         className={`${plexSans.variable} ${plexMono.variable} ${styles.body}`}
