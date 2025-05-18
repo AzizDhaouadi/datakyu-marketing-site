@@ -8,6 +8,7 @@ export default function IllustrationWithText({
   imageAlt,
   features,
   reverse,
+  elaboration,
 }: {
   title: string;
   description: string;
@@ -15,6 +16,7 @@ export default function IllustrationWithText({
   imageAlt?: string;
   features: string[];
   reverse?: boolean;
+  elaboration?: string[];
 }) {
   return (
     <Flex
@@ -24,7 +26,12 @@ export default function IllustrationWithText({
       justifyContent={"center"}
       mx="auto"
     >
-      <Box display={{ base: "none", lg: "initial" }} width={{ lg: "30%" }}>
+      <Box
+        display={{ base: "none", lg: "flex" }}
+        justifyContent={"center"}
+        alignItems={"center"}
+        width={{ lg: "30%" }}
+      >
         <Image
           src={imageSrc}
           mx={"auto"}
@@ -54,6 +61,12 @@ export default function IllustrationWithText({
             </List.Item>
           ))}
         </List.Root>
+        {Array.isArray(elaboration) &&
+          elaboration.map((item, index) => (
+            <Text fontSize={"lg"} key={index}>
+              {item}
+            </Text>
+          ))}
       </Flex>
     </Flex>
   );
