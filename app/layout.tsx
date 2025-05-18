@@ -4,9 +4,18 @@ import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { Provider } from "@/components/ui/provider";
 import "./globals.css";
 import styles from "./page.module.css";
+import { Analytics } from "@vercel/analytics/next";
 
-const plexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-sans' });
-const plexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400'], variable: '--font-mono' });
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-sans",
+});
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,9 +29,15 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body className={`${plexSans.variable} ${plexMono.variable} ${styles.body}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes={"192x192"} />
+      </head>
+      <body
+        className={`${plexSans.variable} ${plexMono.variable} ${styles.body}`}
+      >
         <Provider>
           {children}
+          <Analytics />
         </Provider>
       </body>
     </html>

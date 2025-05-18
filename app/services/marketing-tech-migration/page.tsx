@@ -248,6 +248,7 @@ mixpanel.track(
               src={"/images/todo.png"}
               display={{ base: "none", lg: "initial" }}
               width={"30rem"}
+              alt={"An individual holding a checklist"}
             />
             <Flex
               direction={"column"}
