@@ -1,6 +1,9 @@
 // 🖼️ Styles
 import styles from "./page.module.css";
 
+// ⚛️ Dynamic SEO metadata generation
+import { getPageMetadata } from "./lib/helper/generatePageMetadata";
+
 // 🧩 Custom Components – Core
 import Nav from "@/components/custom/Nav";
 import HeroHeading from "@/components/custom/HeroHeading";
@@ -20,6 +23,10 @@ import { Text, Heading, Box, Image } from "@chakra-ui/react";
 // 🎨 Icons
 import { LuFolder, LuSquareCheck, LuUser, LuDatabase } from "react-icons/lu";
 import { FiMap, FiTrendingUp, FiShield, FiPercent } from "react-icons/fi";
+
+export async function generateMetadata() {
+  return getPageMetadata("/");
+}
 
 export default function Home() {
   const featuredCards = [

@@ -18,6 +18,9 @@ import FAQ from "@/components/custom/FAQ";
 // 💅 Chakra UI
 import { Text, Box, Flex, Heading, Image } from "@chakra-ui/react";
 
+// ⚛️ Dynamic SEO metadata generation
+import { getPageMetadata } from "../../lib/helper/generatePageMetadata";
+
 // 🎨 Icons
 import { LuLayers3 } from "react-icons/lu";
 import { FaGaugeHigh } from "react-icons/fa6";
@@ -25,6 +28,10 @@ import { FcWorkflow } from "react-icons/fc";
 import { GiChoice } from "react-icons/gi";
 import { MdTimeline } from "react-icons/md";
 import { BiLineChart } from "react-icons/bi";
+
+export async function generateMetadata() {
+  return getPageMetadata("/services/martech-audits");
+}
 
 export default function MarTechAudits() {
   const codesToType = [
@@ -294,7 +301,7 @@ amplitude.getInstance().logEvent("submitted_form", {
             interaction.
           </Text>
         </section>
-        <CallToActionButton text={"Request an Audit"} toCenter={true} />
+        <CallToActionButton text={"Request an Audit"} toCenter={{ lg: true }} />
         <section id="typed-code">
           <Box
             display={{ base: "none", md: "none", lg: "inherit" }}

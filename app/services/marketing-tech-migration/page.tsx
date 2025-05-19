@@ -11,6 +11,9 @@ import ListsWithIcons from "@/components/custom/ListsWithIcons";
 import CardsWithImages from "@/components/custom/CardsWithImages";
 import Footer from "@/components/custom/Footer";
 
+// ⚛️ Dynamic SEO metadata generation
+import { getPageMetadata } from "../../lib/helper/generatePageMetadata";
+
 // 🎞️ Custom Components – Animations
 import TypedCodeSection from "@/components/animation/TypedCode";
 
@@ -24,6 +27,10 @@ import { FiShield } from "react-icons/fi";
 import { FaDatabase } from "react-icons/fa";
 import { GiCookie } from "react-icons/gi";
 import { MdTrendingUp } from "react-icons/md";
+
+export async function generateMetadata() {
+  return getPageMetadata("/services/marketing-tech-migration");
+}
 
 export default function MarketingTechMigration() {
   const codeToType = ["business.", "team.", "startup."];

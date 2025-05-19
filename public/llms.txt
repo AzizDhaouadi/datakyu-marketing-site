@@ -1,0 +1,13 @@
+# Datakyu
+## Description: Datakyu is a marketing analytics agency helping businesses track what matters and scale with clarity—no fluff, no bloat.
+
+## Navigation
+- [Home](/)
+- [MarTech Audits](/services/martech-audits)
+- [Tech Stack Migration](/services/marketing-tech-migration)
+- [Custom Analytics Solutions](/services/custom-marketing-analytics)
+
+## Resources
+- [GA4 Event Generator](/resources/generate-ga4-events)
+- [GTM Templates](/resources/google-tag-manager-templates)
+- [Looker Studio Templates](/resources/looker-studio-templates)

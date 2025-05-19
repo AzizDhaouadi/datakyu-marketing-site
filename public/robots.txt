@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /download
+
+Sitemap: https://datakyu.co/sitemap.xml
+LLM: https://datakyu.co/llms.txt

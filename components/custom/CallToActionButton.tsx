@@ -7,18 +7,11 @@ export default function CallToActionButton({
   toCenter,
 }: {
   text: string;
-  toCenter?: { base: boolean; md: boolean; lg: boolean; xl: boolean } | boolean;
+  toCenter?: any | boolean;
 }) {
   let mx = {};
   if (typeof toCenter === "object") {
-    mx = toCenter
-      ? {
-          base: toCenter.base ? "auto" : 0,
-          md: toCenter.md ? "auto" : 0,
-          lg: toCenter.lg ? "auto" : 0,
-          xl: toCenter.xl ? "auto" : 0,
-        }
-      : "initial";
+    mx = toCenter.lg ? "auto" : "initial";
   }
   return (
     <Flex

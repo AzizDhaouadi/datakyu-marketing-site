@@ -19,6 +19,13 @@ import {
   List,
 } from "@chakra-ui/react";
 
+// ⚛️ Dynamic SEO metadata generation
+import { getPageMetadata } from "@/app/lib/helper/generatePageMetadata";
+
+export async function generateMetadata() {
+  return getPageMetadata("/resources/looker-studio-templates");
+}
+
 export default function LookerStudioTemplates() {
   const dashboardTemplatesContent = [
     {
