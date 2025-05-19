@@ -13,6 +13,9 @@ import CallToActionSection from "@/components/custom/CallToActionSection";
 import SinFunction from "@/components/animation/SinFunction";
 import Footer from "@/components/custom/Footer";
 
+// ⚛️ Dynamic SEO metadata generation
+import { getPageMetadata } from "@/app/lib/helper/generatePageMetadata";
+
 // 💅 Chakra UI
 import {
   Text,
@@ -30,6 +33,10 @@ import "prismjs/themes/prism-tomorrow.css";
 
 // 🎨 Icons
 import { LuFolder, LuSquareCheck, LuUser, LuDatabase } from "react-icons/lu";
+
+export async function generateMetadata() {
+  return getPageMetadata("/services/custom-marketing-analytics");
+}
 
 export default function CustomMarketingAnalytics() {
   const dialogsContent = [

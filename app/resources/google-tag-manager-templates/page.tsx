@@ -9,6 +9,9 @@ import FAQ from "@/components/custom/FAQ";
 import Footer from "@/components/custom/Footer";
 import CallToActionSection from "@/components/custom/CallToActionSection";
 
+// ⚛️ Dynamic SEO metadata generation
+import { getPageMetadata } from "@/app/lib/helper/generatePageMetadata";
+
 // 💅 Chakra UI
 import {
   Text,
@@ -18,6 +21,10 @@ import {
   Timeline,
   List,
 } from "@chakra-ui/react";
+
+export async function generateMetadata() {
+  return getPageMetadata("/resources/google-tag-manager-templates");
+}
 
 export default function GoogleTagManagerTemplates() {
   const containerTemplatesContent = [

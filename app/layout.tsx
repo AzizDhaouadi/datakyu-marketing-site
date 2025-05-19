@@ -38,6 +38,12 @@ export default function RootLayout({
           src="/platforms/load.js"
           strategy="afterInteractive"
         ></Script>
+        <script
+          id="cookieyes"
+          type="text/javascript"
+          src="https://cdn-cookieyes.com/client_data/5cd9002534c83870252a4773/script.js"
+        ></script>
+        <script src="https://js.sentry-cdn.com/17dc7fee29c01933e3c3df799f1c804b.min.js"></script>
       </head>
       <body
         className={`${plexSans.variable} ${plexMono.variable} ${styles.body}`}
