@@ -9,5 +9,37 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/resources/ga4-event-tracking-code-generator.html",
+      "destination": "/resources/generate-ga4-events",
+      "permanent": true
+    },
+    {
+      "source": "/resources/google-tag-manager-container-templates.html",
+      "destination": "/resources/google-tag-manager-templates",
+      "permanent": true
+    },
+    {
+      "source": "/resources/looker-studio-templates.html",
+      "destination": "/resources/looker-studio-templates",
+      "permanent": true
+    },
+    {
+      "source": "/services/auditing-and-implementation.html",
+      "destination": "/services/martech-audits",
+      "permanent": true
+    },
+    {
+      "source": "/services/marketing-tech-stack-migration.html",
+      "destination": "/services/marketing-tech-migration",
+      "permanent": true
+    },
+    {
+      "source": "/services/custom-marketing-analytics.html",
+      "destination": "/services/custom-marketing-analytics",
+      "permanent": true
+    }
   ]
 }

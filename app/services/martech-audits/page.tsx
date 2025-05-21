@@ -471,11 +471,20 @@ amplitude.getInstance().logEvent("submitted_form", {
           <section id="post-cards-contact-us">
             <CallToActionButton
               text={"Contact our Sales Team"}
-              toCenter={true}
+              toCenter={{ base: true, md: true, lg: true, xl: true }}
             />
           </section>
         </section>
         <section id="faq-section">
+          <Heading
+            my={6}
+            size={"4xl"}
+            textAlign={"left"}
+            letterSpacing={"tight"}
+            textAlignLast={"center"}
+          >
+            Frequently Asked Questions
+          </Heading>
           <Image
             style={{ margin: "0 auto" }}
             src={"/images/faq.png"}

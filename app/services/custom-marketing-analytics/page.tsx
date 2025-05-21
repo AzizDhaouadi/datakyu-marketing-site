@@ -308,7 +308,7 @@ mixpanel.track(
           <CardsWithImages cardsContent={featureCardsContent} />
           <CallToActionButton
             text={"Contact us"}
-            toCenter={{ base: true, md: true, lg: false, xl: false }}
+            toCenter={{ base: true, md: true, lg: true, xl: true }}
           />
         </section>
         <section style={{ marginTop: "2rem" }} id={"analytics-tech-stack"}>
