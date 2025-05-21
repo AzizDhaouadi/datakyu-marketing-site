@@ -12,28 +12,34 @@
   ],
   "redirects": [
     {
-        "source": "https://www.datakyu.co/resources/ga4-event-tracking-code-generator.html",
-        "destination": "/resources/generate-ga4-events"
+      "source": "/resources/ga4-event-tracking-code-generator.html",
+      "destination": "/resources/generate-ga4-events",
+      "permanent": true
     },
     {
-        "source": "https://www.datakyu.co/resources/google-tag-manager-container-tempaltes.html",
-        "destination": "/resources/google-tag-manager-templates"
+      "source": "/resources/google-tag-manager-container-templates.html",
+      "destination": "/resources/google-tag-manager-templates",
+      "permanent": true
     },
     {
-        "source": "https://www.datakyu.co/resources/looker-studio-templates.html",
-        "destination": "/resources/looker-studio-templates"
+      "source": "/resources/looker-studio-templates.html",
+      "destination": "/resources/looker-studio-templates",
+      "permanent": true
     },
     {
-        "source": "https://www.datakyu.co/services/auditing-and-implementation.html",
-        "destination": "/services/martech-audits"
+      "source": "/services/auditing-and-implementation.html",
+      "destination": "/services/martech-audits",
+      "permanent": true
     },
     {
-        "source": "https://www.datakyu.co/services/marketing-tech-stack-migration.html",
-        "destination": "/services/marketing-tech-migration"
+      "source": "/services/marketing-tech-stack-migration.html",
+      "destination": "/services/marketing-tech-migration",
+      "permanent": true
     },
     {
-        "source": "https://www.datakyu.co/services/custom-marketing-analytics.html",
-        "destination": "/services/custom-marketing-analytics"
+      "source": "/services/custom-marketing-analytics.html",
+      "destination": "/services/custom-marketing-analytics",
+      "permanent": true
     }
   ]
 }
