@@ -13,33 +13,27 @@
   "redirects": [
     {
         "source": "https://www.datakyu.co/resources/ga4-event-tracking-code-generator.html",
-        "destination": "/resources/generate-ga4-events",
-        "status": 301
+        "destination": "/resources/generate-ga4-events"
     },
     {
         "source": "https://www.datakyu.co/resources/google-tag-manager-container-tempaltes.html",
-        "destination": "/resources/google-tag-manager-templates",
-        "status": 301
+        "destination": "/resources/google-tag-manager-templates"
     },
     {
         "source": "https://www.datakyu.co/resources/looker-studio-templates.html",
-        "destination": "/resources/looker-studio-templates",
-        "status": 301
+        "destination": "/resources/looker-studio-templates"
     },
     {
         "source": "https://www.datakyu.co/services/auditing-and-implementation.html",
-        "destination": "/services/martech-audits",
-        "status": 301
+        "destination": "/services/martech-audits"
     },
     {
         "source": "https://www.datakyu.co/services/marketing-tech-stack-migration.html",
-        "destination": "/services/marketing-tech-migration",
-        "status": 301
+        "destination": "/services/marketing-tech-migration"
     },
     {
         "source": "https://www.datakyu.co/services/custom-marketing-analytics.html",
-        "destination": "/services/custom-marketing-analytics",
-        "status": 301
+        "destination": "/services/custom-marketing-analytics"
     }
   ]
 }
