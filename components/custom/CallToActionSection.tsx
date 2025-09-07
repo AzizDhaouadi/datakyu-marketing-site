@@ -15,7 +15,6 @@ export default function CallToActionSection({
       align={"center"}
       justify={"center"}
       gap={4}
-      bg={"gray.50"}
       borderRadius={"md"}
       p={4}
       w={"fit-content"}

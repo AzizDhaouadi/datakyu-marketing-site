@@ -18,7 +18,7 @@ import SineWaveAnimation from "@/components/animation/SinFunction";
 import SlidingLogoGrid from "@/components/animation/SlidingLogoGrid";
 
 // 💅 Chakra UI
-import { Text, Heading, Box, Image } from "@chakra-ui/react";
+import { Text, Heading, Box, Image, Flex } from "@chakra-ui/react";
 
 // 🎨 Icons
 import { LuFolder, LuSquareCheck, LuUser, LuDatabase } from "react-icons/lu";
@@ -131,13 +131,13 @@ export default function Home() {
             We help you own the unlimited power of your marketing data.
           </Text>
           <Box display={{ base: "none", lg: "initial" }}>
-            <Image
+            {/* <Image
               src="/images/collaboration.png"
               alt="Two analysts collaborating on a data project"
               m={{ lg: "0 auto" }}
               width={"45rem"}
               height={"auto"}
-            />
+            /> */}
           </Box>
         </section>
         <section id="offered-services">
@@ -149,62 +149,70 @@ export default function Home() {
           >
             Our Data Driven Approach
           </Heading>
-          <IllustrationWithText
-            title={"Set goals and build a measurement plan"}
-            description={
-              "We are here to listen and we are here help. Let us know what your business goals are and we will help you build a plan to measure exactly what you need to grow."
-            }
-            imageSrc={"/images/Climbing.png"}
-            imageAlt={"A person climibing strairs"}
-            features={[
-              "Identify Key Business Goals",
-              "Build a Measurement Infrastructure",
-              "Ensure Data Fidelity & Integrity",
-            ]}
-            reverse={false}
-            elaboration={[
-              "At Datakyu, we believe analytics should work for you — not overwhelm you. Whether you're running an e-commerce store, a SaaS startup, or a service-based business, the truth is the same: you can't grow what you don't measure. That’s why we're here — to help you understand what matters most and remove the guesswork from your marketing and product decisions.",
-              "Our approach starts with listening. You tell us your goals — whether it's increasing conversions, reducing churn, or understanding customer behavior — and we’ll translate those into a clear, actionable measurement strategy. No fluff, no complicated dashboards you’ll never open — just the insights that directly support your business outcomes.",
-              "You're not alone in this. We’ll help you define success, implement the right tracking tools, and make sense of the numbers that drive real growth. Let us know where you’re headed — we’ll help you measure the way.",
-            ]}
-          />
-          <IllustrationWithText
-            title={"Establish data-backed growth"}
-            description={
-              "We build execute our tracking to reflect our measurement plan which gives you the confidence to reduce uncertainty and make data-driven decisions."
-            }
-            imageSrc={"/images/on-laptop.png"}
-            imageAlt={"A person working on a laptop"}
-            features={[
-              "Focus on Real Metrics",
-              "Capture Meaningful Data",
-              "Build a Data-Driven Culture",
-            ]}
-            reverse={true}
-            elaboration={[
-              "At Datakyu, we don’t just track for the sake of tracking — we build with purpose. Every implementation begins with a solid measurement plan that aligns with your business objectives. Whether you're focused on increasing leads, improving conversion rates, or understanding user behavior, we tailor the tracking strategy to support those exact goals.",
-              "Once the plan is defined, we execute with precision. Our team implements tracking across your platforms — from websites to apps to CRMs — ensuring every event, parameter, and conversion point is cleanly captured and aligned with your data ecosystem. That way, you’re not drowning in noise — you’re seeing the signals that matter.",
-              "The result? Confidence. With a clear measurement framework and execution you can trust, you gain the clarity to reduce uncertainty and make decisions backed by real data. You’ll stop guessing and start steering — toward growth, efficiency, and smarter strategy.",
-            ]}
-          />
-          <IllustrationWithText
-            title={"Visualize your data and follow your growth"}
-            description={
-              "We don't just track data, we visualize it as well. Our dashboarding tools are our canvas and we are known for producing beautiful art."
-            }
-            imageSrc={"/images/project-management.png"}
-            imageAlt={"A person working on industrial drawings."}
-            features={[
-              "Gain Insights Beyond KPIs",
-              "Tailored Dashboards for All Stakeholders",
-            ]}
-            reverse={false}
-            elaboration={[
-              "At Datakyu, we don’t just track data — we bring it to life. Once your events and metrics are flowing correctly, we design dashboards that speak clearly, beautifully, and with purpose. Whether you're tracking campaign performance, product engagement, or customer retention, we make sure the numbers don't just exist — they make sense.",
-              "Our dashboards aren’t templates slapped together — they’re crafted. Every chart, filter, and metric tile is placed with intention. We use tools like Looker Studio, Hex, and Sigma not just to report, but to reveal. The result is something clean, fast, and easy to use — a control panel for your business.",
-              "It’s not just analytics. It’s visual storytelling. When you share our dashboards with your team, your clients, or your board — they’ll get it instantly. That’s the art. Data is the medium. Growth is the result.",
-            ]}
-          />
+          <Flex
+            direction={"row"}
+            my={4}
+            justifyContent={"center"}
+            gap={4}
+            width={{ lg: "100%" }}
+          >
+            <IllustrationWithText
+              title={"Build a measurement plan"}
+              description={
+                "We are here to listen and we are here help. Let us know what your business goals are and we will help you build a plan to measure exactly what you need to grow."
+              }
+              // imageSrc={"/images/Climbing.png"}
+              // imageAlt={"A person climibing strairs"}
+              // features={[
+              //   "Identify Key Business Goals",
+              //   "Build a Measurement Infrastructure",
+              //   "Ensure Data Fidelity & Integrity",
+              // ]}
+              reverse={false}
+              // elaboration={[
+              //   "At Datakyu, we believe analytics should work for you — not overwhelm you. Whether you're running an e-commerce store, a SaaS startup, or a service-based business, the truth is the same: you can't grow what you don't measure. That’s why we're here — to help you understand what matters most and remove the guesswork from your marketing and product decisions.",
+              // ]}
+            />
+            <IllustrationWithText
+              title={"Establish data-backed growth"}
+              description={
+                "We build execute our tracking to reflect our measurement plan which gives you the confidence to reduce uncertainty and make data-driven decisions."
+              }
+              // imageSrc={"/images/on-laptop.png"}
+              // imageAlt={"A person working on a laptop"}
+              // features={[
+              //   "Focus on Real Metrics",
+              //   "Capture Meaningful Data",
+              //   "Build a Data-Driven Culture",
+              // ]}
+              reverse={true}
+              // elaboration={[
+              //   "At Datakyu, we don’t just track for the sake of tracking — we build with purpose. Every implementation begins with a solid measurement plan that aligns with your business objectives. Whether you're focused on increasing leads, improving conversion rates, or understanding user behavior, we tailor the tracking strategy to support those exact goals.",
+              // ]}
+            />
+            <IllustrationWithText
+              title={"Visualize your data"}
+              description={
+                "We don't just track data, we visualize it as well. Our dashboarding tools are our canvas and we are known for producing beautiful art."
+              }
+              // imageSrc={"/images/project-management.png"}
+              // // imageAlt={"A person working on industrial drawings."}
+              // features={[
+              //   "Gain Insights Beyond KPIs",
+              //   "Tailored Dashboards for All Stakeholders",
+              // ]}
+              reverse={false}
+              // elaboration={[
+              //   "At Datakyu, we don’t just track data — we bring it to life. Once your events and metrics are flowing correctly, we design dashboards that speak clearly, beautifully, and with purpose. Whether you're tracking campaign performance, product engagement, or customer retention, we make sure the numbers don't just exist — they make sense.",
+              // ]}
+            />
+            <IllustrationWithText
+              title={"Identify opportunities"}
+              description={
+                "We dig into your raw data and augment it as well as enrich it with CRM connectivity to empower your business. We help you catch shifts, outliers, and signals that point to real growth."
+              }
+            />
+          </Flex>
         </section>
         <section id="features">
           <Heading
@@ -237,7 +245,7 @@ export default function Home() {
           <Heading
             size={"4xl"}
             my={6}
-            color={"rgb(79, 59, 62)"}
+            color={"#311c3b"}
             textAlign={"center"}
             letterSpacing={"tight"}
           >
@@ -249,7 +257,7 @@ export default function Home() {
           <Heading
             size={"4xl"}
             my={6}
-            color={"rgb(79, 59, 62)"}
+            color={"#311c3b"}
             textAlign={"center"}
             letterSpacing={"tight"}
           >

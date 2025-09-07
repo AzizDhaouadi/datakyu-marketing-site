@@ -12,9 +12,9 @@ export default function IllustrationWithText({
 }: {
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: string;
   imageAlt?: string;
-  features: string[];
+  features?: string[];
   reverse?: boolean;
   elaboration?: string[];
 }) {
@@ -26,40 +26,44 @@ export default function IllustrationWithText({
       justifyContent={"center"}
       mx="auto"
     >
-      <Box
-        display={{ base: "none", lg: "flex" }}
-        justifyContent={"center"}
-        alignItems={"center"}
-        width={{ lg: "30%" }}
-      >
-        <Image
-          src={imageSrc}
-          mx={"auto"}
-          alt={imageAlt ? imageAlt : "This is a generic image"}
-          width={{ lg: "100%" }}
-          height={"auto"}
-        ></Image>
-      </Box>
+      {imageSrc && (
+        <Box
+          display={{ base: "none", lg: "flex" }}
+          justifyContent={"center"}
+          alignItems={"center"}
+          width={{ lg: "30%" }}
+        >
+          <Image
+            src={imageSrc}
+            alt={imageAlt || "Illustration"}
+            maxWidth={"100%"}
+            height={"auto"}
+            borderRadius="md"
+            boxShadow="md"
+          />
+        </Box>
+      )}
       <Flex
         ml={{ base: 0, md: 0, lg: 6 }}
         my={4}
         p={{ base: 0, md: 0, lg: 4 }}
         direction={"column"}
         gap={6}
-        width={{ base: "100%", md: "100%", lg: "50%" }}
+        width={{ base: "100%", md: "100%", lg: "100%" }}
         alignItems={"flex-start"}
         justifyContent={"center"}
       >
-        <Heading size={"xl"} color={"rgb(79, 59, 62)"}>
+        <Heading size={"xl"} color={"#f15a25"}>
           {title}
         </Heading>
         <Text fontSize={"lg"}>{description}</Text>
         <List.Root>
-          {features.map((feature, index) => (
-            <List.Item key={index} fontSize={"lg"}>
-              {feature}
-            </List.Item>
-          ))}
+          {features &&
+            features.map((feature, index) => (
+              <List.Item key={index} fontSize={"lg"}>
+                {feature}
+              </List.Item>
+            ))}
         </List.Root>
         {Array.isArray(elaboration) &&
           elaboration.map((item, index) => (

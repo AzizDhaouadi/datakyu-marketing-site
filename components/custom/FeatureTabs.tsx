@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import styles from "@/app/lib/styles/FeatureTab.module.css";
 import Image from "next/image";
 
 type FeatureTabsProps = {
@@ -15,7 +16,7 @@ export default function FeatureTabs({
 }) {
   return (
     <Flex direction={"row"} justifyContent={"space-evenly"}>
-      <Flex
+      {/* <Flex
         display={{ base: "none", md: "none", lg: "flex" }}
         direction={"column"}
         justify={"center"}
@@ -27,7 +28,7 @@ export default function FeatureTabs({
           width={450}
           height={450}
         />
-      </Flex>
+      </Flex> */}
       <VStack
         align="start"
         position="relative"
@@ -37,7 +38,7 @@ export default function FeatureTabs({
       >
         {FeatureTabs.map((item, index) => (
           <Flex
-            borderLeft="1px dotted #CBD5E0"
+            className={styles.featureTab}
             my={"1rem"}
             key={index}
             direction="column"
@@ -49,7 +50,13 @@ export default function FeatureTabs({
               alignItems={"center"}
             >
               <Box ml={"1rem"}>{item.icon}</Box>
-              <Text ml={"1rem"} fontWeight="bold" fontSize="lg" mb={1}>
+              <Text
+                ml={"1rem"}
+                fontWeight="bold"
+                fontSize="lg"
+                mb={1}
+                color={"#f15a25"}
+              >
                 {item.step}
               </Text>
             </Flex>

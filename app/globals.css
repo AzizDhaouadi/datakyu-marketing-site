@@ -36,7 +36,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
-  color: rgb(224, 165, 51);
+  color: #311c3b;
 }
 
 @media (prefers-color-scheme: dark) {
