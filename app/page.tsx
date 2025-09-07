@@ -193,7 +193,7 @@ export default function Home() {
             <IllustrationWithText
               title={"Visualize your data"}
               description={
-                "We don't just track data, we visualize it as well. Our dashboarding tools are our canvas and we are known for producing beautiful art."
+                "We visualize data. Our dashboarding tools are our canvas and we are known for producing beautiful art."
               }
               // imageSrc={"/images/project-management.png"}
               // // imageAlt={"A person working on industrial drawings."}

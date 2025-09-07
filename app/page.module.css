@@ -1,6 +1,6 @@
 .body {
   background-color: #fff;
-  font-family: var(--font-mono), var(--font-sans);
+  font-family: var(--font-space-grotesk), var(--font-sans);
 }
 
 .page {
@@ -18,7 +18,7 @@
   min-height: 100svh;
   padding: 80px;
   gap: 64px;
-  font-family: var(--font-mono);
+  font-family: var(--font-space-grotesk);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -74,7 +74,7 @@
 
 
 .main ol {
-  font-family: var(--font-mono);
+  font-family: var(--font-space-grotesk);
   padding-left: 0;
   margin: 0;
   font-size: 14px;
@@ -88,7 +88,7 @@
 }
 
 .main code {
-  font-family: var(--font-sans);
+  font-family: var(--font-spectral);
   background: var(--gray-alpha-100);
   padding: 2px 4px;
   border-radius: 4px;
