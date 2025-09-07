@@ -10,7 +10,7 @@ export default function HeroHeading({
 }) {
   return (
     <Heading size="4xl" my={6} textAlign={"center"} letterSpacing="tight">
-      <Highlight query={highlight || ""} styles={{ color: "#311c3b" }}>
+      <Highlight query={highlight || ""} styles={{ color: "#f15a25" }}>
         {title}
       </Highlight>
     </Heading>

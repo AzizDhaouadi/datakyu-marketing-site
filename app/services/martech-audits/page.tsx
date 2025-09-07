@@ -296,12 +296,17 @@ amplitude.getInstance().logEvent("submitted_form", {
             title="Marketing Tech Stack Services"
             highlight="Services"
           />
-          <Text textAlign={"center"} mx={"auto"} my={4}>
-            You build. We measure. Actionable insights from every user
-            interaction.
+          <Text
+            textAlign={"center"}
+            mx={"auto"}
+            fontSize="xl"
+            mt={4}
+            maxW="2xl"
+          >
+            We build and implement measurement plans that help you answer the
+            right business questions.
           </Text>
         </section>
-        <CallToActionButton text={"Request an Audit"} toCenter={{ lg: true }} />
         <section id="typed-code">
           <Box
             display={{ base: "none", md: "none", lg: "inherit" }}
@@ -309,6 +314,8 @@ amplitude.getInstance().logEvent("submitted_form", {
             py={12}
             px={6}
             borderRadius="xl"
+            width={{ lg: "50%" }}
+            margin={{ lg: ".5rem auto" }}
           >
             <Flex
               direction="row"
@@ -328,7 +335,7 @@ amplitude.getInstance().logEvent("submitted_form", {
                   maxW="500px"
                   color="white"
                   style={{
-                    fontFamily: "var(--font-mono)",
+                    fontFamily: "var(--font-spectral)",
                     fontSize: "0.9rem",
                     whiteSpace: "pre",
                   }}
@@ -339,33 +346,14 @@ amplitude.getInstance().logEvent("submitted_form", {
             </Flex>
           </Box>
         </section>
-        <section id="what-do-we-do">
-          <Heading
-            size={"4xl"}
-            my={6}
-            textAlign={"center"}
-            letterSpacing={"tight"}
-          >
-            Measure the Right Things, Not All Things
-          </Heading>
-          <Text
-            textAlign={"center"}
-            mx={"auto"}
-            fontSize="xl"
-            mt={4}
-            maxW="2xl"
-          >
-            We build and implement measurement plans that help you answer the
-            right business questions.
-          </Text>
-        </section>
+        <CallToActionButton text={"Request an Audit"} toCenter={{ lg: true }} />
         <section id="services">
           <Heading
             my={6}
             size={"4xl"}
             textAlign={"left"}
             letterSpacing={"tight"}
-            color={"rgb(79, 59, 62)"}
+            color={"#311c3b"}
           >
             Implementation Services
           </Heading>
@@ -379,7 +367,7 @@ amplitude.getInstance().logEvent("submitted_form", {
             size={"4xl"}
             textAlign={"left"}
             letterSpacing={"tight"}
-            color={"rgb(79, 59, 62)"}
+            color={"#311c3b"}
           >
             Auditing Services
           </Heading>
@@ -397,7 +385,7 @@ amplitude.getInstance().logEvent("submitted_form", {
                 size={"4xl"}
                 textAlign={"left"}
                 letterSpacing={"tight"}
-                color={"rgb(79, 59, 62)"}
+                color={"#311c3b"}
               >
                 Our Technology Stack
               </Heading>
@@ -427,7 +415,7 @@ amplitude.getInstance().logEvent("submitted_form", {
                   maxW="500px"
                   color="white"
                   style={{
-                    fontFamily: "var(--font-mono)",
+                    fontFamily: "var(--font-spectral)",
                     fontSize: "0.9rem",
                     whiteSpace: "pre",
                   }}
@@ -441,13 +429,13 @@ amplitude.getInstance().logEvent("submitted_form", {
             </section>
           </Flex>
         </section>
-        <section id="anaytics-importance">
+        <section style={{ marginTop: "4rem" }} id="anaytics-importance">
           <Heading
             my={6}
             size={"4xl"}
             textAlign={"left"}
             letterSpacing={"tight"}
-            color={"rgb(79, 59, 62)"}
+            color={"#311c3b"}
           >
             You Are Only as Strong as Your Analytics Layer
           </Heading>
@@ -459,11 +447,12 @@ amplitude.getInstance().logEvent("submitted_form", {
             <AlternatingTimeline steps={timeLineSteps} />
           </Box>
           <Heading
-            my={6}
+            my={8}
             size={"4xl"}
             textAlign={"left"}
             letterSpacing={"tight"}
             textAlignLast={"center"}
+            color={"#311c3b"}
           >
             The Backbone of Marketing Analytics
           </Heading>
@@ -485,13 +474,6 @@ amplitude.getInstance().logEvent("submitted_form", {
           >
             Frequently Asked Questions
           </Heading>
-          <Image
-            style={{ margin: "0 auto" }}
-            src={"/images/faq.png"}
-            width={320}
-            height={160}
-            alt="A person thinking."
-          />
           <FAQ questions={faqs} />
         </section>
       </main>

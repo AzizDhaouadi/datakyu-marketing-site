@@ -72,7 +72,7 @@ export default function CardsWithImages({
             />
           )}
           <Card.Body mt={4} gap="2">
-            <Card.Title data-template-value color={"rgb(79, 59, 62)"}>
+            <Card.Title data-template-value color={"#f15a25"}>
               {card.title}
             </Card.Title>
             <Card.Description>{card.description}</Card.Description>

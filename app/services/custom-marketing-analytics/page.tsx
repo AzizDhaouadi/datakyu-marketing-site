@@ -350,7 +350,7 @@ mixpanel.track(
                   overflowX="hidden"
                   height={"100%"}
                   style={{
-                    fontFamily: "var(--font-mono)",
+                    fontFamily: "var(--font-spectral)",
                     fontSize: "0.9rem",
                     whiteSpace: "pre",
                   }}

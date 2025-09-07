@@ -32,13 +32,20 @@ export default function ListsWithIcons({
           direction={item.reverse ? "column" : "row"}
           gap={2}
         >
-          {item.icon && (
-            <Box alignItems={"center"} display={"flex"} boxSize={10}>
-              {item.icon}
-            </Box>
-          )}
           <Flex direction={"column"} gap={2}>
-            <Heading size={"xl"}>{item.title}</Heading>
+            <Flex direction={"row"}>
+              {item.icon && (
+                <Box
+                  alignItems={"center"}
+                  display={"flex"}
+                  color={"#f15a25"}
+                  boxSize={10}
+                >
+                  {item.icon}
+                </Box>
+              )}
+              <Heading size={"xl"}>{item.title}</Heading>
+            </Flex>
             <Text>{item.description}</Text>
           </Flex>
         </Flex>

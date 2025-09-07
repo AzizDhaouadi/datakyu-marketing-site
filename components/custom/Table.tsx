@@ -19,13 +19,9 @@ export default function TableComponent({
       direction={"row"}
       gap={4}
       my={"3rem"}
+      width={{ lg: "80%" }}
+      margin={{ lg: "4rem auto" }}
     >
-      <Image
-        src="/images/thinking.png"
-        width={400}
-        display={{ base: "none", md: "none", lg: "initial" }}
-        alt={"A lady thinking"}
-      />
       <Table.Root size="sm">
         <Table.Header>
           <Table.Row>

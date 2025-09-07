@@ -15,7 +15,10 @@ export default function FAQ({ questions }: { questions: questionsProps[] }) {
       <Accordion.Root collapsible>
         {questions.map((question, index) => (
           <Accordion.Item key={index} value={index.toString()} my={10}>
-            <Accordion.ItemTrigger fontSize={"larger"}>
+            <Accordion.ItemTrigger
+              _hover={{ cursor: "pointer" }}
+              fontSize={"larger"}
+            >
               {question.question}
             </Accordion.ItemTrigger>
             <Accordion.ItemContent>

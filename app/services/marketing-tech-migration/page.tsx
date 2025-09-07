@@ -83,21 +83,18 @@ mixpanel.track(
       title: "Google Analytics 4",
       description:
         "Track every interaction with an event-based model, unlock insights with machine learning, and power up with seamless Google integrations.",
-      image: "/images/techStack/google-analytics-4.svg",
       includeFooter: true,
     },
     {
       title: "Segment",
       description:
         "Centralize your data, enforce clean collection, and identify users precisely with Personas.",
-      image: "/images/techStack/segment-1.svg",
       includeFooter: true,
     },
     {
       title: "Mixpanel",
       description:
         "Dive into interactive reports, explore limitless segmentation, and uncover insights with advanced group analytics.",
-      image: "/images/techStack/mixpanel.svg",
       includeFooter: true,
     },
   ];
@@ -159,7 +156,7 @@ mixpanel.track(
               >
                 <Heading
                   my={6}
-                  color={"rgb(79, 59, 62)"}
+                  color={"#311c3b"}
                   size={"4xl"}
                   textAlign={"left"}
                   letterSpacing={"tight"}
@@ -170,6 +167,7 @@ mixpanel.track(
                   size={"4xl"}
                   textAlign={"left"}
                   letterSpacing={"tight"}
+                  color={"#f15a25"}
                 >
                   <TypedCodeSection
                     codeToType={codeToType}
@@ -205,7 +203,7 @@ mixpanel.track(
                   overflowX="hidden"
                   height={"100%"}
                   style={{
-                    fontFamily: "var(--font-mono)",
+                    fontFamily: "var(--font-spectral)",
                     fontSize: "0.9rem",
                     whiteSpace: "pre",
                   }}
@@ -221,7 +219,7 @@ mixpanel.track(
             </Flex>
           </Flex>
         </section>
-        <section id="analytics-tools">
+        <section style={{ marginTop: "4rem" }} id="analytics-tools">
           <Heading
             size={"4xl"}
             my={6}
@@ -251,12 +249,6 @@ mixpanel.track(
         </section>
         <section id="cta-section">
           <Flex direction={"row"} gap={10} justifyContent={"center"}>
-            <Image
-              src={"/images/todo.png"}
-              display={{ base: "none", lg: "initial" }}
-              width={"30rem"}
-              alt={"An individual holding a checklist"}
-            />
             <Flex
               direction={"column"}
               alignItems={"center"}

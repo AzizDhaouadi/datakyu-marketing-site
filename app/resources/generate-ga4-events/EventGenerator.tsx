@@ -372,7 +372,7 @@ If the tracking method is:
                 height={"100%"}
                 overflowWrap={"break-word"}
                 overflowX="hidden"
-                fontFamily={"var(--font-mono)"}
+                fontFamily={"var(--font-spectral)"}
                 fontSize={"0.9rem"}
                 whiteSpace={"pre-wrap"}
               >
@@ -392,7 +392,7 @@ If the tracking method is:
                 height={"100%"}
                 overflowWrap={"break-word"}
                 overflowX="hidden"
-                fontFamily={"var(--font-mono)"}
+                fontFamily={"var(--font-spectral)"}
                 fontSize={"0.9rem"}
                 whiteSpace={"pre-wrap"}
               >
