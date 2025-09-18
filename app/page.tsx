@@ -153,7 +153,7 @@ export default function Home() {
             direction={"row"}
             my={4}
             justifyContent={"center"}
-            gap={4}
+            gap={2}
             width={{ lg: "100%" }}
           >
             <IllustrationWithText
@@ -174,7 +174,7 @@ export default function Home() {
               // ]}
             />
             <IllustrationWithText
-              title={"Establish data-backed growth"}
+              title={"Establish growth"}
               description={
                 "We build execute our tracking to reflect our measurement plan which gives you the confidence to reduce uncertainty and make data-driven decisions."
               }
@@ -191,9 +191,15 @@ export default function Home() {
               // ]}
             />
             <IllustrationWithText
-              title={"Visualize your data"}
+              title={"Identify opportunities"}
               description={
-                "We visualize data. Our dashboarding tools are our canvas and we are known for producing beautiful art."
+                "We dig into your raw data and augment it as well as enrich it with CRM connectivity to empower your business. We help you catch shifts, outliers, and signals that point to real growth."
+              }
+            />
+            <IllustrationWithText
+              title={"Visualize data"}
+              description={
+                "Our dashboarding tools are our canvas and we are known for producing beautiful art."
               }
               // imageSrc={"/images/project-management.png"}
               // // imageAlt={"A person working on industrial drawings."}
@@ -205,12 +211,6 @@ export default function Home() {
               // elaboration={[
               //   "At Datakyu, we don’t just track data — we bring it to life. Once your events and metrics are flowing correctly, we design dashboards that speak clearly, beautifully, and with purpose. Whether you're tracking campaign performance, product engagement, or customer retention, we make sure the numbers don't just exist — they make sense.",
               // ]}
-            />
-            <IllustrationWithText
-              title={"Identify opportunities"}
-              description={
-                "We dig into your raw data and augment it as well as enrich it with CRM connectivity to empower your business. We help you catch shifts, outliers, and signals that point to real growth."
-              }
             />
           </Flex>
         </section>

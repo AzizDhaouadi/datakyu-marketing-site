@@ -5,12 +5,12 @@ export default function Footer() {
     <Box as="footer" py={8} px={6}>
       <Flex direction="row" align="center" gap={4}>
         {/* Logo */}
-        <Image
+        {/* <Image
           src="/logo-transparent.svg"
           alt="Datakyu Logo"
           width={"10rem"}
           height={"auto"}
-        />
+        /> */}
 
         {/* Copyright */}
         <Text fontSize="sm" color="gray.600">

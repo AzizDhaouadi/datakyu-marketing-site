@@ -14,3 +14,19 @@
     position: relative;
     box-shadow: 8px 8px #311c3b;
 }
+
+.downloadCard {
+    background-color: #fff;
+    border: 0 #000;
+    border-radius: 8px;
+    flex-flow: column;
+    margin: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+    padding: 3rem;
+    display: flex;
+    position: relative;
+    box-shadow: 8px 8px #311c3b;
+}

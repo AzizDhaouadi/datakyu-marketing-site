@@ -71,6 +71,18 @@
   height: 1.2rem;
 }
 
+.dialogButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 999px;
+    color: #1a1a1a;
+    font-size: 1rem;
+    border: 2px solid #f15a25;
+    cursor: pointer;
+}
 
 .main ol {
   font-family: var(--font-space-grotesk);

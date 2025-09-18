@@ -252,13 +252,6 @@ mixpanel.track(
       <main className={styles.main}>
         <section id="hero">
           <Flex direction={"row-reverse"} gap={6}>
-            <Image
-              src="/images/project-management.png"
-              width={"25rem"}
-              display={{ base: "none", md: "none", lg: "initial" }}
-              height={"auto"}
-              alt={"An image showing a hand drawing a schematic"}
-            />
             <Flex
               direction={"column"}
               alignItems={"self-start"}
@@ -311,12 +304,12 @@ mixpanel.track(
             toCenter={{ base: true, md: true, lg: true, xl: true }}
           />
         </section>
-        <section style={{ marginTop: "2rem" }} id={"analytics-tech-stack"}>
+        <section style={{ marginTop: "4rem" }} id={"analytics-tech-stack"}>
           <Flex direction={"row"} gap={6}>
             <Flex direction={"column"} gap={6}>
               <Heading
                 my={6}
-                color={"rgb(79, 59, 62)"}
+                color={"#311c3b"}
                 size={"4xl"}
                 textAlign={"left"}
                 letterSpacing={"tight"}
@@ -366,7 +359,7 @@ mixpanel.track(
             </Flex>
           </Flex>
         </section>
-        <section id="problems-we-solve">
+        <section style={{ marginTop: "4rem" }} id="problems-we-solve">
           <HeroHeading
             title="Complex problems we make simple"
             highlight="simple"

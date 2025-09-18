@@ -9,6 +9,7 @@ import Nav from "@/components/custom/Nav";
 import CallToActionButton from "@/components/custom/CallToActionButton";
 import ListsWithIcons from "@/components/custom/ListsWithIcons";
 import CardsWithImages from "@/components/custom/CardsWithImages";
+import TechStackTabs from "@/components/custom/TechStackTabs";
 import Footer from "@/components/custom/Footer";
 
 // ⚛️ Dynamic SEO metadata generation
@@ -16,6 +17,8 @@ import { getPageMetadata } from "../../lib/helper/generatePageMetadata";
 
 // 🎞️ Custom Components – Animations
 import TypedCodeSection from "@/components/animation/TypedCode";
+import AlternatingTimeline from "@/components/custom/AlternatingTimeline";
+import DualSineWaves from "@/components/animation/SinFunction";
 
 // 💻 Code Hightlighter
 import Prism from "prismjs";
@@ -34,7 +37,13 @@ export async function generateMetadata() {
 
 export default function MarketingTechMigration() {
   const codeToType = ["business.", "team.", "startup."];
-
+  const alternatingTimelineContent = [
+    { name: "Audit & Planning" },
+    { name: "Data Mapping & Architecture" },
+    { name: "Implementation" },
+    { name: "Validation & QA" },
+    { name: "Handover & Enablement" },
+  ];
   const listsContent = [
     {
       title: "Google Analytics 4",
@@ -247,6 +256,26 @@ mixpanel.track(
             />
           </Flex>
         </section>
+        <section id="migrate-tech-stack">
+          <Heading
+            size={"2xl"}
+            my={6}
+            textAlign={"center"}
+            letterSpacing={"tight"}
+          >
+            Migrate your marketing tech stack with confidence
+          </Heading>
+          <TechStackTabs margin={4} />
+          <Heading
+            size={"2xl"}
+            my={6}
+            textAlign={"center"}
+            letterSpacing={"tight"}
+          >
+            Our Migration Process
+          </Heading>
+          <AlternatingTimeline steps={alternatingTimelineContent} />
+        </section>
         <section id="cta-section">
           <Flex direction={"row"} gap={10} justifyContent={"center"}>
             <Flex
@@ -260,9 +289,10 @@ mixpanel.track(
                 textAlign={"center"}
                 letterSpacing={"tight"}
               >
-                Can&apos;t find what you are looking for?
+                Let us hekp you migrate your marketing tech stack
               </Heading>
               <CallToActionButton text={"Contact us"} />
+              <DualSineWaves />
             </Flex>
           </Flex>
         </section>

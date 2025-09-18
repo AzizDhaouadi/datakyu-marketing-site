@@ -8,6 +8,8 @@ import {
   ConditionalValue,
 } from "@chakra-ui/react";
 
+import styles from "../../app/page.module.css";
+
 type DialogContent = {
   title: string;
   description: string;
@@ -35,7 +37,7 @@ export default function CustomDialog({
       motionPreset="slide-in-bottom"
     >
       <Dialog.Trigger my={4} asChild>
-        <Button p={2} variant={buttonVariant}>
+        <Button p={2} className={styles.dialogButton}>
           {cta}
         </Button>
       </Dialog.Trigger>

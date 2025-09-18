@@ -314,7 +314,7 @@ amplitude.getInstance().logEvent("submitted_form", {
             py={12}
             px={6}
             borderRadius="xl"
-            width={{ lg: "50%" }}
+            width={{ lg: "75%" }}
             margin={{ lg: ".5rem auto" }}
           >
             <Flex

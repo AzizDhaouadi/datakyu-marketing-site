@@ -25,6 +25,8 @@ export default function IllustrationWithText({
       direction={reverse ? "row-reverse" : "row"}
       justifyContent={"center"}
       mx="auto"
+      width={{ lg: "fit-content", xl: "fit-content" }}
+      height={{ lg: "fit-content", xl: "fit-content" }}
     >
       {imageSrc && (
         <Box
@@ -57,15 +59,18 @@ export default function IllustrationWithText({
           {title}
         </Heading>
         <Text fontSize={"lg"}>{description}</Text>
-        <List.Root>
-          {features &&
-            features.map((feature, index) => (
-              <List.Item key={index} fontSize={"lg"}>
-                {feature}
-              </List.Item>
-            ))}
-        </List.Root>
-        {Array.isArray(elaboration) &&
+        {features && (
+          <List.Root>
+            {features &&
+              features.map((feature, index) => (
+                <List.Item key={index} fontSize={"lg"}>
+                  {feature}
+                </List.Item>
+              ))}
+          </List.Root>
+        )}
+        {elaboration &&
+          Array.isArray(elaboration) &&
           elaboration.map((item, index) => (
             <Text fontSize={"lg"} key={index}>
               {item}

@@ -1,4 +1,6 @@
 "use client";
+
+import styles from "@/app/lib/styles/FeatureCards.module.css";
 import React from "react";
 import { Flex, Card, Image, Link } from "@chakra-ui/react";
 import CallToActionButton from "./CallToActionButton";
@@ -50,13 +52,14 @@ export default function CardsWithImages({
   return (
     <Flex
       direction={"row"}
-      gap={6}
+      gap={2}
       my={"2rem"}
       justifyContent={"center"}
       wrap={"wrap"}
     >
       {cardsContent.map((card, index) => (
         <Card.Root
+          className={styles.downloadCard}
           key={index}
           maxW="sm"
           p={4}
