@@ -16,7 +16,7 @@ import CardsWithImages from "@/components/custom/CardsWithImages";
 import FAQ from "@/components/custom/FAQ";
 
 // 💅 Chakra UI
-import { Text, Box, Flex, Heading, Image } from "@chakra-ui/react";
+import { Text, Box, Flex, Heading } from "@chakra-ui/react";
 
 // ⚛️ Dynamic SEO metadata generation
 import { getPageMetadata } from "../../lib/helper/generatePageMetadata";
@@ -25,7 +25,6 @@ import { getPageMetadata } from "../../lib/helper/generatePageMetadata";
 import { LuLayers3 } from "react-icons/lu";
 import { FaGaugeHigh } from "react-icons/fa6";
 import { FcWorkflow } from "react-icons/fc";
-import { GiChoice } from "react-icons/gi";
 import { MdTimeline } from "react-icons/md";
 import { BiLineChart } from "react-icons/bi";
 
@@ -65,12 +64,6 @@ gtag("event", "user_login", {
       description:
         "Is my current analytics layer collecting everything pertinent to my business? Do we have a Single Source of Truth? Is my data accurate?",
       icon: <FcWorkflow />,
-    },
-    {
-      title: "Understand your data",
-      description:
-        "How do I make sense of all the data I have? How do I use it to make decisions?",
-      icon: <GiChoice />,
     },
   ];
 
@@ -379,7 +372,7 @@ amplitude.getInstance().logEvent("submitted_form", {
         </section>
         <section id="tech-stack">
           <Flex gap={6}>
-            <Flex direction={"column"}>
+            <Flex direction={"column"} justifyContent={{ xl: "space-evenly" }}>
               <Heading
                 my={6}
                 size={"4xl"}

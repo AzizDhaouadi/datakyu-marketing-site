@@ -2,7 +2,7 @@
 import styles from "../../page.module.css";
 
 // 💅 Chakra UI
-import { Text, Heading, Flex, Box, Image } from "@chakra-ui/react";
+import { Text, Heading, Flex, Box } from "@chakra-ui/react";
 
 // 🧩 Custom Components – Core
 import Nav from "@/components/custom/Nav";
@@ -268,7 +268,7 @@ mixpanel.track(
           <TechStackTabs margin={4} />
           <Heading
             size={"2xl"}
-            my={6}
+            my={10}
             textAlign={"center"}
             letterSpacing={"tight"}
           >

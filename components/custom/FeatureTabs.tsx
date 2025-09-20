@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Flex, Text, VStack } from "@chakra-ui/react";
 import styles from "@/app/lib/styles/FeatureTab.module.css";
-import Image from "next/image";
 
 type FeatureTabsProps = {
   step: string;
@@ -16,19 +15,6 @@ export default function FeatureTabs({
 }) {
   return (
     <Flex direction={"row"} justifyContent={"space-evenly"}>
-      {/* <Flex
-        display={{ base: "none", md: "none", lg: "flex" }}
-        direction={"column"}
-        justify={"center"}
-        alignItems={"center"}
-      >
-        <Image
-          src={"/images/folders.png"}
-          alt="Stacked folders"
-          width={450}
-          height={450}
-        />
-      </Flex> */}
       <VStack
         align="start"
         position="relative"

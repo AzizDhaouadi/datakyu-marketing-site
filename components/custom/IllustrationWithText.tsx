@@ -24,9 +24,9 @@ export default function IllustrationWithText({
       gap={6}
       direction={reverse ? "row-reverse" : "row"}
       justifyContent={"center"}
+      flexWrap={{ lg: "wrap" }}
       mx="auto"
       width={{ lg: "fit-content", xl: "fit-content" }}
-      height={{ lg: "fit-content", xl: "fit-content" }}
     >
       {imageSrc && (
         <Box

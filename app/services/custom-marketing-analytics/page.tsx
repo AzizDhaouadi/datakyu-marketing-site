@@ -17,14 +17,7 @@ import Footer from "@/components/custom/Footer";
 import { getPageMetadata } from "@/app/lib/helper/generatePageMetadata";
 
 // 💅 Chakra UI
-import {
-  Text,
-  Heading,
-  Image,
-  Flex,
-  Box,
-  ConditionalValue,
-} from "@chakra-ui/react";
+import { Text, Heading, Flex, Box, ConditionalValue } from "@chakra-ui/react";
 
 // 💻 Code Hightlighter
 import Prism from "prismjs";

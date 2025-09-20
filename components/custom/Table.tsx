@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Flex, Image } from "@chakra-ui/react";
+import { Table, Flex } from "@chakra-ui/react";
 import { FiCheckCircle, FiCircle } from "react-icons/fi";
 
 type TableComponentProps = {

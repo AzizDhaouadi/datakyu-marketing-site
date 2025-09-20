@@ -27,7 +27,6 @@ type CustomDialogProps = {
 export default function CustomDialog({
   placement,
   cta,
-  buttonVariant = "outline",
   content,
 }: CustomDialogProps) {
   return (

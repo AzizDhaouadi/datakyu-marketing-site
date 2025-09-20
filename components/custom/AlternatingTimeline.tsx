@@ -11,7 +11,7 @@ export default function AlternatingTimeline({
   steps: TimelineStepProps[];
 }) {
   return (
-    <Timeline.Root size="xl" variant="outline" gap={10}>
+    <Timeline.Root colorPalette={"red"} size="xl" variant="subtle" gap={10}>
       {steps.map((step, index) => (
         <Timeline.Item key={index}>
           {/* Left-side content (for odd indices) */}

@@ -15,19 +15,24 @@ export default function FeatureCards({
 }) {
   return (
     <Flex
-      direction={"row"}
+      direction={{ base: "column", sm: "column", md: "column", lg: "row" }}
       my={4}
       justifyContent={"center"}
       gap={6}
       wrap={"nowrap"}
-      width={{ lg: "100%" }}
+      width={{ base: "fit-content", sm: "100%", md: "100%", lg: "100%" }}
       m={{ lg: "4rem auto" }}
     >
       {featuredCards.map((featuredCard, index) => {
         return (
           <Card.Root
             className={styles.processCard}
-            w={"25%"}
+            w={{
+              base: "fit-content",
+              sm: "fit-content",
+              md: "100%",
+              lg: "30%",
+            }}
             variant={"elevated"}
             key={index}
           >

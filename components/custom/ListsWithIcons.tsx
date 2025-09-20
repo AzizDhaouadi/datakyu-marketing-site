@@ -20,7 +20,7 @@ export default function ListsWithIcons({
       direction={toReverse ? "row" : "column"}
       wrap={toReverse ? "wrap" : "initial"}
       gap={4}
-      justifyContent={{ lg: "center", xl: "center" }}
+      justifyContent={{ md: "center", lg: "center", xl: "center" }}
     >
       {listDescriptions.map((item, index) => (
         <Flex
