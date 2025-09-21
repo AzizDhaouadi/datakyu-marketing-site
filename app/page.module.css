@@ -16,7 +16,7 @@
   font-family: var(--font-space-grotesk);
 }
 
-body {
+.body {
   background-color: #fff;
   font-family: var(--font-space-grotesk), var(--font-sans);
 }
