@@ -4,6 +4,11 @@ export const seoMetaDataMap: Record<string, { title: string; description: string
         description: "Datakyu helps growing businesses set up analytics systems that are clear, scalable, and built for action. No guesswork—just the insights your team needs to grow faster.",
         canonical: "https://datakyu.co/"
     },
+    "/our-technology-stack": {
+        title: "Our Technology Stack – Datakyu",
+        description: "We build marketing analytics systems using best-in-class tools that are scalable, flexible, and designed for action. Our stack includes Google Analytics 4, Google Tag Manager, Looker Studio, and more.",
+        canonical: "https://datakyu.co/our-technology-stack"
+    },
     "/services/martech-audits": {
         title: "MarTech & Analytics Audits – Datakyu",
         description: "Get clarity on what’s tracking, what’s broken, and what’s missing. Datakyu audits your marketing tech stack to uncover gaps, misfires, and untapped potential—so your data works as hard as your team does.",

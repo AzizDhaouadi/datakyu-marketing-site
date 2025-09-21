@@ -28,6 +28,7 @@ const navItems = [
       { name: "Consulting", href: "/services/custom-marketing-analytics" },
     ],
   },
+  { title: "Our Tech Stack", href: "/our-technology-stack" },
   {
     title: "Resources",
     href: "#",
