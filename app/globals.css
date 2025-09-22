@@ -21,12 +21,7 @@ body {
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  font-family: var(--font-space-grotesk), var(--font-sans);
 }
 
 a {
@@ -35,8 +30,14 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
-  color: rgb(224, 165, 51);
+  font-family: var(--font-spectral);
+  color: #311c3b;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 @media (prefers-color-scheme: dark) {

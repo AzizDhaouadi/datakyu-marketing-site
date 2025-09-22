@@ -205,7 +205,7 @@ export default function LookerStudioTemplates() {
           <Heading
             size={"4xl"}
             my={6}
-            textAlign={"left"}
+            textAlign={"center"}
             letterSpacing={"tight"}
           >
             Frequently Asked Questions

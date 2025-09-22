@@ -9,17 +9,8 @@ export default function HeroHeading({
   highlight?: string;
 }) {
   return (
-    <Heading
-      size="4xl"
-      my={6}
-      color={"rgb(79, 59, 62)"}
-      textAlign={"center"}
-      letterSpacing="tight"
-    >
-      <Highlight
-        query={highlight || ""}
-        styles={{ color: "rgb(224, 165, 51)" }}
-      >
+    <Heading size="4xl" my={6} textAlign={"center"} letterSpacing="tight">
+      <Highlight query={highlight || ""} styles={{ color: "#f15a25" }}>
         {title}
       </Highlight>
     </Heading>

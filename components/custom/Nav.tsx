@@ -28,6 +28,7 @@ const navItems = [
       { name: "Consulting", href: "/services/custom-marketing-analytics" },
     ],
   },
+  { title: "Our Tech Stack", href: "/our-technology-stack" },
   {
     title: "Resources",
     href: "#",
@@ -55,7 +56,9 @@ const navItems = [
 ];
 
 export default function SimpleNav() {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false); // Mobile
+  const [activeDropdown, setActiveDropdown] = useState<number | null>(null); // Desktop
+
   return (
     <Box as="nav">
       <Container maxW="container.xl" py={4}>
@@ -78,9 +81,11 @@ export default function SimpleNav() {
                   <Box
                     position="relative"
                     className="nav-dropdown"
-                    _hover={{
-                      "& > .dropdown-content": { display: "block" },
-                    }}
+                    // _hover={{
+                    //   "& > .dropdown-content": { display: "block" },
+                    // }}
+                    onMouseEnter={() => setActiveDropdown(i)} // Show dropdown on hover
+                    onMouseLeave={() => setActiveDropdown(null)}
                   >
                     <HStack gap={1} cursor="pointer">
                       <Text fontWeight="medium">{item.title}</Text>
@@ -93,13 +98,14 @@ export default function SimpleNav() {
                       position="absolute"
                       top="100%"
                       left="0"
-                      mt={2}
                       boxShadow="md"
                       borderRadius="md"
                       minW="200px"
-                      display="none"
+                      display={activeDropdown === i ? "block" : "none"}
                       zIndex={1}
+                      height={"max-content"}
                       p={2}
+                      mt={".01rem"}
                       bg={"white"}
                     >
                       <VStack align="stretch" gap={1}>

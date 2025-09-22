@@ -1,8 +1,3 @@
-.body {
-  background-color: #fff;
-  font-family: var(--font-mono), var(--font-sans);
-}
-
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -18,7 +13,12 @@
   min-height: 100svh;
   padding: 80px;
   gap: 64px;
-  font-family: var(--font-mono);
+  font-family: var(--font-space-grotesk);
+}
+
+.body {
+  background-color: #fff;
+  font-family: var(--font-space-grotesk), var(--font-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,21 +49,21 @@
   gap: 0.5rem;
 
   padding: 1rem;
-  background: linear-gradient(145deg, #1a1a1a, #000);
+  background: #fff;
   border-radius: 999px;
 
-  color: white;
+  color: #1a1a1a;
   font-size: 1.1rem;
   font-weight: 500;
-  border: none;
+  border: 2px solid #f15a25;
   cursor: pointer;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 8px 8px #311c3b;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .ctaButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px #311c3b;
 }
 
 .ctaButton .icon {
@@ -71,9 +71,21 @@
   height: 1.2rem;
 }
 
+.dialogButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 999px;
+    color: #1a1a1a;
+    font-size: 1rem;
+    border: 2px solid #f15a25;
+    cursor: pointer;
+}
 
 .main ol {
-  font-family: var(--font-mono);
+  font-family: var(--font-space-grotesk);
   padding-left: 0;
   margin: 0;
   font-size: 14px;
@@ -87,7 +99,7 @@
 }
 
 .main code {
-  font-family: var(--font-sans);
+  font-family: var(--font-spectral);
   background: var(--gray-alpha-100);
   padding: 2px 4px;
   border-radius: 4px;

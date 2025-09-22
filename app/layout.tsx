@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Space_Grotesk, Spectral } from "next/font/google";
 
 import { Provider } from "@/components/ui/provider";
 import "./globals.css";
@@ -8,15 +8,18 @@ import { Analytics } from "@vercel/analytics/next";
 
 import Script from "next/script";
 
-const plexSans = IBM_Plex_Sans({
+const SpectralFont = Spectral({
+  // For Headings
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-spectral",
 });
-const plexMono = IBM_Plex_Mono({
+
+const SpaceGrotesk = Space_Grotesk({
+  // For Body
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -50,7 +53,7 @@ export default function RootLayout({
         ></script>
       </head>
       <body
-        className={`${plexSans.variable} ${plexMono.variable} ${styles.body}`}
+        className={`${SpectralFont.variable} ${SpaceGrotesk.variable} ${styles.body}`}
       >
         <Provider>
           {children}

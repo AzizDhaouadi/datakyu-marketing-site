@@ -46,7 +46,7 @@ export default function OpenHubspotDialog({
                 <Dialog.ActionTrigger asChild>
                   <Button
                     style={{
-                      backgroundColor: "#2B6CB0",
+                      backgroundColor: "#f15a25",
                       color: "white",
                       padding: "10px 20px",
                       borderRadius: "5px",
@@ -64,7 +64,7 @@ export default function OpenHubspotDialog({
               <Dialog.CloseTrigger asChild>
                 <CloseButton
                   style={{
-                    backgroundColor: "#2B6CB0",
+                    backgroundColor: "#f15a25",
                     color: "white",
                     padding: "10px 20px",
                     borderRadius: "5px",
