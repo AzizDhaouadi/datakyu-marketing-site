@@ -1,209 +1,96 @@
-"use client";
-import { useState } from "react";
+// ⚛️ React bits components
+import CardNav from "@/components/Bits/CardNav";
 
-import {
-  Box,
-  Flex,
-  Text,
-  CloseButton,
-  Stack,
-  Button,
-  Drawer,
-  Link,
-  Container,
-  Image,
-  HStack,
-  VStack,
-  Portal,
-} from "@chakra-ui/react";
-import { FiChevronDown } from "react-icons/fi";
-
-const navItems = [
-  {
-    title: "Services",
-    href: "#",
-    items: [
-      { name: "Auditing & Implementation", href: "/services/martech-audits" },
-      { name: "Stack Migration", href: "/services/marketing-tech-migration" },
-      { name: "Consulting", href: "/services/custom-marketing-analytics" },
-    ],
-  },
-  { title: "Our Tech Stack", href: "/our-technology-stack" },
-  {
-    title: "Resources",
-    href: "#",
-    items: [
-      { name: "Blog", href: "https://datajournal.datakyu.co/" },
-      { name: "GA4 Generator", href: "/resources/generate-ga4-events" },
-      {
-        name: "GTM Templates",
-        href: "/resources/google-tag-manager-templates",
-      },
-      {
-        name: "Looker Studio Templates",
-        href: "/resources/looker-studio-templates",
-      },
-    ],
-  },
-  {
-    title: "Policies",
-    href: "#",
-    items: [
-      { name: "Cookie Policy", href: "/policies/cookie-policy" },
-      { name: "Privacy Policy", href: "/policies/privacy-policy" },
-    ],
-  },
-];
-
-export default function SimpleNav() {
-  const [isOpen, setOpen] = useState(false); // Mobile
-  const [activeDropdown, setActiveDropdown] = useState<number | null>(null); // Desktop
+export default function Nav() {
+  const items = [
+    {
+      label: "About",
+      bgColor: "#0D0716",
+      textColor: "#fff",
+      links: [
+        {
+          label: "Home",
+          ariaLabel: "About Home",
+          href: "/",
+        },
+        {
+          label: "Our Technology Stack",
+          ariaLabel: "About Technology",
+          href: "/our-technology-stack",
+        },
+        {
+          label: "Cookie Policy",
+          ariaLabel: "About Cookie Policy",
+          href: "/policies/cookie-policy",
+        },
+        {
+          label: "Privacy Policy",
+          ariaLabel: "About Privacy Policy",
+          href: "/policies/privacy-policy",
+        },
+      ],
+    },
+    {
+      label: "Services",
+      bgColor: "#170D27",
+      textColor: "#fff",
+      links: [
+        {
+          label: "Auditing & Implementation",
+          ariaLabel: "Auditing & Impelementation Services",
+          href: "/services/martech-audits",
+        },
+        {
+          label: "Stack Migration",
+          ariaLabel: "Marketing Tech Stack Migration Services",
+          href: "/services/marketing-tech-migration",
+        },
+        {
+          label: "Custom Analytics",
+          ariaLabel: "Custom Marketing Analytics Services",
+          href: "/services/custom-marketing-analytics",
+        },
+      ],
+    },
+    {
+      label: "Resources",
+      bgColor: "#271E37",
+      textColor: "#fff",
+      links: [
+        {
+          label: "Blog",
+          ariaLabel: "Blog",
+          href: "https://datajournal.datakyu.co",
+        },
+        {
+          label: "GTM Templates",
+          ariaLabel: "GTM Templates",
+          href: "/resources/google-tag-manager-templates",
+        },
+        {
+          label: "Looker Studio Templates",
+          ariaLabel: "LS Templates",
+          href: "/resoureces/looker-studio-templates",
+        },
+        {
+          label: "GA4 Event Generator",
+          ariaLabel: "GA4 Event Generator",
+          href: "/resources/generate-ga4-events",
+        },
+      ],
+    },
+  ];
 
   return (
-    <Box as="nav">
-      <Container maxW="container.xl" py={4}>
-        <Flex justify="space-between" align="center">
-          {/* Logo */}
-          <Link href={"/"}>
-            <Image
-              display={{ base: "none", md: "initial" }}
-              src="/logo-transparent.svg"
-              alt="Logo"
-              height="100px"
-            />
-          </Link>
-
-          {/* Desktop navigation */}
-          <HStack gap={8} display={{ base: "none", md: "flex" }}>
-            {navItems.map((item, i) => (
-              <Box key={i} position="relative">
-                {item.items ? (
-                  <Box
-                    position="relative"
-                    className="nav-dropdown"
-                    // _hover={{
-                    //   "& > .dropdown-content": { display: "block" },
-                    // }}
-                    onMouseEnter={() => setActiveDropdown(i)} // Show dropdown on hover
-                    onMouseLeave={() => setActiveDropdown(null)}
-                  >
-                    <HStack gap={1} cursor="pointer">
-                      <Text fontWeight="medium">{item.title}</Text>
-                      <Box>
-                        <FiChevronDown />
-                      </Box>
-                    </HStack>
-                    <Box
-                      className="dropdown-content"
-                      position="absolute"
-                      top="100%"
-                      left="0"
-                      boxShadow="md"
-                      borderRadius="md"
-                      minW="200px"
-                      display={activeDropdown === i ? "block" : "none"}
-                      zIndex={1}
-                      height={"max-content"}
-                      p={2}
-                      mt={".01rem"}
-                      bg={"white"}
-                    >
-                      <VStack align="stretch" gap={1}>
-                        {item.items.map(
-                          (subItem: { href: string; name: string }, j) => (
-                            <Link
-                              key={j}
-                              href={subItem.href || "#"}
-                              px={3}
-                              py={2}
-                              borderRadius="md"
-                            >
-                              <Text>{subItem.name}</Text>
-                            </Link>
-                          )
-                        )}
-                      </VStack>
-                    </Box>
-                  </Box>
-                ) : (
-                  <Link
-                    href={item.href || "#"}
-                    fontWeight="medium"
-                    _hover={{
-                      textDecoration: "none",
-                    }}
-                  >
-                    {item.title}
-                  </Link>
-                )}
-              </Box>
-            ))}
-          </HStack>
-        </Flex>
-
-        {/* Mobile navigation */}
-        <Drawer.Root
-          size={"sm"}
-          open={isOpen}
-          onOpenChange={(e) => setOpen(e.open)}
-        >
-          <Drawer.Trigger asChild>
-            <Button p={4} variant="outline" size="sm" display={{ md: "none" }}>
-              Menu
-            </Button>
-          </Drawer.Trigger>
-          <Portal>
-            <Drawer.Backdrop />
-            <Drawer.Positioner padding={4}>
-              <Drawer.Content rounded="md">
-                <Drawer.Body p={6}>
-                  <Stack gap={6}>
-                    {navItems.map((item, i) => (
-                      <Box key={i}>
-                        {item.items ? (
-                          <Box>
-                            <Text fontWeight="medium" mb={4}>
-                              {item.title}
-                            </Text>
-                            <VStack
-                              align="start"
-                              pl={4}
-                              borderLeft="1px"
-                              gap={4}
-                            >
-                              {item.items.map(
-                                (
-                                  subItem: { href: string; name: string },
-                                  j
-                                ) => (
-                                  <Link
-                                    key={j}
-                                    href={subItem.href}
-                                    fontSize="sm"
-                                  >
-                                    {subItem.name}
-                                  </Link>
-                                )
-                              )}
-                            </VStack>
-                          </Box>
-                        ) : (
-                          <Link href={item.href || "#"} fontWeight="medium">
-                            {item.title}
-                          </Link>
-                        )}
-                      </Box>
-                    ))}
-                  </Stack>
-                </Drawer.Body>
-                <Drawer.CloseTrigger asChild>
-                  <CloseButton size="sm" />
-                </Drawer.CloseTrigger>
-              </Drawer.Content>
-            </Drawer.Positioner>
-          </Portal>
-        </Drawer.Root>
-      </Container>
-    </Box>
+    <CardNav
+      logoAlt="Company Logo"
+      logo={"/logo-transparent.svg"}
+      items={items}
+      baseColor="#fff"
+      menuColor="#000"
+      buttonBgColor="#111"
+      buttonTextColor="#fff"
+      ease="power3.out"
+    />
   );
 }
