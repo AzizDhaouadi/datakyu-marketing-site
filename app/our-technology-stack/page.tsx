@@ -6,7 +6,6 @@ import { getPageMetadata } from "../lib/helper/generatePageMetadata";
 
 // 🧩 Custom Components – Core
 import Nav from "@/components/custom/Nav";
-import HeroHeading from "@/components/custom/HeroHeading";
 import CardsWithImages from "@/components/custom/CardsWithImages";
 import FeatureCards from "@/components/custom/FeatureCards";
 import CallToActionButton from "@/components/custom/CallToActionButton";

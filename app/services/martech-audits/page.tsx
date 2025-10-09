@@ -28,6 +28,13 @@ import { FcWorkflow } from "react-icons/fc";
 import { MdTimeline } from "react-icons/md";
 import { BiLineChart } from "react-icons/bi";
 
+// ⚛️ React bits components
+import BlurText from "@/components/Bits/BlurText";
+// import MagicBento from "@/components/Bits/MagicBento";
+// import LogoLoop from "@/components/Bits/LogoLoop";
+import SplashCursor from "@/components/Bits/SplashCursor";
+import AnimatedContent from "@/components/Bits/AnimatedContent";
+
 export async function generateMetadata() {
   return getPageMetadata("/services/martech-audits");
 }
@@ -284,10 +291,14 @@ amplitude.getInstance().logEvent("submitted_form", {
         <Nav />
       </header>
       <main className={styles.main}>
+        <SplashCursor />
         <section id="hero">
-          <HeroHeading
-            title="Marketing Tech Stack Services"
-            highlight="Services"
+          <BlurText
+            text="Marketing Tech Stack Services"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="tracking-tight text-[#f15a25]"
           />
           <Text
             textAlign={"center"}
@@ -300,175 +311,243 @@ amplitude.getInstance().logEvent("submitted_form", {
             right business questions.
           </Text>
         </section>
-        <section id="typed-code">
-          <Box
-            display={{ base: "none", md: "none", lg: "inherit" }}
-            bg="gray.900"
-            py={12}
-            px={6}
-            borderRadius="xl"
-            width={{ lg: "75%" }}
-            margin={{ lg: ".5rem auto" }}
-          >
-            <Flex
-              direction="row"
-              wrap="wrap"
-              gap={6}
-              justify="center"
-              align="flex-start"
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="typed-code">
+            <Box
+              display={{ base: "none", md: "none", lg: "inherit" }}
+              bg="gray.900"
+              py={12}
+              px={6}
+              borderRadius="xl"
+              width={{ lg: "75%" }}
+              margin={{ lg: ".5rem auto" }}
             >
-              {codesToType.map((code, index) => (
-                <Box
-                  key={index}
-                  bg="gray.800"
-                  p={6}
-                  borderRadius="md"
-                  boxShadow="md"
-                  minW="320px"
-                  maxW="500px"
-                  color="white"
-                  style={{
-                    fontFamily: "var(--font-spectral)",
-                    fontSize: "0.9rem",
-                    whiteSpace: "pre",
-                  }}
-                >
-                  <TypedCodeSection codeToType={code} />
-                </Box>
-              ))}
-            </Flex>
-          </Box>
-        </section>
-        <CallToActionButton text={"Request an Audit"} toCenter={{ lg: true }} />
-        <section id="services">
-          <Heading
-            my={6}
-            size={"4xl"}
-            textAlign={"left"}
-            letterSpacing={"tight"}
-            color={"#311c3b"}
-          >
-            Implementation Services
-          </Heading>
-          <Text>
-            Delivering seamless, scalable implementation tailored to your
-            business objectives.
-          </Text>
-          <FeatureCards featuredCards={featuredCards} />
-          <Heading
-            my={6}
-            size={"4xl"}
-            textAlign={"left"}
-            letterSpacing={"tight"}
-            color={"#311c3b"}
-          >
-            Auditing Services
-          </Heading>
-          <Text>
-            Comprehensive audits to ensure data accuracy, platform integrity,
-            and alignment with business objectives.
-          </Text>
-          <TableComponent tableBodyContent={tableContent} />
-        </section>
-        <section id="tech-stack">
-          <Flex gap={6}>
-            <Flex direction={"column"} justifyContent={{ xl: "space-evenly" }}>
-              <Heading
-                my={6}
-                size={"4xl"}
-                textAlign={"left"}
-                letterSpacing={"tight"}
-                color={"#311c3b"}
+              <Flex
+                direction="row"
+                wrap="wrap"
+                gap={6}
+                justify="center"
+                align="flex-start"
               >
-                Our Technology Stack
-              </Heading>
-              <Text fontSize={"md"}>
-                We operate on a modern, future-ready stack—if it can be built,
-                we can track it.
-              </Text>
-              <SlidingLogoGrid logoStack={techStackLogos} />
-              <ListsWithIcons listDescriptions={listWithIconsContent} />
-            </Flex>
-            <section id="typed-code-back">
-              <Box
-                display={{ base: "none", md: "none", lg: "inherit" }}
-                bg="gray.900"
-                py={12}
-                px={6}
-                w={{ lg: "30rem", xl: "45rem" }}
-                h={{ lg: "100%" }}
-                borderRadius="xl"
-              >
-                <Box
-                  bg="gray.800"
-                  p={6}
-                  borderRadius="md"
-                  boxShadow="md"
-                  minW="320px"
-                  maxW="500px"
-                  color="white"
-                  style={{
-                    fontFamily: "var(--font-spectral)",
-                    fontSize: "0.9rem",
-                    whiteSpace: "pre",
-                  }}
-                >
-                  <TypedCodeSection
-                    codeToType={trackingSnippets}
-                    smartBackspace={true}
-                  />
-                </Box>
-              </Box>
-            </section>
-          </Flex>
-        </section>
-        <section style={{ marginTop: "4rem" }} id="anaytics-importance">
-          <Heading
-            my={6}
-            size={"4xl"}
-            textAlign={"left"}
-            letterSpacing={"tight"}
-            color={"#311c3b"}
-          >
-            You Are Only as Strong as Your Analytics Layer
-          </Heading>
-          <Text fontSize={"md"}>
-            The right foundation lets every event, click, and user action drive
-            value.
-          </Text>
-          <Box my={10}>
-            <AlternatingTimeline steps={timeLineSteps} />
-          </Box>
-          <Heading
-            my={8}
-            size={"4xl"}
-            textAlign={"left"}
-            letterSpacing={"tight"}
-            textAlignLast={"center"}
-            color={"#311c3b"}
-          >
-            The Backbone of Marketing Analytics
-          </Heading>
-          <CardsWithImages cardsContent={cardsContent} />
-          <section id="post-cards-contact-us">
-            <CallToActionButton
-              text={"Contact our Sales Team"}
-              toCenter={{ base: true, md: true, lg: true, xl: true }}
-            />
+                {codesToType.map((code, index) => (
+                  <Box
+                    key={index}
+                    bg="gray.800"
+                    p={6}
+                    borderRadius="md"
+                    boxShadow="md"
+                    minW="320px"
+                    maxW="500px"
+                    color="white"
+                    style={{
+                      fontFamily: "var(--font-spectral)",
+                      fontSize: "0.9rem",
+                      whiteSpace: "pre",
+                    }}
+                  >
+                    <TypedCodeSection codeToType={code} />
+                  </Box>
+                ))}
+              </Flex>
+            </Box>
           </section>
-        </section>
-        <section id="faq-section">
-          <Heading
-            my={6}
-            size={"4xl"}
-            textAlign={"left"}
-            letterSpacing={"tight"}
-            textAlignLast={"center"}
-          >
-            Frequently Asked Questions
-          </Heading>
-          <FAQ questions={faqs} />
-        </section>
+        </AnimatedContent>
+        <CallToActionButton text={"Request an Audit"} toCenter={{ lg: true }} />
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="services">
+            <Heading
+              my={6}
+              size={"4xl"}
+              textAlign={"left"}
+              letterSpacing={"tight"}
+              color={"#311c3b"}
+            >
+              Implementation Services
+            </Heading>
+            <Text>
+              Delivering seamless, scalable implementation tailored to your
+              business objectives.
+            </Text>
+            <FeatureCards featuredCards={featuredCards} />
+            <Heading
+              my={6}
+              size={"4xl"}
+              textAlign={"left"}
+              letterSpacing={"tight"}
+              color={"#311c3b"}
+            >
+              Auditing Services
+            </Heading>
+            <Text>
+              Comprehensive audits to ensure data accuracy, platform integrity,
+              and alignment with business objectives.
+            </Text>
+            <TableComponent tableBodyContent={tableContent} />
+          </section>
+        </AnimatedContent>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="tech-stack">
+            <Flex gap={6} justifyContent={{ xl: "space-evenly" }}>
+              <Flex
+                direction={"column"}
+                justifyContent={{ xl: "space-evenly" }}
+              >
+                <Heading
+                  my={6}
+                  size={"4xl"}
+                  textAlign={"left"}
+                  letterSpacing={"tight"}
+                  color={"#311c3b"}
+                >
+                  Our Technology Stack
+                </Heading>
+                <Text fontSize={"md"}>
+                  We operate on a modern, future-ready stack—if it can be built,
+                  we can track it.
+                </Text>
+                <SlidingLogoGrid logoStack={techStackLogos} />
+                <ListsWithIcons listDescriptions={listWithIconsContent} />
+              </Flex>
+              <section id="typed-code-back">
+                <Box
+                  display={{ base: "none", md: "none", lg: "inherit" }}
+                  bg="gray.900"
+                  py={12}
+                  px={6}
+                  w={{ lg: "30rem", xl: "45rem" }}
+                  h={{ lg: "100%" }}
+                  borderRadius="xl"
+                >
+                  <Box
+                    bg="gray.800"
+                    p={6}
+                    borderRadius="md"
+                    boxShadow="md"
+                    minW="320px"
+                    maxW="500px"
+                    color="white"
+                    style={{
+                      fontFamily: "var(--font-spectral)",
+                      fontSize: "0.9rem",
+                      whiteSpace: "pre",
+                    }}
+                  >
+                    <TypedCodeSection
+                      codeToType={trackingSnippets}
+                      smartBackspace={true}
+                    />
+                  </Box>
+                </Box>
+              </section>
+            </Flex>
+          </section>
+        </AnimatedContent>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section style={{ marginTop: "4rem" }} id="anaytics-importance">
+            <Heading
+              my={6}
+              size={"4xl"}
+              textAlign={"left"}
+              letterSpacing={"tight"}
+              color={"#311c3b"}
+            >
+              You Are Only as Strong as Your Analytics Layer
+            </Heading>
+            <Text fontSize={"md"}>
+              The right foundation lets every event, click, and user action
+              drive value.
+            </Text>
+            <Box my={10}>
+              <AlternatingTimeline steps={timeLineSteps} />
+            </Box>
+            <Heading
+              my={10}
+              size={"4xl"}
+              textAlign={"left"}
+              letterSpacing={"tight"}
+              textAlignLast={"center"}
+              color={"#311c3b"}
+            >
+              The Backbone of Marketing Analytics
+            </Heading>
+            <CardsWithImages cardsContent={cardsContent} />
+            <section id="post-cards-contact-us">
+              <CallToActionButton
+                text={"Contact our Sales Team"}
+                toCenter={{ base: true, md: true, lg: true, xl: true }}
+              />
+            </section>
+          </section>
+        </AnimatedContent>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="faq-section">
+            <Heading
+              my={6}
+              size={"4xl"}
+              textAlign={"left"}
+              letterSpacing={"tight"}
+              textAlignLast={"center"}
+            >
+              Frequently Asked Questions
+            </Heading>
+            <FAQ questions={faqs} />
+          </section>
+        </AnimatedContent>
       </main>
       <Footer />
     </div>
