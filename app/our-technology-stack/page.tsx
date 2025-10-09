@@ -23,6 +23,11 @@ import { HiDocumentReport } from "react-icons/hi";
 import { FaDatabase } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 
+// ⚛️ React bits components
+import SplashCursor from "@/components/Bits/SplashCursor";
+import AnimatedContent from "@/components/Bits/AnimatedContent";
+import BlurText from "@/components/Bits/BlurText";
+
 export async function generateMetadata() {
   return getPageMetadata("/our-technology-stack");
 }
@@ -125,10 +130,14 @@ export default function OurTechnologyStack() {
         <Nav />
       </header>
       <main className={styles.main}>
+        <SplashCursor />
         <section id="hero">
-          <HeroHeading
-            title="Analytics that moves revenue"
-            highlight="revenue"
+          <BlurText
+            text="Analytics that drives revenue"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="tracking-tight text-[#f15a25]"
           />
           <Text textAlign={"center"}>
             Google Analytics 4, Google Tag Manager, Segment, Mixpanel, Amplitude
@@ -140,50 +149,89 @@ export default function OurTechnologyStack() {
             toCenter={{ base: true, md: true, lg: true, xl: true }}
           />
         </section>
-        <section id="promise-solution">
-          <Heading
-            my={6}
-            size={"4xl"}
-            textAlign={"center"}
-            letterSpacing={"tight"}
-          >
-            Problems we solve
-          </Heading>
-          <FeatureCards featuredCards={featuredCards} />
-        </section>
-        <Box display={{ base: "none", sm: "none", md: "block", lg: "block" }}>
-          <section id="tech-stack-tools">
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="promise-solution">
             <Heading
               my={6}
               size={"4xl"}
               textAlign={"center"}
               letterSpacing={"tight"}
             >
-              Your Technology Stack, Our Expertise
+              Problems we solve
             </Heading>
-            <TechStackTools />
-            <MarketingToolsTable />
+            <FeatureCards featuredCards={featuredCards} />
+          </section>
+        </AnimatedContent>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <Box display={{ base: "none", sm: "none", md: "block", lg: "block" }}>
+            <section id="tech-stack-tools">
+              <Heading
+                my={6}
+                size={"4xl"}
+                textAlign={"center"}
+                letterSpacing={"tight"}
+              >
+                Your Technology Stack, Our Expertise
+              </Heading>
+              <TechStackTools />
+              <MarketingToolsTable />
+              <CallToActionButton
+                text={"Start Optimizing with Datakyu"}
+                toCenter={{ base: true, md: true, lg: true, xl: true }}
+              />
+            </section>
+          </Box>
+        </AnimatedContent>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="frequently-asked-question">
+            <Heading
+              my={6}
+              size={"4xl"}
+              textAlign={"center"}
+              letterSpacing={"tight"}
+            >
+              Frequently Asked Questions
+            </Heading>
+            <FAQ questions={faqs} />
             <CallToActionButton
-              text={"Start Optimizing with Datakyu"}
+              text={"Book a consultation"}
               toCenter={{ base: true, md: true, lg: true, xl: true }}
             />
           </section>
-        </Box>
-        <section id="frequently-asked-question">
-          <Heading
-            my={6}
-            size={"4xl"}
-            textAlign={"center"}
-            letterSpacing={"tight"}
-          >
-            Frequently Asked Questions
-          </Heading>
-          <FAQ questions={faqs} />
-          <CallToActionButton
-            text={"Book a consultation"}
-            toCenter={{ base: true, md: true, lg: true, xl: true }}
-          />
-        </section>
+        </AnimatedContent>
       </main>
       <Footer />
     </div>
