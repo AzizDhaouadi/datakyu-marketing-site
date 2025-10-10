@@ -1,0 +1,12 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Compact favicon version of DataKyu logo -->
+  
+  <!-- Vertical bar - blue -->
+  <rect x="11" y="8" width="4" height="16" fill="#5865F2" rx="1"/>
+  
+  <!-- Horizontal bar - pink -->
+  <rect x="8" y="14" width="16" height="4" fill="#FF006E" rx="1"/>
+  
+  <!-- Diagonal accent bar - cyan -->
+  <rect x="14" y="10" width="4" height="12" fill="#00D4FF" rx="1" transform="rotate(20 16 16)"/>
+</svg>

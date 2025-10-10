@@ -1,0 +1,13 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Slack-inspired: colored bars at angles forming a unified mark -->
+  <!-- Transparent background -->
+  
+  <!-- Vertical bar - blue -->
+  <rect x="85" y="70" width="30" height="100" fill="#5865F2" rx="6"/>
+  
+  <!-- Horizontal bar - pink -->
+  <rect x="70" y="110" width="100" height="30" fill="#FF006E" rx="6"/>
+  
+  <!-- Diagonal accent bar - cyan -->
+  <rect x="110" y="80" width="30" height="90" fill="#00D4FF" rx="6" transform="rotate(20 125 125)"/>
+</svg>

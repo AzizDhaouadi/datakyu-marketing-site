@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes={"192x192"} />
+        <link rel="icon" href="/favicon.svg" sizes={"192x192"} />
         <Script
           type="text/javascript"
           src="/platforms/load.js"
