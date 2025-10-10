@@ -40,34 +40,31 @@ const cardData: BentoCardProps[] = [
   {
     color: "#110a1f",
     title: "Actionable Insights",
-    description:
-      "Transform raw data into clear decisions your team can execute",
+    description: "Transform raw data into decisions",
     label: "Impact",
   },
   {
     color: "#110a1f",
     title: "Full-Funnel View",
-    description:
-      "See the complete customer journey from first touch to conversion",
+    description: "See the complete customer journey",
     label: "Visibility",
   },
   {
     color: "#110a1f",
     title: "Real-Time Tracking",
-    description: "Monitor campaign performance and pivot quickly when needed",
+    description: "Monitor campaign performance",
     label: "Agility",
   },
   {
     color: "#110a1f",
     title: "ROI Transparency",
-    description:
-      "Know exactly which channels and campaigns deliver actual revenue",
+    description: "Determine true marketing effectiveness",
     label: "Accountability",
   },
   {
     color: "#110a1f",
     title: "Strategic Partnership",
-    description: "Aalysts who understand both data and marketing strategy",
+    description: "Understand data with expert guidance",
     label: "Expertise",
   },
 ];
