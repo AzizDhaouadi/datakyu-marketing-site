@@ -3,7 +3,6 @@ import styles from "../../page.module.css";
 
 // 🧩 Custom Components – Core
 import Nav from "@/components/custom/Nav";
-import HeroHeading from "@/components/custom/HeroHeading";
 import CallToActionButton from "@/components/custom/CallToActionButton";
 import Footer from "@/components/custom/Footer";
 import TypedCodeSection from "@/components/animation/TypedCode";

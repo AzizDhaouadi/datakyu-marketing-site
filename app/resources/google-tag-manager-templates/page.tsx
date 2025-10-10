@@ -2,7 +2,6 @@ import styles from "../../page.module.css";
 
 // 🧩 Custom Components – Core
 import Nav from "@/components/custom/Nav";
-import HeroHeading from "@/components/custom/HeroHeading";
 import CardsWithImages from "@/components/custom/CardsWithImages";
 import CustomDialog from "@/components/custom/Dialog";
 import FAQ from "@/components/custom/FAQ";
@@ -21,6 +20,11 @@ import {
   Timeline,
   List,
 } from "@chakra-ui/react";
+
+// ⚛️ React bits components
+import BlurText from "@/components/Bits/BlurText";
+import SplashCursor from "@/components/Bits/SplashCursor";
+import AnimatedContent from "@/components/Bits/AnimatedContent";
 
 export async function generateMetadata() {
   return getPageMetadata("/resources/google-tag-manager-templates");
@@ -222,10 +226,14 @@ export default function GoogleTagManagerTemplates() {
         <Nav />
       </header>
       <main className={styles.main}>
+        <SplashCursor />
         <section id="hero">
-          <HeroHeading
-            title={"Google Tag Manager Templates"}
-            highlight={"Templates"}
+          <BlurText
+            text="Google Tag Manager Templates"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="tracking-tight text-[#f15a25]"
           />
           <Text textAlign={"center"}>
             Set up Google Analytics 4 event tracking in four simple steps. Our
@@ -233,78 +241,91 @@ export default function GoogleTagManagerTemplates() {
             tested and launched.
           </Text>
         </section>
-        <section id="containers-description">
-          <CardsWithImages cardsContent={containerTemplatesContent} />
-        </section>
-        <section id="how-does-it-work">
-          <Heading
-            size={"4xl"}
-            my={6}
-            textAlign={"left"}
-            letterSpacing={"tight"}
-          >
-            How does it work?
-          </Heading>
-          <Separator size="md" />
-          <Flex direction={{ base: "column", md: "row" }} gap={10}>
-            <Flex
-              direction={"column"}
-              justifyContent={"center"}
-              alignItems={"flex-start"}
-              gap={4}
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="containers-description">
+            <CardsWithImages cardsContent={containerTemplatesContent} />
+          </section>
+          <section id="how-does-it-work">
+            <Heading
+              size={"4xl"}
+              my={6}
+              textAlign={"left"}
+              letterSpacing={"tight"}
             >
-              <Heading
-                size={"2xl"}
-                my={6}
-                textAlign={"left"}
-                color={"rgb(79, 59, 62)"}
-                letterSpacing={"tight"}
+              How does it work?
+            </Heading>
+            <Separator size="md" />
+            <Flex direction={{ base: "column", md: "row" }} gap={10}>
+              <Flex
+                direction={"column"}
+                justifyContent={"center"}
+                alignItems={"flex-start"}
+                gap={4}
               >
-                Set up GA4 event tracking with Google Tag Manager
-              </Heading>
-              <Text>
-                Get started with Google Analytics 4 event tracking with Google
-                Tag Manager in four simple steps. Just select the container,
-                download it, import it and then test and publish.
-              </Text>
-              <Text>
-                If you have any questions, you might find an answer in our FAQ
-                section below 👇. If you did not find what you were looking for,
-                feel free to contact us.
-              </Text>
+                <Heading
+                  size={"2xl"}
+                  my={6}
+                  textAlign={"left"}
+                  color={"rgb(79, 59, 62)"}
+                  letterSpacing={"tight"}
+                >
+                  Set up GA4 event tracking with Google Tag Manager
+                </Heading>
+                <Text>
+                  Get started with Google Analytics 4 event tracking with Google
+                  Tag Manager in four simple steps. Just select the container,
+                  download it, import it and then test and publish.
+                </Text>
+                <Text>
+                  If you have any questions, you might find an answer in our FAQ
+                  section below 👇. If you did not find what you were looking
+                  for, feel free to contact us.
+                </Text>
+              </Flex>
+              <Timeline.Root my={6} size={"xl"} variant={"subtle"}>
+                {timelineContent.map((item, index) => (
+                  <Timeline.Item key={index} my={2}>
+                    <Timeline.Connector>
+                      <Timeline.Separator />
+                      <Timeline.Indicator>{index + 1}</Timeline.Indicator>
+                    </Timeline.Connector>
+                    <Timeline.Content>
+                      <Timeline.Title>
+                        <Heading>{item.title}</Heading>
+                      </Timeline.Title>
+                      <Text textStyle={"md"}>{item.description}</Text>
+                    </Timeline.Content>
+                  </Timeline.Item>
+                ))}
+              </Timeline.Root>
             </Flex>
-            <Timeline.Root my={6} size={"xl"} variant={"subtle"}>
-              {timelineContent.map((item, index) => (
-                <Timeline.Item key={index} my={2}>
-                  <Timeline.Connector>
-                    <Timeline.Separator />
-                    <Timeline.Indicator>{index + 1}</Timeline.Indicator>
-                  </Timeline.Connector>
-                  <Timeline.Content>
-                    <Timeline.Title>
-                      <Heading>{item.title}</Heading>
-                    </Timeline.Title>
-                    <Text textStyle={"md"}>{item.description}</Text>
-                  </Timeline.Content>
-                </Timeline.Item>
-              ))}
-            </Timeline.Root>
-          </Flex>
-        </section>
-        <section id="faq">
-          <Heading
-            size={"4xl"}
-            my={6}
-            textAlign={"center"}
-            letterSpacing={"tight"}
-          >
-            Frequently Asked Questions
-          </Heading>
-          <FAQ questions={questionsAndAnswers} />
-        </section>
-        <section id="contact-us">
-          <CallToActionSection description={"We are here to help!"} />
-        </section>
+          </section>
+          <section id="faq">
+            <Heading
+              size={"4xl"}
+              my={6}
+              textAlign={"center"}
+              letterSpacing={"tight"}
+            >
+              Frequently Asked Questions
+            </Heading>
+            <FAQ questions={questionsAndAnswers} />
+          </section>
+          <section id="contact-us">
+            <CallToActionSection description={"We are here to help!"} />
+          </section>
+        </AnimatedContent>
       </main>
       <Footer />
     </div>

@@ -70,7 +70,7 @@ export default function Nav() {
         {
           label: "Looker Studio Templates",
           ariaLabel: "LS Templates",
-          href: "/resoureces/looker-studio-templates",
+          href: "/resources/looker-studio-templates",
         },
         {
           label: "GA4 Event Generator",

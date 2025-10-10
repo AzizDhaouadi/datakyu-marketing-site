@@ -2,7 +2,6 @@ import styles from "../../page.module.css";
 
 // 🧩 Custom Components – Core
 import Nav from "@/components/custom/Nav";
-import HeroHeading from "@/components/custom/HeroHeading";
 import CardsWithImages from "@/components/custom/CardsWithImages";
 import CustomDialog from "@/components/custom/Dialog";
 import FAQ from "@/components/custom/FAQ";
@@ -21,6 +20,11 @@ import {
 
 // ⚛️ Dynamic SEO metadata generation
 import { getPageMetadata } from "@/app/lib/helper/generatePageMetadata";
+
+// ⚛️ React bits components
+import BlurText from "@/components/Bits/BlurText";
+import SplashCursor from "@/components/Bits/SplashCursor";
+import AnimatedContent from "@/components/Bits/AnimatedContent";
 
 export async function generateMetadata() {
   return getPageMetadata("/resources/looker-studio-templates");
@@ -131,90 +135,111 @@ export default function LookerStudioTemplates() {
         <Nav />
       </header>
       <main className={styles.main}>
+        <SplashCursor />
         <section id="hero">
-          <HeroHeading
+          {/* <HeroHeading
             title={"Looker Studio Templates"}
             highlight={"Templates"}
+          /> */}
+          <BlurText
+            text="Looker Studio Templates"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="tracking-tight text-[#f15a25]"
           />
           <Text textAlign={"center"}>
             Get up and running with visualizing your data in seconds with our
             ready to go templates. Just duplicate, connect and start analyzing!
           </Text>
         </section>
-        <section id="containers-description">
-          <CardsWithImages cardsContent={dashboardTemplatesContent} />
-        </section>
-        <section id="how-does-it-work">
-          <Heading
-            size={"4xl"}
-            my={6}
-            textAlign={"left"}
-            letterSpacing={"tight"}
-          >
-            How does it work?
-          </Heading>
-          <Separator size="md" />
-          <Flex direction={{ base: "column", md: "row" }} gap={10}>
-            <Flex
-              direction={"column"}
-              justifyContent={"center"}
-              alignItems={"flex-start"}
-              gap={4}
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="containers-description">
+            <CardsWithImages cardsContent={dashboardTemplatesContent} />
+          </section>
+          <section id="how-does-it-work">
+            <Heading
+              size={"4xl"}
+              my={6}
+              textAlign={"left"}
+              letterSpacing={"tight"}
             >
-              <Heading
-                size={"2xl"}
-                my={6}
-                textAlign={"left"}
-                color={"rgb(79, 59, 62)"}
-                letterSpacing={"tight"}
+              How does it work?
+            </Heading>
+            <Separator size="md" />
+            <Flex direction={{ base: "column", md: "row" }} gap={10}>
+              <Flex
+                direction={"column"}
+                justifyContent={"center"}
+                alignItems={"flex-start"}
+                gap={4}
               >
-                Visualize your data with Looker Studio 📊
-              </Heading>
-              <Text>
-                Viusalize your data using Looker Studio in 4 simple steps using
-                our templates. Whatever your business is, we have a temlate for
-                it. All of our tempaltes work seamlessly and use the innate
-                Google Analytics connector with Looker Studio, so there is no
-                funny business there.
-              </Text>
-              <Text>
-                If you have any questions, you might find an answer in our FAQ
-                section below 👇. If you did not find what you were looking for,
-                feel free to contact us.
-              </Text>
+                <Heading
+                  size={"2xl"}
+                  my={6}
+                  textAlign={"left"}
+                  color={"rgb(79, 59, 62)"}
+                  letterSpacing={"tight"}
+                >
+                  Visualize your data with Looker Studio 📊
+                </Heading>
+                <Text>
+                  Viusalize your data using Looker Studio in 4 simple steps
+                  using our templates. Whatever your business is, we have a
+                  temlate for it. All of our tempaltes work seamlessly and use
+                  the innate Google Analytics connector with Looker Studio, so
+                  there is no funny business there.
+                </Text>
+                <Text>
+                  If you have any questions, you might find an answer in our FAQ
+                  section below 👇. If you did not find what you were looking
+                  for, feel free to contact us.
+                </Text>
+              </Flex>
+              <Timeline.Root my={6} size={"xl"} variant={"subtle"}>
+                {timelineContent.map((item, index) => (
+                  <Timeline.Item key={index} my={2}>
+                    <Timeline.Connector>
+                      <Timeline.Separator />
+                      <Timeline.Indicator>{index + 1}</Timeline.Indicator>
+                    </Timeline.Connector>
+                    <Timeline.Content>
+                      <Timeline.Title>
+                        <Heading>{item.title}</Heading>
+                      </Timeline.Title>
+                      <Text textStyle={"md"}>{item.description}</Text>
+                    </Timeline.Content>
+                  </Timeline.Item>
+                ))}
+              </Timeline.Root>
             </Flex>
-            <Timeline.Root my={6} size={"xl"} variant={"subtle"}>
-              {timelineContent.map((item, index) => (
-                <Timeline.Item key={index} my={2}>
-                  <Timeline.Connector>
-                    <Timeline.Separator />
-                    <Timeline.Indicator>{index + 1}</Timeline.Indicator>
-                  </Timeline.Connector>
-                  <Timeline.Content>
-                    <Timeline.Title>
-                      <Heading>{item.title}</Heading>
-                    </Timeline.Title>
-                    <Text textStyle={"md"}>{item.description}</Text>
-                  </Timeline.Content>
-                </Timeline.Item>
-              ))}
-            </Timeline.Root>
-          </Flex>
-        </section>
-        <section id="faq">
-          <Heading
-            size={"4xl"}
-            my={6}
-            textAlign={"center"}
-            letterSpacing={"tight"}
-          >
-            Frequently Asked Questions
-          </Heading>
-          <FAQ questions={questionsAndAnswers} />
-        </section>
-        <section id="contact-us">
-          <CallToActionSection description={"We are here to help!"} />
-        </section>
+          </section>
+          <section id="faq">
+            <Heading
+              size={"4xl"}
+              my={6}
+              textAlign={"center"}
+              letterSpacing={"tight"}
+            >
+              Frequently Asked Questions
+            </Heading>
+            <FAQ questions={questionsAndAnswers} />
+          </section>
+          <section id="contact-us">
+            <CallToActionSection description={"We are here to help!"} />
+          </section>
+        </AnimatedContent>
       </main>
       <Footer />
     </div>

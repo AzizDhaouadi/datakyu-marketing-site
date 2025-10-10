@@ -25,7 +25,6 @@ import SineWaveAnimation from "@/components/animation/SinFunction";
 import { Text, Heading, Box, Flex } from "@chakra-ui/react";
 
 // 🎨 Icons
-import { LuFolder, LuSquareCheck, LuUser, LuDatabase } from "react-icons/lu";
 import { FiMap, FiShield, FiPercent } from "react-icons/fi";
 import {
   SiGoogleanalytics,
@@ -56,33 +55,6 @@ export default function Home() {
       description:
         "Feel the impact of complete and accurate measurements for your product and business. We build measurement strategies that establish the basis for performance analysis, growth, and forecasting.",
       icon: <FiPercent />,
-    },
-  ];
-
-  const processSteps = [
-    {
-      step: "Consultation Call",
-      description:
-        "At Datakyu, we hold one value above all: respect for your time and ours. That’s why our process begins with a structured discovery call — not as a formality, but as a crucial alignment step. This conversation allows us to understand your business challenges, goals, and expectations, while also giving you a transparent view into how we operate, what we specialize in, and the kind of results we deliver. We believe in working with intent — and that starts by ensuring we’re the right partner for each other. If we aren’t the best fit, we’ll tell you upfront and point you in the right direction. But if we are, that initial conversation becomes the first step in a streamlined, purpose-driven collaboration.",
-      icon: <LuUser />,
-    },
-    {
-      step: "Measurement Plan",
-      description:
-        "We work closely with you to develop a tailored measurement plan aligned with your unique business objectives. Our goal is to help you identify the metrics that truly matter — the ones that reflect progress, performance, and growth — and establish the infrastructure to measure them accurately and consistently. Whether you're focused on customer acquisition, retention, revenue, or operational efficiency, we ensure your data strategy is built around meaningful, actionable insights — not vanity metrics.",
-      icon: <LuFolder />,
-    },
-    {
-      step: "Implementation",
-      description:
-        "We translate your strategic vision into a measurable reality by implementing the right instrumentation using the most appropriate and scalable technology stack. Every implementation is rigorously tested to ensure alignment with the measurement plan, guaranteeing that your data is clean, reliable, and trustworthy. Our focus is not just on tracking — but on ensuring every event, property, and interaction is captured with precision, so you can move forward with full confidence in your analytics.",
-      icon: <LuSquareCheck />,
-    },
-    {
-      step: "Data Visualization",
-      description:
-        "We transform complex data into clear, actionable insights through thoughtfully designed dashboards tailored to your business goals. Our visualizations go beyond aesthetics — they are built to highlight what matters most, enabling you and your team to make informed, data-driven decisions with confidence. Whether you're tracking performance, identifying trends, or aligning stakeholders, we ensure your data tells a story that drives strategic action.",
-      icon: <LuDatabase />,
     },
   ];
 
