@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
             if (!prompt) return new Response("Missing prompt", { status: 400 });
 
             const response = await openai.responses.create({
-                model: 'gpt-4o',
+                model: 'gpt-5-nano',
                 instructions: 'You are a coding assistant proficient in Google Analytics 4 tracking codes',
                 input: prompt,
             });

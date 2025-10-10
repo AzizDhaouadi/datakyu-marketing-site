@@ -84,7 +84,7 @@ export default function Nav() {
   return (
     <CardNav
       logoAlt="Company Logo"
-      logo={"/logo-transparent.svg"}
+      logo={"/logo.svg"}
       items={items}
       baseColor="#fff"
       menuColor="#000"
