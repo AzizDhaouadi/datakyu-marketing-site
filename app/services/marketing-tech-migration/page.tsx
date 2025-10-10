@@ -31,6 +31,11 @@ import { FaDatabase } from "react-icons/fa";
 import { GiCookie } from "react-icons/gi";
 import { MdTrendingUp } from "react-icons/md";
 
+// ⚛️ React bits components
+import BlurText from "@/components/Bits/BlurText";
+import SplashCursor from "@/components/Bits/SplashCursor";
+import AnimatedContent from "@/components/Bits/AnimatedContent";
+
 export async function generateMetadata() {
   return getPageMetadata("/services/marketing-tech-migration");
 }
@@ -149,6 +154,7 @@ mixpanel.track(
         <Nav />
       </header>
       <main className={styles.main}>
+        <SplashCursor />
         <section id={"hero"}>
           <Flex direction={"row"} gap={6}>
             <Flex direction={"column"} gap={6}>
@@ -163,20 +169,19 @@ mixpanel.track(
                   xl: "inherit",
                 }}
               >
+                <BlurText
+                  text="Helping every"
+                  delay={150}
+                  animateBy="words"
+                  direction="top"
+                  className="tracking-tight text-[#311c3b]"
+                />
                 <Heading
-                  my={6}
-                  color={"#311c3b"}
-                  size={"4xl"}
-                  textAlign={"left"}
-                  letterSpacing={"tight"}
-                >
-                  Helping every
-                </Heading>
-                <Heading
-                  size={"4xl"}
+                  size={"6xl"}
                   textAlign={"left"}
                   letterSpacing={"tight"}
                   color={"#f15a25"}
+                  fontFamily={"var(--font-space-grotesk)"}
                 >
                   <TypedCodeSection
                     codeToType={codeToType}
@@ -228,26 +233,39 @@ mixpanel.track(
             </Flex>
           </Flex>
         </section>
-        <section style={{ marginTop: "4rem" }} id="analytics-tools">
-          <Heading
-            size={"4xl"}
-            my={6}
-            textAlign={"center"}
-            letterSpacing={"tight"}
-          >
-            The Infrastructure Behind Lasting Success
-          </Heading>
-          <Text
-            textAlign={"center"}
-            mx={"auto"}
-            fontSize="xl"
-            mt={4}
-            maxW="2xl"
-          >
-            Power your marketing with data you can trust.
-          </Text>
-          <CardsWithImages cardsContent={analyticsToolsContent} />
-        </section>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section style={{ marginTop: "4rem" }} id="analytics-tools">
+            <Heading
+              size={"4xl"}
+              my={6}
+              textAlign={"center"}
+              letterSpacing={"tight"}
+            >
+              The Infrastructure Behind Lasting Success
+            </Heading>
+            <Text
+              textAlign={"center"}
+              mx={"auto"}
+              fontSize="xl"
+              mt={4}
+              maxW="2xl"
+            >
+              Power your marketing with data you can trust.
+            </Text>
+            <CardsWithImages cardsContent={analyticsToolsContent} />
+          </section>
+        </AnimatedContent>
         <section id="analytics-advantages">
           <Flex direction={"row"} gap={6}>
             <ListsWithIcons
@@ -256,46 +274,72 @@ mixpanel.track(
             />
           </Flex>
         </section>
-        <section id="migrate-tech-stack">
-          <Heading
-            size={"2xl"}
-            my={6}
-            textAlign={"center"}
-            letterSpacing={"tight"}
-          >
-            Migrate your marketing tech stack with confidence
-          </Heading>
-          <TechStackTabs margin={4} />
-          <Heading
-            size={"2xl"}
-            my={10}
-            textAlign={"center"}
-            letterSpacing={"tight"}
-          >
-            Our Migration Process
-          </Heading>
-          <AlternatingTimeline steps={alternatingTimelineContent} />
-        </section>
-        <section id="cta-section">
-          <Flex direction={"row"} gap={10} justifyContent={"center"}>
-            <Flex
-              direction={"column"}
-              alignItems={"center"}
-              justifyContent={"center"}
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="migrate-tech-stack">
+            <Heading
+              size={"2xl"}
+              my={6}
+              textAlign={"center"}
+              letterSpacing={"tight"}
             >
-              <Heading
-                size={"4xl"}
-                my={6}
-                textAlign={"center"}
-                letterSpacing={"tight"}
+              Migrate your marketing tech stack with confidence
+            </Heading>
+            <TechStackTabs margin={4} />
+            <Heading
+              size={"2xl"}
+              my={10}
+              textAlign={"center"}
+              letterSpacing={"tight"}
+            >
+              Our Migration Process
+            </Heading>
+            <AlternatingTimeline steps={alternatingTimelineContent} />
+          </section>
+        </AnimatedContent>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="cta-section">
+            <Flex direction={"row"} gap={10} justifyContent={"center"}>
+              <Flex
+                direction={"column"}
+                alignItems={"center"}
+                justifyContent={"center"}
               >
-                Let us hekp you migrate your marketing tech stack
-              </Heading>
-              <CallToActionButton text={"Contact us"} />
-              <DualSineWaves />
+                <Heading
+                  size={"4xl"}
+                  my={6}
+                  textAlign={"center"}
+                  letterSpacing={"tight"}
+                >
+                  Let us hekp you migrate your marketing tech stack
+                </Heading>
+                <CallToActionButton text={"Contact us"} />
+                <DualSineWaves />
+              </Flex>
             </Flex>
-          </Flex>
-        </section>
+          </section>
+        </AnimatedContent>
       </main>
       <Footer />
     </div>

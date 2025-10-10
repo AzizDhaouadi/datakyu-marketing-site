@@ -8,7 +8,6 @@ import CardsWithImages from "@/components/custom/CardsWithImages";
 import CallToActionButton from "@/components/custom/CallToActionButton";
 import CustomDialog from "@/components/custom/Dialog";
 import ListsWithIcons from "@/components/custom/ListsWithIcons";
-import FeatureTabs from "@/components/custom/FeatureTabs";
 import CallToActionSection from "@/components/custom/CallToActionSection";
 import SinFunction from "@/components/animation/SinFunction";
 import Footer from "@/components/custom/Footer";
@@ -19,13 +18,16 @@ import { getPageMetadata } from "@/app/lib/helper/generatePageMetadata";
 // 💅 Chakra UI
 import { Text, Heading, Flex, Box, ConditionalValue } from "@chakra-ui/react";
 
+// ⚛️ React bits components
+import BlurText from "@/components/Bits/BlurText";
+import MagicBento from "@/components/Bits/MagicBento";
+import SplashCursor from "@/components/Bits/SplashCursor";
+import AnimatedContent from "@/components/Bits/AnimatedContent";
+
 // 💻 Code Hightlighter
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-tomorrow.css";
-
-// 🎨 Icons
-import { LuFolder, LuSquareCheck, LuUser, LuDatabase } from "react-icons/lu";
 
 export async function generateMetadata() {
   return getPageMetadata("/services/custom-marketing-analytics");
@@ -169,13 +171,6 @@ export default function CustomMarketingAnalytics() {
       includeFooter: false,
     },
     {
-      title: "User Identification",
-      description:
-        "Identify users across devices and platforms to understand their behavior.",
-      image: "/images/user-identification.png",
-      includeFooter: false,
-    },
-    {
       title: "Insights & Recommendations",
       description:
         "Get actionable insights and recommendations based on your data.",
@@ -210,39 +205,13 @@ mixpanel.track(
     return Prism.highlight(code, Prism.languages.javascript, "javascript");
   });
 
-  const processSteps = [
-    {
-      step: "Consultation Call",
-      description:
-        "At Datakyu, we hold one value above all: respect for your time and ours. That’s why our process begins with a structured discovery call — not as a formality, but as a crucial alignment step. This conversation allows us to understand your business challenges, goals, and expectations, while also giving you a transparent view into how we operate, what we specialize in, and the kind of results we deliver. We believe in working with intent — and that starts by ensuring we’re the right partner for each other. If we aren’t the best fit, we’ll tell you upfront and point you in the right direction. But if we are, that initial conversation becomes the first step in a streamlined, purpose-driven collaboration.",
-      icon: <LuUser />,
-    },
-    {
-      step: "Measurement Plan",
-      description:
-        "We work closely with you to develop a tailored measurement plan aligned with your unique business objectives. Our goal is to help you identify the metrics that truly matter — the ones that reflect progress, performance, and growth — and establish the infrastructure to measure them accurately and consistently. Whether you're focused on customer acquisition, retention, revenue, or operational efficiency, we ensure your data strategy is built around meaningful, actionable insights — not vanity metrics.",
-      icon: <LuFolder />,
-    },
-    {
-      step: "Implementation",
-      description:
-        "We translate your strategic vision into a measurable reality by implementing the right instrumentation using the most appropriate and scalable technology stack. Every implementation is rigorously tested to ensure alignment with the measurement plan, guaranteeing that your data is clean, reliable, and trustworthy. Our focus is not just on tracking — but on ensuring every event, property, and interaction is captured with precision, so you can move forward with full confidence in your analytics.",
-      icon: <LuSquareCheck />,
-    },
-    {
-      step: "Data Visualization",
-      description:
-        "We transform complex data into clear, actionable insights through thoughtfully designed dashboards tailored to your business goals. Our visualizations go beyond aesthetics — they are built to highlight what matters most, enabling you and your team to make informed, data-driven decisions with confidence. Whether you're tracking performance, identifying trends, or aligning stakeholders, we ensure your data tells a story that drives strategic action.",
-      icon: <LuDatabase />,
-    },
-  ];
-
   return (
     <div className={styles.page}>
       <header style={{ width: "100%" }} className={styles.header}>
         <Nav />
       </header>
       <main className={styles.main}>
+        <SplashCursor />
         <section id="hero">
           <Flex direction={"row-reverse"} gap={6}>
             <Flex
@@ -251,9 +220,12 @@ mixpanel.track(
               justifyContent={"flex-start"}
               gap={6}
             >
-              <HeroHeading
-                title="Turn data into insights"
-                highlight="insights"
+              <BlurText
+                text="Turn data into insights"
+                delay={150}
+                animateBy="words"
+                direction="top"
+                className="tracking-tight text-[#f15a25]"
               />
               <Text>
                 Unleash the hidden potential of your website and products with
@@ -281,101 +253,179 @@ mixpanel.track(
             </Flex>
           </Flex>
         </section>
-        <section id="consulting-services">
-          <Heading
-            size={"4xl"}
-            my={6}
-            textAlign={"center"}
-            letterSpacing={"tight"}
-          >
-            Our Consulting Services
-          </Heading>
-          <Text textAlign={"center"}>All the different ways we can help.</Text>
-          <CardsWithImages cardsContent={featureCardsContent} />
-          <CallToActionButton
-            text={"Contact us"}
-            toCenter={{ base: true, md: true, lg: true, xl: true }}
-          />
-        </section>
-        <section style={{ marginTop: "4rem" }} id={"analytics-tech-stack"}>
-          <Flex direction={"row"} gap={6}>
-            <Flex direction={"column"} gap={6}>
-              <Heading
-                my={6}
-                color={"#311c3b"}
-                size={"4xl"}
-                textAlign={"left"}
-                letterSpacing={"tight"}
-              >
-                Our Technology Stack
-              </Heading>
-              <Text>
-                Build a tracking infrastructure that scales with your business.
-                Future proof your tracking and work with tooks that are shaping
-                to future of web analytics.
-              </Text>
-              <ListsWithIcons listDescriptions={listsContent} />
-            </Flex>
-            <Flex
-              display={{ base: "none", md: "none", lg: "flex" }}
-              width={{ lg: "35rem" }}
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="consulting-services">
+            <Heading
+              size={"4xl"}
+              my={6}
+              textAlign={"center"}
+              letterSpacing={"tight"}
             >
-              <Box
-                bg="gray.900"
-                w={"55rem"}
-                mx={"auto"}
-                py={4}
-                px={2}
-                borderRadius="xl"
+              Our Consulting Services
+            </Heading>
+            <Text textAlign={"center"}>
+              All the different ways we can help.
+            </Text>
+            <CardsWithImages cardsContent={featureCardsContent} />
+            <CallToActionButton
+              text={"Contact us"}
+              toCenter={{ base: true, md: true, lg: true, xl: true }}
+            />
+          </section>
+        </AnimatedContent>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section style={{ marginTop: "4rem" }} id={"analytics-tech-stack"}>
+            <Flex direction={"row"} gap={6}>
+              <Flex direction={"column"} gap={6}>
+                <Heading
+                  my={6}
+                  color={"#311c3b"}
+                  size={"4xl"}
+                  textAlign={"left"}
+                  letterSpacing={"tight"}
+                >
+                  Our Technology Stack
+                </Heading>
+                <Text>
+                  Build a tracking infrastructure that scales with your
+                  business. Future proof your tracking and work with tooks that
+                  are shaping to future of web analytics.
+                </Text>
+                <ListsWithIcons listDescriptions={listsContent} />
+              </Flex>
+              <Flex
+                display={{ base: "none", md: "none", lg: "flex" }}
+                width={{ lg: "35rem" }}
               >
                 <Box
-                  bg="gray.800"
-                  p={6}
-                  borderRadius="md"
-                  color="white"
-                  overflowX="hidden"
-                  height={"100%"}
-                  style={{
-                    fontFamily: "var(--font-spectral)",
-                    fontSize: "0.9rem",
-                    whiteSpace: "pre",
-                  }}
+                  bg="gray.900"
+                  w={"55rem"}
+                  mx={"auto"}
+                  py={4}
+                  px={2}
+                  borderRadius="xl"
                 >
-                  {highlightedCodeContent.map((code: string, index) => (
-                    <Box
-                      key={index}
-                      dangerouslySetInnerHTML={{ __html: code }}
-                    ></Box>
-                  ))}
+                  <Box
+                    bg="gray.800"
+                    p={6}
+                    borderRadius="md"
+                    color="white"
+                    overflowX="hidden"
+                    height={"100%"}
+                    style={{
+                      fontFamily: "var(--font-spectral)",
+                      fontSize: "0.9rem",
+                      whiteSpace: "pre",
+                    }}
+                  >
+                    {highlightedCodeContent.map((code: string, index) => (
+                      <Box
+                        key={index}
+                        dangerouslySetInnerHTML={{ __html: code }}
+                      ></Box>
+                    ))}
+                  </Box>
                 </Box>
-              </Box>
+              </Flex>
             </Flex>
-          </Flex>
-        </section>
-        <section style={{ marginTop: "4rem" }} id="problems-we-solve">
-          <HeroHeading
-            title="Complex problems we make simple"
-            highlight="simple"
-          />
-          <CardsWithImages cardsContent={solutionsCardsContent} />
-        </section>
-        <section id="process">
-          <Heading
-            my={6}
-            size={"4xl"}
-            textAlign={"center"}
-            letterSpacing={"tight"}
-          >
-            Our Methodology
-          </Heading>
-          <FeatureTabs FeatureTabs={processSteps} />
-        </section>
-        <section id="cta">
-          <Box display={{ base: "none", md: "none", lg: "initial" }}>
-            <SinFunction />
-          </Box>
-          <CallToActionSection description="Contact us today to learn how we can help you turn data into actionable insights." />
-        </section>
+          </section>
+        </AnimatedContent>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section style={{ marginTop: "4rem" }} id="problems-we-solve">
+            <HeroHeading
+              title="Complex problems we make simple"
+              highlight="simple"
+            />
+            <CardsWithImages cardsContent={solutionsCardsContent} />
+          </section>
+        </AnimatedContent>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="process">
+            <Heading
+              my={6}
+              size={"4xl"}
+              textAlign={"center"}
+              letterSpacing={"tight"}
+            >
+              Our Methodology
+            </Heading>
+            <MagicBento
+              textAutoHide={true}
+              enableStars={true}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              enableTilt={false}
+              enableMagnetism={false}
+              clickEffect={true}
+              spotlightRadius={300}
+              particleCount={100}
+              glowColor="132, 0, 255"
+            />{" "}
+          </section>
+        </AnimatedContent>
+        <AnimatedContent
+          distance={150}
+          direction="horizontal"
+          reverse={false}
+          duration={1.2}
+          ease="ease.in"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <section id="cta">
+            <Box display={{ base: "none", md: "none", lg: "initial" }}>
+              <SinFunction />
+            </Box>
+            <CallToActionSection description="Contact us today to learn how we can help you turn data into actionable insights." />
+          </section>
+        </AnimatedContent>
       </main>
       <Footer />
     </div>
