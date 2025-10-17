@@ -161,7 +161,6 @@ If the tracking method is:
         <Nav />
       </header>
       <main className={styles.main}>
-        <SplashCursor />
         <AnimatedContent
           distance={150}
           direction="horizontal"
