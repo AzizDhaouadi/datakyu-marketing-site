@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Heading, Box } from "@chakra-ui/react";
 import { HiOutlineLightningBolt } from "react-icons/hi";
-import OpenHubsportDialog from "./OpenHubspotDialog";
+import OpenHubspotDialog from "./OpenHubspotDialog";
 
 export default function CallToActionSection({
   description,
@@ -29,7 +29,7 @@ export default function CallToActionSection({
       >
         {description}
       </Heading>
-      <OpenHubsportDialog text="Drop us a message" toCenter={false} />
+      <OpenHubspotDialog text="Drop us a message" toCenter={false} />
     </Flex>
   );
 }

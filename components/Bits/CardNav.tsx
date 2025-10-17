@@ -1,5 +1,6 @@
 "use client";
 import CallToActionButton from "../custom/CallToActionButton";
+import Link from "next/link";
 
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
@@ -198,12 +199,14 @@ const CardNav: React.FC<CardNavProps> = ({
           </div>
 
           <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
-            <img
-              src={logo}
-              alt={logoAlt}
-              className="logo"
-              style={{ height: "80px" }}
-            />
+            <Link href={"/"}>
+              <img
+                src={logo}
+                alt={logoAlt}
+                className="logo"
+                style={{ height: "80px" }}
+              />
+            </Link>
           </div>
           <CallToActionButton text={"Get Started"} />
         </div>

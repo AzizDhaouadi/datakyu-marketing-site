@@ -36,10 +36,12 @@ export default function OpenHubspotDialog({
                 <Dialog.Title p={"1rem"}>How can we help?</Dialog.Title>
               </Dialog.Header>
               <Dialog.Body p={"2rem"} id="hbspt-modal">
+                <div id="target-form-container"></div>
                 <HubspotForm
                   region="na1"
                   portalId="44171646"
-                  formId="357a2ea7-c337-419e-b440-c454bb6608bd"
+                  formId="414c3f35-bd01-4403-a26f-10adf7d98873"
+                  targetID="target-form-container"
                 />
               </Dialog.Body>
               <Dialog.Footer>

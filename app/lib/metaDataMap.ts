@@ -43,5 +43,11 @@ export const seoMetaDataMap: Record<string, { title: string; description: string
         description:
             "Skip the blank canvas. Datakyu’s free Looker Studio templates give you clean, customizable dashboards for GA4, ads, and more—ready to plug in and share with your team.",
         canonical: "https://datakyu.co/resources/looker-studio-templates"
+    },
+    "/contact": {
+        title: "Contact us – Datakyu",
+        description:
+            "Get in touch with Datakyu today. Whether you have questions, need support, or want to collaborate, our team is here to help.",
+        canonical: "https://datakyu.co/contact"
     }
 }

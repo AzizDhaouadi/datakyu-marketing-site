@@ -9,9 +9,9 @@ export default function Nav() {
       textColor: "#fff",
       links: [
         {
-          label: "Home",
-          ariaLabel: "About Home",
-          href: "/",
+          label: "Contact",
+          ariaLabel: "About Contact",
+          href: "/contact",
         },
         {
           label: "Our Technology Stack",
