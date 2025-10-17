@@ -32,7 +32,6 @@ import {
 
 // ⚛️ React bits components
 import BlurText from "@/components/Bits/BlurText";
-import SplashCursor from "@/components/Bits/SplashCursor";
 import AnimatedContent from "@/components/Bits/AnimatedContent";
 
 export default function GenerateGA4Events() {
