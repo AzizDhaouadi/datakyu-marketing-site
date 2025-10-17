@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex } from "@chakra-ui/react";
-import OpenHubsportDialog from "./OpenHubspotDialog";
+import OpenHubspotDialog from "./OpenHubspotDialog";
 
 export default function CallToActionButton({
   text,
@@ -25,7 +25,7 @@ export default function CallToActionButton({
       w={{ lg: "fit-content" }}
       mx={mx}
     >
-      <OpenHubsportDialog text={text} toCenter={true} />
+      <OpenHubspotDialog text={text} toCenter={true} />
     </Flex>
   );
 }

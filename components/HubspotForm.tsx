@@ -7,12 +7,14 @@ type HubspotFormProps = {
   portalId: string;
   formId: string;
   region: string;
+  targetID?: string;
 };
 
 export default function HubspotForm({
   portalId,
   formId,
   region,
+  targetID,
 }: HubspotFormProps) {
   useEffect(() => {
     const script = document.createElement("script");
@@ -24,6 +26,7 @@ export default function HubspotForm({
           portalId: portalId,
           formId: formId,
           region: region,
+          target: `#${targetID}`,
           onFormReady: function () {
             console.log("Loaded!");
             return track({
@@ -36,7 +39,6 @@ export default function HubspotForm({
             });
           },
           onFormSubmit: function (form: any) {
-            // console.log(form["elements"]["email"].value);
             track({
               trackingPlatform: { segment: true, dataLayer: true },
               eventPayload: {
@@ -52,9 +54,14 @@ export default function HubspotForm({
         });
       }
     };
-    const hbsptModal = document.querySelector("#hbspt-modal");
+    const hbsptModal =
+      document.querySelector("#hbspt-modal") ||
+      document.querySelector("#contact-form-section");
     if (hbsptModal) {
+      console.log("Appending Hubspot script");
       hbsptModal.appendChild(script);
+    } else {
+      console.error("Hubspot modal not found");
     }
   }, [portalId, formId, region]);
 
