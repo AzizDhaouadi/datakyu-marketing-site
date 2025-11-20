@@ -150,19 +150,6 @@ export default function Home() {
               />
             </Flex>
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section id="features">
             <Heading
               my={6}
@@ -179,21 +166,8 @@ export default function Home() {
             </Text>
             <FeatureCards featuredCards={featuredCards} />
           </section>
-        </AnimatedContent>
 
-        <CallToActionSection description="Ready to take your data to the next level?" />
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
+          <CallToActionSection description="Ready to take your data to the next level?" />
           <section id="methodology">
             <Heading
               size={"4xl"}
@@ -216,19 +190,6 @@ export default function Home() {
               glowColor="132, 0, 255"
             />
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section id="cta">
             <Heading
               size={"4xl"}

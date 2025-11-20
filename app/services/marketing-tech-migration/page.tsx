@@ -265,27 +265,14 @@ mixpanel.track(
             </Text>
             <CardsWithImages cardsContent={analyticsToolsContent} />
           </section>
-        </AnimatedContent>
-        <section id="analytics-advantages">
-          <Flex direction={"row"} gap={6}>
-            <ListsWithIcons
-              toReverse={true}
-              listDescriptions={analyticsAdvantagesContent}
-            />
-          </Flex>
-        </section>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
+          <section id="analytics-advantages">
+            <Flex direction={"row"} gap={6}>
+              <ListsWithIcons
+                toReverse={true}
+                listDescriptions={analyticsAdvantagesContent}
+              />
+            </Flex>
+          </section>
           <section id="migrate-tech-stack">
             <Heading
               size={"2xl"}
@@ -306,19 +293,6 @@ mixpanel.track(
             </Heading>
             <AlternatingTimeline steps={alternatingTimelineContent} />
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section id="cta-section">
             <Flex direction={"row"} gap={10} justifyContent={"center"}>
               <Flex

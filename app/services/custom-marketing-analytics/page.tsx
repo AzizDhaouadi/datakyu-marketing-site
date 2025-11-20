@@ -283,19 +283,6 @@ mixpanel.track(
               toCenter={{ base: true, md: true, lg: true, xl: true }}
             />
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section style={{ marginTop: "4rem" }} id={"analytics-tech-stack"}>
             <Flex direction={"row"} gap={6}>
               <Flex direction={"column"} gap={6}>
@@ -351,19 +338,6 @@ mixpanel.track(
               </Flex>
             </Flex>
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section style={{ marginTop: "4rem" }} id="problems-we-solve">
             <HeroHeading
               title="Complex problems we make simple"
@@ -371,19 +345,6 @@ mixpanel.track(
             />
             <CardsWithImages cardsContent={solutionsCardsContent} />
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section id="process">
             <Heading
               my={6}
@@ -406,19 +367,6 @@ mixpanel.track(
               glowColor="132, 0, 255"
             />{" "}
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section id="cta">
             <Box display={{ base: "none", md: "none", lg: "initial" }}>
               <SinFunction />
