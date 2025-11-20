@@ -14,7 +14,6 @@ import Nav from "@/components/custom/Nav";
 // ⚛️ React bits components
 import BlurText from "@/components/Bits/BlurText";
 import MagicBento from "@/components/Bits/MagicBento";
-import LogoLoop from "@/components/Bits/LogoLoop";
 import SplashCursor from "@/components/Bits/SplashCursor";
 import AnimatedContent from "@/components/Bits/AnimatedContent";
 
@@ -216,55 +215,6 @@ export default function Home() {
               particleCount={100}
               glowColor="132, 0, 255"
             />
-          </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
-          <section id="martech-stack">
-            <Heading
-              size={"4xl"}
-              my={6}
-              color={"#311c3b"}
-              textAlign={"center"}
-              letterSpacing={"tight"}
-            >
-              Our Technology Stack
-            </Heading>
-            <div
-              style={{
-                height: "200px",
-                position: "relative",
-                overflow: "hidden",
-                width: "100%",
-                maxWidth: "80vw",
-                margin: "0 auto",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <LogoLoop
-                logos={techLogos}
-                speed={60}
-                direction="left"
-                logoHeight={80}
-                gap={120}
-                pauseOnHover
-                scaleOnHover
-                fadeOut
-                fadeOutColor="#ffffff"
-                ariaLabel="Technology partners"
-              />
-            </div>
           </section>
         </AnimatedContent>
         <AnimatedContent
