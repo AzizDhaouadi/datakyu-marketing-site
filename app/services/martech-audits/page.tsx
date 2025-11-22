@@ -361,20 +361,10 @@ amplitude.getInstance().logEvent("submitted_form", {
               </Flex>
             </Box>
           </section>
-        </AnimatedContent>
-        <CallToActionButton text={"Request an Audit"} toCenter={{ lg: true }} />
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
+          <CallToActionButton
+            text={"Request an Audit"}
+            toCenter={{ lg: true }}
+          />
           <section id="services">
             <Heading
               my={6}
@@ -405,19 +395,6 @@ amplitude.getInstance().logEvent("submitted_form", {
             </Text>
             <TableComponent tableBodyContent={tableContent} />
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section id="tech-stack">
             <Flex gap={6} justifyContent={{ xl: "space-evenly" }}>
               <Flex
@@ -473,19 +450,6 @@ amplitude.getInstance().logEvent("submitted_form", {
               </section>
             </Flex>
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section style={{ marginTop: "4rem" }} id="anaytics-importance">
             <Heading
               my={6}
@@ -521,19 +485,6 @@ amplitude.getInstance().logEvent("submitted_form", {
               />
             </section>
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section id="faq-section">
             <Heading
               my={6}

@@ -14,7 +14,6 @@ import Nav from "@/components/custom/Nav";
 // ⚛️ React bits components
 import BlurText from "@/components/Bits/BlurText";
 import MagicBento from "@/components/Bits/MagicBento";
-import LogoLoop from "@/components/Bits/LogoLoop";
 import SplashCursor from "@/components/Bits/SplashCursor";
 import AnimatedContent from "@/components/Bits/AnimatedContent";
 
@@ -26,11 +25,6 @@ import { Text, Heading, Box, Flex } from "@chakra-ui/react";
 
 // 🎨 Icons
 import { FiMap, FiShield, FiPercent } from "react-icons/fi";
-import {
-  SiGoogleanalytics,
-  SiLooker,
-  SiMixpanel,
-} from "@icons-pack/react-simple-icons";
 
 export async function generateMetadata() {
   return getPageMetadata("/");
@@ -55,24 +49,6 @@ export default function Home() {
       description:
         "Feel the impact of complete and accurate measurements for your product and business. We build measurement strategies that establish the basis for performance analysis, growth, and forecasting.",
       icon: <FiPercent />,
-    },
-  ];
-
-  const techLogos = [
-    {
-      node: <SiGoogleanalytics size={80} color="#E37400" />,
-      title: "Google Analytics",
-      href: "https://analytics.google.com",
-    },
-    {
-      node: <SiLooker size={80} color="#4285F4" />,
-      title: "Looker Studio",
-      href: "https://lookerstudio.google.com",
-    },
-    {
-      node: <SiMixpanel size={80} color="#7856FF" />,
-      title: "Mixpanel",
-      href: "https://mixpanel.com",
     },
   ];
 
@@ -151,19 +127,6 @@ export default function Home() {
               />
             </Flex>
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section id="features">
             <Heading
               my={6}
@@ -180,21 +143,8 @@ export default function Home() {
             </Text>
             <FeatureCards featuredCards={featuredCards} />
           </section>
-        </AnimatedContent>
 
-        <CallToActionSection description="Ready to take your data to the next level?" />
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
+          <CallToActionSection description="Ready to take your data to the next level?" />
           <section id="methodology">
             <Heading
               size={"4xl"}
@@ -217,68 +167,6 @@ export default function Home() {
               glowColor="132, 0, 255"
             />
           </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
-          <section id="martech-stack">
-            <Heading
-              size={"4xl"}
-              my={6}
-              color={"#311c3b"}
-              textAlign={"center"}
-              letterSpacing={"tight"}
-            >
-              Our Technology Stack
-            </Heading>
-            <div
-              style={{
-                height: "200px",
-                position: "relative",
-                overflow: "hidden",
-                width: "100%",
-                maxWidth: "80vw",
-                margin: "0 auto",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <LogoLoop
-                logos={techLogos}
-                speed={60}
-                direction="left"
-                logoHeight={80}
-                gap={120}
-                pauseOnHover
-                scaleOnHover
-                fadeOut
-                fadeOutColor="#ffffff"
-                ariaLabel="Technology partners"
-              />
-            </div>
-          </section>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
           <section id="cta">
             <Heading
               size={"4xl"}
