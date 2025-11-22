@@ -25,11 +25,6 @@ import { Text, Heading, Box, Flex } from "@chakra-ui/react";
 
 // 🎨 Icons
 import { FiMap, FiShield, FiPercent } from "react-icons/fi";
-import {
-  SiGoogleanalytics,
-  SiLooker,
-  SiMixpanel,
-} from "@icons-pack/react-simple-icons";
 
 export async function generateMetadata() {
   return getPageMetadata("/");
@@ -54,24 +49,6 @@ export default function Home() {
       description:
         "Feel the impact of complete and accurate measurements for your product and business. We build measurement strategies that establish the basis for performance analysis, growth, and forecasting.",
       icon: <FiPercent />,
-    },
-  ];
-
-  const techLogos = [
-    {
-      node: <SiGoogleanalytics size={80} color="#E37400" />,
-      title: "Google Analytics",
-      href: "https://analytics.google.com",
-    },
-    {
-      node: <SiLooker size={80} color="#4285F4" />,
-      title: "Looker Studio",
-      href: "https://lookerstudio.google.com",
-    },
-    {
-      node: <SiMixpanel size={80} color="#7856FF" />,
-      title: "Mixpanel",
-      href: "https://mixpanel.com",
     },
   ];
 
