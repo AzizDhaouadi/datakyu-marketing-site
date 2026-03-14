@@ -29,7 +29,10 @@ export default function CallToActionSection({
       >
         {description}
       </Heading>
-      <OpenHubspotDialog text="Drop us a message" toCenter={false} />
+      <OpenHubspotDialog
+        text="Book a Marketing Data Diagnostic"
+        toCenter={false}
+      />
     </Flex>
   );
 }
