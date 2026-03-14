@@ -34,7 +34,7 @@ const cardData: BentoCardProps[] = [
   {
     color: "#110a1f",
     title: "Data-Driven Clarity",
-    description: "Cut through vanity metrics to focus on growth",
+    description: "Ignore vanity metrics",
     label: "Focus",
   },
   {
@@ -46,7 +46,7 @@ const cardData: BentoCardProps[] = [
   {
     color: "#110a1f",
     title: "Full-Funnel View",
-    description: "See the complete customer journey",
+    description: "See your customer journey",
     label: "Visibility",
   },
   {
@@ -58,13 +58,13 @@ const cardData: BentoCardProps[] = [
   {
     color: "#110a1f",
     title: "ROI Transparency",
-    description: "Determine true marketing effectiveness",
+    description: "Determine marketing effectiveness",
     label: "Accountability",
   },
   {
     color: "#110a1f",
     title: "Strategic Partnership",
-    description: "Understand data with expert guidance",
+    description: "Understand your data",
     label: "Expertise",
   },
 ];
