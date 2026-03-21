@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Spectral } from "next/font/google";
+import { Providers } from "../providers";
 
 import { Provider } from "@/components/ui/provider";
 import "./globals.css";
@@ -55,10 +56,10 @@ export default function RootLayout({
       <body
         className={`${SpectralFont.variable} ${SpaceGrotesk.variable} ${styles.body}`}
       >
-        <Provider>
+        <Providers>
           {children}
           <Analytics />
-        </Provider>
+        </Providers>
       </body>
     </html>
   );
