@@ -1,26 +1,24 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Spectral } from "next/font/google";
+// import { Space_Grotesk, Spectral } from "next/font/google";
+import { Manrope, DM_Mono } from "next/font/google";
 import { Providers } from "../providers";
 
-import { Provider } from "@/components/ui/provider";
 import "./globals.css";
 import styles from "./page.module.css";
 import { Analytics } from "@vercel/analytics/next";
 
 import Script from "next/script";
 
-const SpectralFont = Spectral({
-  // For Headings
+const ManropeFont = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-spectral",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
 });
 
-const SpaceGrotesk = Space_Grotesk({
-  // For Body
+const DMMono = DM_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
+  weight: ["400", "500"],
+  variable: "--font-dm-mono",
 });
 
 export const metadata: Metadata = {
@@ -54,7 +52,7 @@ export default function RootLayout({
         ></script>
       </head>
       <body
-        className={`${SpectralFont.variable} ${SpaceGrotesk.variable} ${styles.body}`}
+        className={`${ManropeFont.variable} ${DMMono.variable} ${styles.body}`}
       >
         <Providers>
           {children}

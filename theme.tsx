@@ -18,6 +18,10 @@ const config = defineConfig({
           600: { value: "#C94420" },
         },
       },
+      fonts: {
+        heading: { value: "var(--font-manrope), sans-serif" },
+        body: { value: "var(--font-dm-mono), monospace" },
+      },
     },
   },
 });

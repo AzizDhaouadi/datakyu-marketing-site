@@ -32,7 +32,9 @@ export default function MarketingTechMigration() {
         <AdvantagesList />
         <MigrationTechStack />
         <MigrationProcess />
-        <CallToActionSection description="Ready to migrate with confidence?" />
+        <section id="contact">
+          <CallToActionSection description="Ready to migrate with confidence?" />
+        </section>
       </main>
       <Footer />
     </>

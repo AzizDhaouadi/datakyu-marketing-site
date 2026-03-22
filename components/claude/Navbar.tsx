@@ -13,7 +13,6 @@ const NAV_ITEMS = [
     label: "About",
     links: [
       { label: "Contact", href: "/contact" },
-      { label: "Our Technology Stack", href: "/our-technology-stack" },
       { label: "Cookie Policy", href: "/policies/cookie-policy" },
       { label: "Privacy Policy", href: "/policies/privacy-policy" },
     ],
@@ -83,8 +82,7 @@ function Dropdown({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-      bg="transparent"
-      backdropFilter="blur(12px)"
+      bg="white"
       border="1px solid rgba(12,11,9,0.1)"
       borderRadius="md"
       py={2}
@@ -105,7 +103,7 @@ function Dropdown({
           fontWeight="400"
           color="{colors.ink.600}"
           _hover={{
-            bg: "{colors.smoke.100}",
+            bg: "rgba(12,11,9,0.04)",
             color: "{colors.ink.900}",
             textDecoration: "none",
           }}
@@ -187,10 +185,11 @@ function MobileDrawer({
     <AnimatePresence>
       {open && (
         <>
+          {/* Backdrop */}
           <MotionBox
             position="fixed"
             inset={0}
-            bg="transparent"
+            bg="rgba(12,11,9,0.3)"
             zIndex={150}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -199,33 +198,25 @@ function MobileDrawer({
             onClick={onClose}
           />
 
+          {/* Drawer — slides down from top */}
           <MotionBox
             position="fixed"
-            bottom={0}
+            top={0}
             left={0}
             right={0}
             zIndex={200}
-            bg="{colors.smoke.50}"
-            borderTopRadius="xl"
-            initial={{ y: "100%" }}
+            bg="white"
+            borderBottomRadius="xl"
+            boxShadow="0 16px 48px rgba(12,11,9,0.12)"
+            initial={{ y: "-100%" }}
             animate={{ y: 0 }}
-            exit={{ y: "100%" }}
+            exit={{ y: "-100%" }}
             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Handle */}
-            <Flex justify="center" pt={3} pb={2}>
-              <Box
-                w="36px"
-                h="4px"
-                bg="rgba(12,11,9,0.12)"
-                borderRadius="full"
-              />
-            </Flex>
-
-            {/* Header */}
+            {/* Header — same height as navbar */}
             <Flex
               px={6}
-              py={4}
+              h="64px"
               align="center"
               justify="space-between"
               borderBottom="1px solid rgba(12,11,9,0.08)"
@@ -321,7 +312,7 @@ function MobileDrawer({
                               fontFamily="body"
                               color="{colors.ink.400}"
                               _hover={{
-                                bg: "{colors.smoke.200}",
+                                bg: "rgba(12,11,9,0.04)",
                                 color: "{colors.ink.900}",
                                 textDecoration: "none",
                               }}
@@ -347,10 +338,8 @@ function MobileDrawer({
             </Box>
 
             {/* CTA */}
-            <Box px={6} pb={8} pt={2}>
-              <CallToActionButton
-                text={"Book a Consultation"}
-              ></CallToActionButton>
+            <Box px={6} pb={8} pt={2} borderTop="1px solid rgba(12,11,9,0.08)">
+              <CallToActionButton text={"Book a Consultation"} />
             </Box>
           </MotionBox>
         </>
@@ -376,13 +365,14 @@ export default function Navbar() {
         display="flex"
         alignItems="center"
         justifyContent="space-between"
-        backdropFilter="blur(12px)"
+        bg="white"
+        borderBottom="1px solid rgba(12,11,9,0.08)"
       >
         {/* Logo */}
         <Link as={NextLink} href="/" _hover={{ textDecoration: "none" }}>
           <Image
             src="/logo.svg"
-            boxSize="100px"
+            boxSize="50px"
             borderRadius="full"
             fit="cover"
             alt="Datakyu Official Logo"
@@ -405,7 +395,9 @@ export default function Navbar() {
         </Flex>
 
         {/* Desktop CTA */}
-        <CallToActionButton text={"Book a Consultation"} />
+        <Box display={{ base: "none", md: "block" }}>
+          <CallToActionButton text={"Book a Consultation"} />
+        </Box>
 
         {/* Mobile hamburger */}
         <Box

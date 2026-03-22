@@ -58,9 +58,11 @@ mixpanel.track(
         <Stack />
         <Process />
         <Outcomes />
-        <CallToActionSection
-          description={"Turn your analytics into an advantage"}
-        />
+        <section id="contact">
+          <CallToActionSection
+            description={"Turn your analytics into an advantage"}
+          />
+        </section>
       </main>
       <Footer />
     </>

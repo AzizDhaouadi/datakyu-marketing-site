@@ -29,16 +29,13 @@ export default function Ticker() {
       overflow="hidden"
       borderTop="1px solid rgba(255,255,255,0.05)"
       borderBottom="1px solid rgba(255,255,255,0.05)"
-      css={{
-        "@keyframes ticker": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-50%)" },
-        },
-        animation: "ticker 10s linear infinite",
-      }}
     >
-      <Flex whiteSpace="nowrap" animation="ticker 28s linear infinite">
-        {ALL_ITEMS.map((item, i) => (
+      <Flex
+        width="max-content"
+        whiteSpace="nowrap"
+        css={{ animation: "ticker 40s linear infinite" }}
+      >
+        {[...ALL_ITEMS, ...ALL_ITEMS].map((item, i) => (
           <Flex key={i} align="center" gap={4} px={10} shrink={0}>
             <Dot />
             <Text

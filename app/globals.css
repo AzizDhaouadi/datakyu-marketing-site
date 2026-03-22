@@ -16,7 +16,7 @@ body {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-space-grotesk), var(--font-sans);
+  font-family: var(--font-dm-mono), var(--font-sans);
 }
 
 a {
@@ -25,7 +25,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-spectral);
+  font-family: var(--font-manrope);
   color: #311c3b;
 }
 

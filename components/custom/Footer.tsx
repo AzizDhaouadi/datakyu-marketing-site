@@ -125,7 +125,7 @@ export function Footer() {
             color="rgba(255,255,255,0.35)"
           >
             We help marketers and product teams build analytics infrastructure
-            they can trust — and turn that data into growth.
+            they can trust and turn that data into growth.
           </Text>
         </Box>
 
