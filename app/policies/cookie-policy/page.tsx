@@ -1,16 +1,17 @@
+// 🖼️ Styles
 import styles from "../../page.module.css";
 
-// 🧩 Custom Components – Core
-import Nav from "@/components/custom/Nav";
-import Footer from "@/components/custom/Footer";
+// Claude Generated Components - Core
+import Navbar from "@/components/claude/Navbar";
 
-import { Heading, Box, Link, Text } from "@chakra-ui/react";
+// Chakra UI Components - Core
+import { Heading, Box, Text, Link, List } from "@chakra-ui/react";
 
 export default function CookiePolicy() {
   return (
     <div className={styles.page}>
       <header style={{ width: "100%" }} className={styles.header}>
-        <Nav />
+        <Navbar />
       </header>
       <main className={styles.main}>
         <Heading>Cookie Policy</Heading>
@@ -77,7 +78,6 @@ export default function CookiePolicy() {
           .
         </Text>
       </main>
-      <Footer />
     </div>
   );
 }

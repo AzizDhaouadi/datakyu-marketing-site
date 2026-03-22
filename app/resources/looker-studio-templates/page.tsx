@@ -1,247 +1,57 @@
+// 🖼️ Styles
 import styles from "../../page.module.css";
 
 // 🧩 Custom Components – Core
-import Nav from "@/components/custom/Nav";
-import CardsWithImages from "@/components/custom/CardsWithImages";
-import CustomDialog from "@/components/custom/Dialog";
-import FAQ from "@/components/custom/FAQ";
-import Footer from "@/components/custom/Footer";
+import { Footer } from "@/components/custom/Footer";
+import FAQSection from "@/components/custom/FAQ";
 import CallToActionSection from "@/components/custom/CallToActionSection";
 
-// 💅 Chakra UI
-import {
-  Text,
-  Heading,
-  Separator,
-  Flex,
-  Timeline,
-  List,
-} from "@chakra-ui/react";
+// Claude Generated Components - Core
+import Navbar from "@/components/claude/Navbar";
 
 // ⚛️ Dynamic SEO metadata generation
 import { getPageMetadata } from "@/app/lib/helper/generatePageMetadata";
-
-// ⚛️ React bits components
-import BlurText from "@/components/Bits/BlurText";
-import SplashCursor from "@/components/Bits/SplashCursor";
-import AnimatedContent from "@/components/Bits/AnimatedContent";
+import LookerHero from "@/components/claude/LookerHero";
+import LookerTemplates from "@/components/claude/LookerTemplates";
+import LookerHowItWorks from "@/components/claude/LookerHowItWorks";
 
 export async function generateMetadata() {
   return getPageMetadata("/resources/looker-studio-templates");
 }
 
 export default function LookerStudioTemplates() {
-  const dashboardTemplatesContent = [
+  const FAQS = [
     {
-      image: "/images/techStack/looker.svg",
-      title: "Google Analytics 4 with BigQuery",
-      description:
-        "This dashboard helps businesses analyze user engagement, session and event performance, source-based traffic, and extract insights without SQL expertise.",
-      includeFooter: false,
-      toDownload: true,
-      dialogFooter: (
-        <CustomDialog
-          placement={"center"}
-          cta={"Learn more"}
-          buttonVariant={"outline"}
-          content={{
-            title: "Dashboard Overview",
-            description:
-              "This dashboard is powered entirely by BigQuery, using data exported directly from Google Analytics 4 (GA4). It features a variety of visualizations, including time series, tables, filled maps, and bar charts, offering a comprehensive view of your GA4 data.",
-          }}
-        />
-      ),
-    },
-  ];
-
-  const timelineContent = [
-    {
-      title: "Step One",
-      description:
-        "Select of the dashboard templates that you would like to use. You can test the template and discover its features by opening it in a seperate tab or window. Next, click on the Replicate button to create a copy of your own.",
+      q: "How do I create a Looker Studio account?",
+      a: "Go to lookerstudio.google.com and sign in with your Google account. That's it — no separate signup needed.",
     },
     {
-      title: "Step Two",
-      description:
-        "If you didn't already, create a Looker Studio account. If you already have an account, you should be taken to the template. Next, click on ⋮ then click on Make a copy.",
+      q: "How do I map the original data sources?",
+      a: "When you click Make a copy, Looker Studio will prompt you to map each original data source to your own. Match each source to its equivalent — for example, map the original GA4 source to your GA4 property and the BigQuery source to your own export. Once mapping is done, click Copy Report. If you see broken charts afterwards, it usually means a source wasn't mapped correctly — go back and remap.",
     },
     {
-      title: "Step Three",
-      description:
-        "The next step is data mapping. Once you click on Make a copy, you will be asked to map the original data sources to the ones you will be using in your dashboard. This is why it is important to take your time during step one 👆. Once the mapping is done, click Copy Report.",
+      q: "Are the charts customizable?",
+      a: "Yes. Once you've made a copy the dashboard is fully yours — you can edit any chart, change visualizations, add new data sources, or restructure the layout. Familiarity with Looker Studio will help, but most edits are straightforward.",
     },
     {
-      title: "Step Four",
-      description:
-        "Last but not least, go over the dashbooard and make sure all reports are correctly visualizing the data and that there are no broken charts. If you are happy with what you are seeing then there is nothing to do. Mission accomplished!",
-    },
-  ];
-
-  const questionsAndAnswers = [
-    {
-      question: "How do I create a Looker Studio account?",
-      answer:
-        "To create a Looker Studio account, go to the Looker Studio website and sign in with your Google account.",
-    },
-    {
-      question: "How do I map the original data sources?",
-      answer: (
-        <>
-          <Text py={4} color={"grey.50"}>
-            Mapping the original data sources is very straightforward.
-            Here&apos;s how can map them:
-          </Text>
-          <List.Root as={"ol"} textAlign={"left"}>
-            <List.Item>
-              On the overview page of the dashboard, we mention what are the
-              data sources were used to build the dashboard.
-            </List.Item>
-            <List.Item>
-              Once you have the list, make sure to add equivalent data sources
-              in order for the mapping to work.
-            </List.Item>
-            <List.Item>
-              Next, once you are asked to map the data source, map each data
-              source to its equivalent. For instance map the original Google
-              Analytics 4 source to your Google Analytics 4 source.
-            </List.Item>
-            <List.Item>
-              Once the mapping is done, click on Make a copy to start using the
-              dashboard
-            </List.Item>
-          </List.Root>
-          <Text py={4} color={"grey.50"}>
-            If your mapping is incorrect, you will notice some broken charts.
-            This is due to the data sources incompatibility
-          </Text>
-        </>
-      ),
-    },
-    {
-      question: "Are the charts customizable?",
-      answer:
-        "Yes, they are. Although, it is important to note that to customize the reports, you will need to be familiar with Looker Studio.",
-    },
-    {
-      question: "Can I add more data sources to the dashboard?",
-      answer:
-        "Yes, you can. Once you have made a copy of the dashboard, you are free to use it as you would like including adding data sources and other charts.",
+      q: "Can I add more data sources to the dashboard?",
+      a: "Yes. After copying you're free to add additional data sources, blend them with existing ones, and build new charts on top. The template is a starting point, not a constraint.",
     },
   ];
 
   return (
-    <div className={styles.page}>
+    <>
       <header style={{ width: "100%" }} className={styles.header}>
-        <Nav />
+        <Navbar />
       </header>
       <main className={styles.main}>
-        <SplashCursor />
-        <section id="hero">
-          {/* <HeroHeading
-            title={"Looker Studio Templates"}
-            highlight={"Templates"}
-          /> */}
-          <BlurText
-            text="Looker Studio Templates"
-            delay={150}
-            animateBy="words"
-            direction="top"
-            className="tracking-tight text-[#f15a25]"
-          />
-          <Text textAlign={"center"}>
-            Get up and running with visualizing your data in seconds with our
-            ready to go templates. Just duplicate, connect and start analyzing!
-          </Text>
-        </section>
-        <AnimatedContent
-          distance={150}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          ease="ease.in"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
-          <section id="containers-description">
-            <CardsWithImages cardsContent={dashboardTemplatesContent} />
-          </section>
-          <section id="how-does-it-work">
-            <Heading
-              size={"4xl"}
-              my={6}
-              textAlign={"left"}
-              letterSpacing={"tight"}
-            >
-              How does it work?
-            </Heading>
-            <Separator size="md" />
-            <Flex direction={{ base: "column", md: "row" }} gap={10}>
-              <Flex
-                direction={"column"}
-                justifyContent={"center"}
-                alignItems={"flex-start"}
-                gap={4}
-              >
-                <Heading
-                  size={"2xl"}
-                  my={6}
-                  textAlign={"left"}
-                  color={"rgb(79, 59, 62)"}
-                  letterSpacing={"tight"}
-                >
-                  Visualize your data with Looker Studio 📊
-                </Heading>
-                <Text>
-                  Viusalize your data using Looker Studio in 4 simple steps
-                  using our templates. Whatever your business is, we have a
-                  temlate for it. All of our tempaltes work seamlessly and use
-                  the innate Google Analytics connector with Looker Studio, so
-                  there is no funny business there.
-                </Text>
-                <Text>
-                  If you have any questions, you might find an answer in our FAQ
-                  section below 👇. If you did not find what you were looking
-                  for, feel free to contact us.
-                </Text>
-              </Flex>
-              <Timeline.Root my={6} size={"xl"} variant={"subtle"}>
-                {timelineContent.map((item, index) => (
-                  <Timeline.Item key={index} my={2}>
-                    <Timeline.Connector>
-                      <Timeline.Separator />
-                      <Timeline.Indicator>{index + 1}</Timeline.Indicator>
-                    </Timeline.Connector>
-                    <Timeline.Content>
-                      <Timeline.Title>
-                        <Heading>{item.title}</Heading>
-                      </Timeline.Title>
-                      <Text textStyle={"md"}>{item.description}</Text>
-                    </Timeline.Content>
-                  </Timeline.Item>
-                ))}
-              </Timeline.Root>
-            </Flex>
-          </section>
-          <section id="faq">
-            <Heading
-              size={"4xl"}
-              my={6}
-              textAlign={"center"}
-              letterSpacing={"tight"}
-            >
-              Frequently Asked Questions
-            </Heading>
-            <FAQ questions={questionsAndAnswers} />
-          </section>
-          <section id="contact-us">
-            <CallToActionSection description={"We are here to help!"} />
-          </section>
-        </AnimatedContent>
+        <LookerHero />
+        <LookerTemplates />
+        <LookerHowItWorks />
+        <FAQSection faqs={FAQS} />
+        <CallToActionSection description="Need a custom dashboard instead?" />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import HubspotForm from "../HubspotForm";
 import {
   Button,
@@ -31,7 +30,7 @@ export default function OpenHubspotDialog({
         <Portal>
           <Dialog.Backdrop />
           <Dialog.Positioner>
-            <Dialog.Content>
+            <Dialog.Content my={6}>
               <Dialog.Header>
                 <Dialog.Title p={"1rem"}>How can we help?</Dialog.Title>
               </Dialog.Header>
