@@ -108,7 +108,7 @@ export default function AuditTiers() {
               lineHeight={1.7}
             >
               Two audit tiers to fit your needs. Both deliver a clear picture of
-              your analytics health — the full audit goes deeper on every
+              your analytics health. The full audit goes deeper on every
               dimension.
             </Text>
           </Grid>

@@ -35,7 +35,7 @@ const services = [
   {
     num: "02",
     title: "Product Performance",
-    desc: "We instrument your product with events that actually tell you something. Funnel analysis, retention cohorts, feature adoption — built to answer the questions your team keeps asking.",
+    desc: "We instrument your product with events that actually tell you something. Funnel analysis, retention cohorts, feature adoption built to answer the questions your team keeps asking.",
     tags: ["Mixpanel", "Amplitude", "Funnels", "Retention"],
     icon: (
       <svg
@@ -55,7 +55,7 @@ const services = [
   {
     num: "03",
     title: "Analytics Consulting",
-    desc: "Embedded analytics expertise for your team. We join your sprints, advise on measurement strategy, and turn your data stack into a competitive advantage — not a liability.",
+    desc: "Embedded analytics expertise for your team. We join your sprints, advise on measurement strategy, and turn your data stack into a competitive advantage not a liability.",
     tags: ["Strategy", "Dashboards", "Attribution", "Reporting"],
     icon: (
       <svg

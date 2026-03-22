@@ -21,7 +21,7 @@ const DELIVERABLES = [
   {
     num: "01",
     title: "Documentation",
-    desc: "We design, build, and maintain robust tracking documentation — naming conventions, implementation references, and event schemas — so your data stays trustworthy long after we're gone.",
+    desc: "We design, build, and maintain robust tracking documentation naming conventions, implementation references, and event schemas so your data stays trustworthy long after we're gone.",
     tag: "Included in all packages",
   },
   {
@@ -33,7 +33,7 @@ const DELIVERABLES = [
   {
     num: "03",
     title: "Training",
-    desc: "Workshops and stakeholder sessions to ensure everyone — from marketers to engineers — understands how to use and trust the data. Your team owns it when we're done.",
+    desc: "Workshops and stakeholder sessions to ensure everyone from marketers to engineers understands how to use and trust the data. Your team owns it when we're done.",
     tag: "Coming soon",
   },
 ];

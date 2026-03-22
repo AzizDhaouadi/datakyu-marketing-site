@@ -51,7 +51,7 @@ const SERVICES = [
   {
     num: "03",
     title: "Understand data integrity and quality",
-    desc: "Is your analytics layer collecting everything that matters? Do you have a single source of truth? We find out — and fix it.",
+    desc: "Is your analytics layer collecting everything that matters? Do you have a single source of truth? We find out and fix it.",
     icon: (
       <svg
         width="20"

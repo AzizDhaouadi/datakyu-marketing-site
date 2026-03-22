@@ -85,8 +85,8 @@ const FOOTER_LINKS = {
   ],
   Services: [
     { name: "Auditing & Implementation", href: "/services/martech-audits" },
-    { name: "Stack Migration", href: "services/marketing-tech-migration" },
-    { name: "Custom Analytics", href: "services/custom-marketing-analytics" },
+    { name: "Stack Migration", href: "/services/marketing-tech-migration" },
+    { name: "Custom Analytics", href: "/services/custom-marketing-analytics" },
   ],
   Company: [
     { name: "Blog", href: "https://datajournal.datakyu.co" },

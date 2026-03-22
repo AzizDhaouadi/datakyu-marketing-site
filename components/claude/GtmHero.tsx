@@ -15,7 +15,7 @@ const fadeUp = (delay = 0) => ({
 const STATS = [
   { val: "3", label: "container templates ready to import" },
   { val: "4", label: "steps to full GA4 event tracking" },
-  { val: "100%", label: "preconfigured — no setup from scratch" },
+  { val: "100%", label: "preconfigured" },
 ];
 
 export default function GTMHero() {
@@ -91,7 +91,7 @@ export default function GTMHero() {
             maxW="500px"
             lineHeight={1.7}
           >
-            Our Google Tag Manager containers come fully configured — tags,
+            Our Google Tag Manager containers come fully configured. With tags,
             triggers, and variables ready to test and launch. No setup from
             scratch.
           </Text>

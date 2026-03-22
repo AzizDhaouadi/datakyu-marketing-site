@@ -16,8 +16,11 @@ const fadeUp = (delay = 0) => ({
 
 const STATS = [
   { val: "3×", label: "avg. improvement in data accuracy" },
-  { val: "$0", label: "data loss during migration" },
-  { val: "48h", label: "audit turnaround for standard setups" },
+  {
+    val: "Full clarity",
+    label: "Every audit comes with prioritized actionable fixes",
+  },
+  { val: "48h", label: "to know exactly where you stand" },
 ];
 
 export default function AuditHero() {

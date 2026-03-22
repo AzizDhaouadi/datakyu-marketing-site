@@ -17,7 +17,7 @@ const STACK_ITEMS = [
       "Cross-platform tracking",
       "Google Ads integration",
     ],
-    desc: "The industry standard rebuilt from scratch. GA4 is the right long-term bet — and most teams are underusing it.",
+    desc: "The industry standard rebuilt from scratch. GA4 is the right long-term bet and most teams are underusing it.",
   },
   {
     name: "Segment",

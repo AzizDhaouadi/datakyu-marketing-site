@@ -15,7 +15,7 @@ const MotionBox = motion(Box) as any;
 const STACK = [
   {
     name: "Google Analytics 4",
-    desc: "Event-based data model with machine learning insights. The industry standard, done right — not just installed and forgotten.",
+    desc: "Event-based data model with machine learning insights. The industry standard, done right.",
   },
   {
     name: "Segment",

@@ -88,7 +88,7 @@ export default function LookerHero() {
             lineHeight={1.7}
           >
             Ready-to-go Looker Studio templates. Duplicate, connect your data
-            source, and start analyzing — no setup from scratch.
+            source, and start analyzing in minutes.
           </Text>
         </MotionBox>
 

@@ -166,7 +166,7 @@ export default function FAQSection({
               </Text>
             </Box>
             <Text fontSize="16px" color="{colors.ink.400}" lineHeight={1.7}>
-              If yours isn't here, reach out directly — we're happy to walk
+              If yours isn't here, reach out directly. We're happy to walk
               through anything before you commit.
             </Text>
           </Grid>

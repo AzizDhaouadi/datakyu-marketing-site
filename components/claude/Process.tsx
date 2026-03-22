@@ -11,7 +11,7 @@ const STEPS = [
   {
     num: "01",
     title: "Diagnostic",
-    desc: "We audit your full data pipeline — from collection to reporting. You get a clear map of what's working, what's broken, and what's missing.",
+    desc: "We audit your full data pipeline from collection to reporting. You get a clear map of what's working, what's broken, and what's missing.",
   },
   {
     num: "02",
@@ -21,7 +21,7 @@ const STEPS = [
   {
     num: "03",
     title: "Implementation",
-    desc: "We build it. Server-side tags, GTM containers, SDK calls — all validated with QA testing before we ship anything to production.",
+    desc: "We build the tracking. We validate with QA testing before we ship anything to production.",
   },
   {
     num: "04",

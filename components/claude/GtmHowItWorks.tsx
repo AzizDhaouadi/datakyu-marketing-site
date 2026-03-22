@@ -222,7 +222,7 @@ export default function GTMHowItWorks() {
               color="rgba(255,255,255,0.5)"
               lineHeight={1.6}
             >
-              Have questions? Check the FAQ below or reach out directly — we're
+              Have questions? Check the FAQ below or reach out directly. We're
               happy to help.
             </Text>
           </Flex>

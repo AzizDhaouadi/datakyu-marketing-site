@@ -491,7 +491,7 @@ If the tracking method is:
               lineHeight={1.7}
             >
               Generate GA4 tracking code for recommended events, e-commerce,
-              SaaS, and custom events — using dataLayer, gtag.js, or the
+              SaaS, and custom events using dataLayer, gtag.js, or the
               Measurement Protocol.
             </Text>
           </Box>
