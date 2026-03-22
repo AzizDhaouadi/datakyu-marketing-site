@@ -96,9 +96,9 @@ export default function HomeHero() {
             maxW="540px"
             lineHeight={1.7}
           >
-            We diagnose and repair tracking, attribution, and reporting systems
-            for established SMB marketing teams — so every decision your
-            leadership makes is backed by numbers they can trust.
+            We diagnose and fix tracking, attribution, and reporting systems for
+            established SMB marketing teams so every decision your leadership
+            makes is backed by numbers they can trust.
           </Text>
         </MotionBox>
 

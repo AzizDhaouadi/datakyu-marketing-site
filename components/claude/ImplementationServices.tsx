@@ -190,7 +190,7 @@ export default function ImplementationServices() {
             </Text>
             <Text fontSize="16px" color="{colors.ink.400}" lineHeight={1.7}>
               Delivering scalable implementation tailored to your business
-              objectives — not a copy-paste job from a template.
+              objectives not a copy-paste job from a template.
             </Text>
           </Grid>
         </MotionBox>

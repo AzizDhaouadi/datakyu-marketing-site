@@ -14,10 +14,22 @@ const STATS = [
 ];
 
 const POSTS = [
-  "Flatten GA4 BigQuery Export Schema",
-  "Google Consent Mode V2 with CookieYes & GTM",
-  "Track Gravity Forms with Google Tag Manager",
-  "GA4 Measurement Protocol: Server-Side Events",
+  {
+    name: "Flatten GA4 BigQuery Export Schema",
+    href: "https://datajournal.datakyu.co/flatten-ga4-bigquery-export-schema/",
+  },
+  {
+    name: "Google Consent Mode V2 with CookieYes & GTM",
+    href: "https://datajournal.datakyu.co/implementing-google-consent-mode-using-cookieyes-integration/",
+  },
+  {
+    name: "Track Gravity Forms with Google Tag Manager",
+    href: "https://datajournal.datakyu.co/track-gravity-forms-with-google-tag-manager/",
+  },
+  {
+    name: "GA4 Measurement Protocol: Server-Side Events",
+    href: "https://datajournal.datakyu.co/advanced-ga4-measurement-protocol-implementation/",
+  },
 ];
 
 export default function DataJournal() {
@@ -201,7 +213,9 @@ export default function DataJournal() {
                           _groupHover={{ color: "white" }}
                           transition="color 0.2s"
                         >
-                          {post}
+                          <Link target={"_blank"} href={post.href}>
+                            {post.name}
+                          </Link>
                         </Text>
                       </Flex>
                       <Box

@@ -33,7 +33,7 @@ const TECH_STACK = [
 ];
 
 const OUTCOMES = [
-  "Self-referral exclusions removed — direct traffic accurately reflects real behaviour",
+  "Self-referral exclusions removed direct traffic accurately reflects real behaviour",
   "Custom channel groupings covering Apple Search Ads, affiliates, programmatic, and mobile ad networks",
   "User ID implemented via GTM to enable cross-device session deduplication across Web, iOS, and Android",
   "GA4 attribution change documented with BigQuery recommended as ground truth for longitudinal analysis",

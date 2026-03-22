@@ -243,7 +243,7 @@ export default function BeforeAfter() {
               color="rgba(255,255,255,0.25)"
               letterSpacing="0.06em"
             >
-              Data Integrity Audits — starting at $2,000
+              Data Integrity Audits
             </Text>
             <Link
               href="#contact"
