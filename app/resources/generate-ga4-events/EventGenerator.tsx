@@ -216,7 +216,7 @@ function CodePanel({ isLoading, code }: { isLoading: boolean; code: string }) {
   };
 
   const isPlaceholder =
-    code === "Choose which event you need help with and we'll handle the rest";
+    code === "Choose which event you need help with and we'll handle the rest.";
 
   return (
     <Box
@@ -361,7 +361,7 @@ export default function GenerateGA4Events() {
   const [customDescription, setCustomDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [generatedCode, setGeneratedCode] = useState(
-    "Choose which event you need help with and we'll handle the rest"
+    "Choose which event you need help with and we'll handle the rest."
   );
 
   const defaultPrompt = `Given the GA4 event name "${defaultEvent}" and the tracking method "${defaultMedium}", generate the JavaScript code only, with:
